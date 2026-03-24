@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Te amo ❤️</title>
+
+<!-- Fonte Luckiest Guy -->
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    background:#000;
+    height:100vh;
+    font-family:'Luckiest Guy', cursive;
+    cursor:pointer;
+    overflow:hidden;
+}
+
+/* estrutura das telas */
+.tela{
+    position:relative;
+    width:100%;
+    height:100vh;
+    color:#fff;
+}
+
+/* imagem CENTRAL */
+.imagem-centro{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:230px;
+}
+
+/* TEXTO TELA 1 (embaixo) */
+.texto-baixo{
+    position:absolute;
+    bottom:40px;
+    width:100%;
+    text-align:center;
+    font-size:28px;
+    letter-spacing:2px;
+}
+
+/* TEXTO TELA 2 (parágrafo mais acima) */
+.texto-paragrafo{
+    position:absolute;
+    top:65%; /* mais em cima */
+    left:50%;
+    transform:translateX(-50%);
+    width:80%;
+    max-width:600px;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    letter-spacing:1px;
+}
+
+/* segunda tela escondida */
+#tela2{
+    display:none;
+}
+</style>
+</head>
+
+<body onclick="abrirPresente()">
+
+<!-- TELA 1 -->
+<div id="tela1" class="tela">
+    <img src="present.png" class="imagem-centro">
+    <div class="texto-baixo">
+        Clique para abrir o presente!
+    </div>
+</div>
+
+<!-- TELA 2 -->
+<div id="tela2" class="tela">
+    <img src="iloveyou.png" class="imagem-centro">
+
+    <!-- EDITE O TEXTO AQUI -->
+    <div class="texto-paragrafo">
+Mãe,
+Feliz aniversário! Quero que você saiba que eu te amo muito e sou muito grato por tudo que você faz por mim todos os dias. Você é muito importante na minha vida.
+Te amo ❤️
+
+    </div>
+</div>
+
+<script>
+function abrirPresente(){
+    document.getElementById("tela1").style.display="none";
+    document.getElementById("tela2").style.display="block";
+    document.body.onclick=null;
+}
+</script>
+
+</body>
+</html>
