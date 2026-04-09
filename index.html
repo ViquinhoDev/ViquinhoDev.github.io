@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -30,13 +30,13 @@ body{
 /* imagem CENTRAL */
 .imagem-centro{
     position:absolute;
-    top:50%;
+    top:45%;
     left:50%;
     transform:translate(-50%,-50%);
     width:230px;
 }
 
-/* TEXTO TELA 1 (embaixo) */
+/* TEXTO EMBAIXO (igual tela 1) */
 .texto-baixo{
     position:absolute;
     bottom:40px;
@@ -46,10 +46,10 @@ body{
     letter-spacing:2px;
 }
 
-/* TEXTO TELA 2 (parágrafo mais acima) */
+/* TEXTO PARÁGRAFO */
 .texto-paragrafo{
     position:absolute;
-    top:65%; /* mais em cima */
+    top:65%;
     left:50%;
     transform:translateX(-50%);
     width:80%;
@@ -60,14 +60,42 @@ body{
     letter-spacing:1px;
 }
 
-/* segunda tela escondida */
-#tela2{
+/* título tela 3 */
+.titulo{
+    position:absolute;
+    top:40%;
+    width:100%;
+    text-align:center;
+    font-size:38px;
+}
+
+/* link presente */
+.link-presente{
+    position:absolute;
+    top:55%;
+    width:100%;
+    text-align:center;
+    font-size:24px;
+}
+
+.link-presente a{
+    color:#00c3ff;
+    text-decoration:none;
+}
+
+.link-presente a:hover{
+    text-decoration:underline;
+}
+
+/* telas escondidas */
+#tela2,
+#tela3{
     display:none;
 }
 </style>
 </head>
 
-<body onclick="abrirPresente()">
+<body onclick="proximaTela()">
 
 <!-- TELA 1 -->
 <div id="tela1" class="tela">
@@ -81,20 +109,44 @@ body{
 <div id="tela2" class="tela">
     <img src="iloveyou.png" class="imagem-centro">
 
-    <!-- EDITE O TEXTO AQUI -->
     <div class="texto-paragrafo">
 Mãe,
 Feliz aniversário! Sou muito grato por você ser minha mãe; Gosto muito de voce e sou muito grato por todos os dias que passei com você. Você é muito importante na minha vida.
 Te amo ❤️
+    </div>
 
+    <div class="texto-baixo">
+        Clique para prosseguir!
+    </div>
+</div>
+
+<!-- TELA 3 -->
+<div id="tela3" class="tela">
+    <div class="titulo">
+        PRESENTE:
+    </div>
+
+    <div class="link-presente">
+        <a href="#" target="_blank">Clique aqui para abrir</a>
     </div>
 </div>
 
 <script>
-function abrirPresente(){
-    document.getElementById("tela1").style.display="none";
-    document.getElementById("tela2").style.display="block";
-    document.body.onclick=null;
+let etapa = 1;
+
+function proximaTela(){
+
+    if(etapa === 1){
+        document.getElementById("tela1").style.display="none";
+        document.getElementById("tela2").style.display="block";
+        etapa = 2;
+    }
+    else if(etapa === 2){
+        document.getElementById("tela2").style.display="none";
+        document.getElementById("tela3").style.display="block";
+        document.body.onclick = null; // para parar depois da tela 3
+        etapa = 3;
+    }
 }
 </script>
 
