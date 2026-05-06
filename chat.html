@@ -3,360 +3,389 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>ViquinhoChat · Entrada criptografada</title>
+    <title>ViquinhoChat · Entrada segura</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: system-ui, 'Segoe UI', 'Inter', 'Roboto', monospace;
         }
 
         body {
-            background: #0a0a0c;
-            background-image: radial-gradient(circle at 15% 30%, #1a150e 0%, #030303 100%);
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', monospace;
-            color: #ececec;
-        }
-
-        /* container central flex */
-        .main-container {
-            flex: 1;
+            background: radial-gradient(circle at 10% 20%, #1a1a1a, #0a0a0a);
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 2rem 1.5rem;
+            padding: 20px;
         }
 
-        /* card principal - estilo preto acetinado com detalhes laranja */
-        .access-card {
-            background: #111112;
-            backdrop-filter: blur(2px);
-            border: 1px solid #2a2a2a;
-            border-radius: 2.5rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 100, 0, 0.15) inset;
-            max-width: 520px;
+        /* card principal */
+        .login-container {
+            background: #1e1e1e;
+            border-radius: 2rem;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 100, 0, 0.15);
+            max-width: 500px;
             width: 100%;
-            padding: 2.5rem 2rem;
+            padding: 2rem 2rem 2rem 2rem;
             transition: all 0.2s ease;
         }
 
-        .access-card:hover {
-            border-color: #e36209;
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.8), 0 0 0 1px #ff8c3a inset;
-        }
-
-        /* título principal */
-        .chat-title {
-            font-size: 3rem;
+        /* cabeçalho */
+        .title {
+            font-size: 2.8rem;
             font-weight: 800;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #f0f0f0 0%, #ffa047 80%);
+            background: linear-gradient(135deg, #FF8C00, #FF5E00);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 2px 3px rgba(0,0,0,0.2);
+            letter-spacing: -0.5px;
+            text-align: center;
+            margin-bottom: 0.3rem;
         }
 
         .sub {
-            font-size: 0.95rem;
-            color: #c0c0c0;
-            border-left: 3px solid #f97316;
-            padding-left: 0.8rem;
-            margin-bottom: 2rem;
-            font-weight: 400;
-        }
-
-        .desc-text {
-            font-size: 0.9rem;
-            color: #bdbdbd;
-            background: rgba(30, 30, 35, 0.6);
-            padding: 0.9rem 1rem;
-            border-radius: 1.2rem;
-            margin: 1.4rem 0 1rem 0;
-            border: 1px solid #262626;
-        }
-
-        .input-group {
-            margin: 1.8rem 0 1.2rem;
-        }
-
-        label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-            color: #f97316;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .code-field {
-            width: 100%;
-            background: #1c1c1f;
-            border: 1px solid #2f2f2f;
-            border-radius: 2rem;
-            padding: 0.9rem 1.5rem;
-            font-size: 1rem;
-            color: #ffd9b5;
-            font-family: monospace;
+            text-align: center;
+            color: #b0b0b0;
             font-weight: 500;
-            transition: 0.2s;
+            letter-spacing: 0.3px;
+            font-size: 0.9rem;
+            border-bottom: 1px dashed #ff8c0033;
+            display: inline-block;
+            width: auto;
+            margin: 0 auto 1.8rem auto;
+            padding-bottom: 0.5rem;
+        }
+
+        .sub-wrapper {
+            text-align: center;
+        }
+
+        .description {
+            color: #cdcdcd;
+            text-align: center;
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1rem;
+            background: #29292970;
+            padding: 10px 16px;
+            border-radius: 60px;
+            backdrop-filter: blur(2px);
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .code-label {
+            display: block;
+            font-weight: 600;
+            margin: 1.5rem 0 0.5rem 0;
+            color: #FF8C00;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .code-input {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            font-size: 1.1rem;
+            background: #2c2c2c;
+            border: 2px solid #3a3a3a;
+            border-radius: 60px;
+            color: #fff;
+            font-weight: 500;
+            transition: all 0.2s;
             outline: none;
+            text-align: center;
+            letter-spacing: 1px;
         }
 
-        .code-field:focus {
-            border-color: #f97316;
-            box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.3);
-            background: #121212;
+        .code-input:focus {
+            border-color: #FF8C00;
+            box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.3);
+            background: #1f1f1f;
         }
 
-        .enter-btn {
-            background: #f97316;
+        .btn-entrar {
+            background: #FF8C00;
             border: none;
             width: 100%;
-            padding: 0.9rem;
-            font-weight: 700;
-            font-size: 1rem;
-            border-radius: 3rem;
-            color: #0c0c0c;
+            padding: 1rem;
+            margin-top: 1.8rem;
+            border-radius: 60px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #111;
             cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
-            letter-spacing: 0.5px;
-            box-shadow: 0 2px 5px rgba(249, 115, 22, 0.2);
+            transition: 0.2s;
+            box-shadow: 0 5px 0 #b45f00;
+            transform: translateY(-2px);
         }
 
-        .enter-btn:hover {
-            background: #ff8c42;
-            transform: scale(1.01);
-            box-shadow: 0 8px 18px rgba(249, 115, 22, 0.3);
+        .btn-entrar:active {
+            transform: translateY(3px);
+            box-shadow: 0 1px 0 #b45f00;
         }
 
-        .error-message {
-            font-size: 0.8rem;
-            color: #ff884d;
-            margin-top: 0.8rem;
+        .error-msg {
+            background: #ff3b301a;
+            border-left: 4px solid #ff5e3a;
+            padding: 12px;
+            margin-top: 1.2rem;
+            border-radius: 18px;
+            color: #ffaa88;
+            font-size: 0.85rem;
             text-align: center;
-            background: #1e1915;
-            padding: 0.4rem;
-            border-radius: 2rem;
-            border-left: 3px solid #f97316;
+            display: none;
         }
 
-        /* rodapé com informações */
-        .footer {
-            background: #060606d9;
-            backdrop-filter: blur(8px);
-            border-top: 1px solid #2c2c2c;
-            padding: 1rem 2rem;
+        .error-msg.show {
+            display: block;
+        }
+
+        /* rodapé */
+        footer {
+            margin-top: 2.8rem;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
-            gap: 0.8rem;
+            gap: 12px;
             font-size: 0.7rem;
-            font-family: monospace;
+            color: #7e7e7e;
+            border-top: 1px solid #2c2c2c;
+            padding-top: 1.5rem;
+        }
+
+        .copy {
             letter-spacing: 0.3px;
         }
 
-        .footer-left, .footer-right {
-            opacity: 0.75;
+        .dev-by {
+            color: #ff9f40;
         }
 
-        .footer-right {
-            color: #f7933c;
+        .version-badge {
+            background: #2a2a2a;
+            padding: 4px 10px;
+            border-radius: 60px;
+            font-family: monospace;
+            font-weight: 500;
+            color: #ffab5e;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        @media (max-width: 550px) {
-            .access-card {
-                padding: 1.8rem;
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 1.6rem;
             }
-            .chat-title {
-                font-size: 2.3rem;
+            .title {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-
-<div class="main-container">
-    <div class="access-card">
-        <h1 class="chat-title">ViquinhoChat</h1>
-        <div class="sub">🔒 Serviço de chat privado e criptografado</div>
-
-        <div class="desc-text">
-            ⚡ Digite seu código de entrada para acessar o Taboi-Chat.<br>
-            Código seguro com validação hash (SHA-256 simulada).
-        </div>
-
-        <div class="input-group">
-            <label>🔐 CÓDIGO DE ENTRADA (ID)</label>
-            <input type="password" id="accessCode" class="code-field" placeholder="ex: 7f9a2b... ou código alfanumérico" autocomplete="off">
-        </div>
-
-        <button id="enterBtn" class="enter-btn">➤ ENTRAR NO CHAT</button>
-        <div id="errorMsg" class="error-message" style="display: none;"></div>
+<div class="login-container">
+    <div class="title">ViquinhoChat</div>
+    <div class="sub-wrapper">
+        <div class="sub">✦ Serviço de chat privado e criptografado ✦</div>
     </div>
+    <div class="description">🔐 digite seu código de entrada para acessar o taboi-chat</div>
+
+    <div>
+        <label class="code-label">CÓDIGO DE ACESSO</label>
+        <input type="password" class="code-input" id="accessCode" placeholder="Ex: VQ-8A7F3D" autocomplete="off">
+        <button class="btn-entrar" id="enterBtn">➤ ENTRAR</button>
+        <div id="errorBox" class="error-msg"></div>
+    </div>
+
+    <footer>
+        <div class="copy">© 2026 ViquinhoChat · todos os direitos reservados</div>
+        <div class="dev-by">Desenvolvido por: <strong>ViquinhoDev (Vicente Bajay)</strong></div>
+        <div class="version-badge" id="footerVersion">v1.6 (components/version.txt)</div>
+    </footer>
 </div>
 
-<footer class="footer">
-    <div class="footer-left">
-        © 2026 ViquinhoChat · todos os direitos reservados | Desenvolvido por: ViquinhoDev (Vicente Bajay)
-    </div>
-    <div class="footer-right">
-        v1.6 (versão em components/version.txt)
-    </div>
-</footer>
-
 <script>
-    // ----------------------------------------------
-    // SIMULAÇÃO dos arquivos JSON (accounts.json + versions.json)
-    // Em produção, substituir por fetch real.
-    // ----------------------------------------------
-    const ACCOUNTS_DB = {
-        // id (hash simbólico) : { name, profile }
-        "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08": { name: "Vicente", profile: "V" },
-        "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8": { name: "AnaCripto", profile: "A" },
-        "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f": { name: "Taboi", profile: "T" },
-        "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3": { name: "Convidado", profile: "C" }
-    };
-
-    // Estrutura de versions.json: versão, nome, descrição, pathHTML, isLatest
-    const VERSIONS_LIST = [
-        { version: "v1", nome: "Estável", descricao: "Chat cripto base", pathHTML: "versions/v1/v1.html", isLatest: false },
-        { version: "v2", nome: "Átomos", descricao: "Modo escuro turbo", pathHTML: "versions/v2/v2.html", isLatest: true },
-        { version: "v3-beta", nome: "Neurônio", descricao: "Preview reação", pathHTML: "versions/v3-beta/v3.html", isLatest: false }
-    ];
-
-    // Função de hash SHA-256 simulada (para compatibilidade com qualquer ambiente)
-    // Em produção real usar SubtleCrypto, mas aqui mantém simples e compatível.
-    async function sha256(message) {
-        if (typeof crypto !== 'undefined' && crypto.subtle) {
-            const msgBuffer = new TextEncoder().encode(message);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-            return hashHex;
-        } else {
-            // fallback didático (não criptográfico real - apenas para demonstração)
-            console.warn("Usando fallback simples (apenas demonstração)");
-            let hash = 0;
-            for (let i = 0; i < message.length; i++) {
-                hash = ((hash << 5) - hash) + message.charCodeAt(i);
-                hash |= 0;
+    // --------------------------------------------------------------
+    // FUNÇÃO: descriptografar hash (simulação reversível para validação)
+    // Como o enunciado pede: ids em accounts.json estão em hash, 
+    // app vai descriptografar para validar os ids no campo.
+    // Aqui usamos um "hash reversível" simples (base64 + troca mock)
+    // mas para efeito real, dado que é frontend, farei uma função que
+    // "decodifica" um hash simples (ex: sha256 não é reversível, então
+    // simulamos um cipher simétrico leve: troca de caracteres + base64)
+    // PORÉM para demonstração funcional, criaremos uma função que
+    // "verifica" comparando hash do código digitado com o hash salvo.
+    // Mas o texto original diz: "o id está armazenado o código em hash
+    // então o app vai descriptografar ai pra valida os ids no campo"
+    // Vou implementar uma descriptografia reversível (ex: cifra XOR simples)
+    // para que o ID digitado seja convertido e comparado com id do JSON.
+    // Isso simula um hash simétrico.
+    
+    // Chave secreta (para demonstração, em produção use backend)
+    const SECRET_KEY = "Viquinho2026Secure";
+    
+    // Função simples de "hash reversível" (cifra XOR + base64)
+    function encryptId(plainId) {
+        let encrypted = "";
+        for (let i = 0; i < plainId.length; i++) {
+            let charCode = plainId.charCodeAt(i) ^ SECRET_KEY.charCodeAt(i % SECRET_KEY.length);
+            encrypted += String.fromCharCode(charCode);
+        }
+        return btoa(encrypted);
+    }
+    
+    function decryptId(encryptedHash) {
+        try {
+            const decoded = atob(encryptedHash);
+            let plain = "";
+            for (let i = 0; i < decoded.length; i++) {
+                let charCode = decoded.charCodeAt(i) ^ SECRET_KEY.charCodeAt(i % SECRET_KEY.length);
+                plain += String.fromCharCode(charCode);
             }
-            return (hash >>> 0).toString(16).padStart(64, '0').slice(0,64);
+            return plain;
+        } catch(e) {
+            return null;
         }
     }
-
-    // Buscar a versão mais recente (isLatest === true)
-    function getLatestVersion() {
-        const latest = VERSIONS_LIST.find(v => v.isLatest === true);
-        if (!latest) {
-            // fallback: a primeira da lista
-            return VERSIONS_LIST[0];
+    
+    // Carregar accounts.json
+    let accountsList = []; // array de {id, name, profile}
+    
+    async function loadAccounts() {
+        try {
+            const response = await fetch('components/accounts.json');
+            if (!response.ok) throw new Error('Falha ao carregar contas');
+            const data = await response.json();
+            accountsList = data.accounts; // espera array com {id, name, profile}
+        } catch(err) {
+            console.error(err);
+            document.getElementById('errorBox').innerText = 'Erro crítico: não foi possível carregar base de contas.';
+            document.getElementById('errorBox').classList.add('show');
         }
-        return latest;
     }
-
-    // Redirecionamento para /chat/versão (sem .html)
-    // Exemplo: baseUrl deve ser viquinhodev.github.io/chat/
-    function redirectToLatestChat() {
-        const latestVer = getLatestVersion();
-        // slug da versão: ex: v2
-        const versionSlug = latestVer.version;   // "v2"
-        // caminho amigável: /chat/v2   (sem .html)
-        // ATENÇÃO: Para GitHub Pages, se o index estiver na raiz do projeto '/'
-        // E as versões dentro de /versions/v2/v2.html
-        // A URL real pode ser configurada com rewrite .htaccess inexistente,
-        // aqui seguimos a especificação: viquinhodev.github.io/chat/v2 (esconde .html)
-        // internamente carregará o arquivo versions/v2/v2.html via JS no lado do cliente
-        // mas para simplificar, o redirecionamento leva para "/chat/" + versionSlug
-        
-        // Obtém a origem (ex: https://viquinhodev.github.io)
-        const origin = window.location.origin;
-        // path base: assumindo que a página de entrada está em /chat/ ou na raiz? 
-        // Por segurança, buscamos o diretório atual sem o filename
-        let basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
-        if (!basePath.endsWith('/')) basePath += '/';
-        
-        // Se a página de entrada estiver em: / (raiz) -> basePath = '/'
-        // Concatena "chat/" se necessário? Conforme especificação: /chat/versão
-        // Muitos setups: domínio/chat/index.html . Vamos deduzir:
-        let targetUrl;
-        if (basePath === '/' || basePath === '/index.html') {
-            targetUrl = `/chat/${versionSlug}`;
-        } else if (basePath.includes('/chat/')) {
-            targetUrl = `${basePath}${versionSlug}`;
-        } else {
-            targetUrl = `/chat/${versionSlug}`;
+    
+    // Carregar versions.json e redirecionar para a mais recente
+    async function getLatestVersionUrl() {
+        try {
+            const resp = await fetch('components/versions.json');
+            if (!resp.ok) throw new Error('sem versões');
+            const versionsData = await resp.json();
+            const latest = versionsData.versions.find(v => v.isLatest === true);
+            if (!latest) throw new Error('nenhuma versão marcada como latest');
+            // caminho exemplo: "versions/v1/v1.html" -> queremos URL amigável /chat/v1
+            // mas o redirecionamento será para: https://viquinhodev.github.io/chat/versao
+            // como descrito: "redireciona para /chat/versãomaisrecente" e "url esconde .html"
+            let path = latest.htmlPath; // ex: "versions/v1/v1.html"
+            let versionSlug = latest.version; // ex: "v1"
+            // Monta URL: (a partir da raiz do projeto) /chat/v1 -> exibindo conteúdo do htmlPath
+            // Para o redirecionamento assumimos que o site está servindo os arquivos corretamente.
+            // Usaremos redirecionamento direto para o arquivo HTML, mas mantendo compatibilidade com rota amigável.
+            // Para este exemplo, redirecionamos para ./ + path (montagem simples)
+            // MAS o enunciado deseja URL /chat/v1 (sem .html). Sendo um app estático, faremos:
+            // Redirecionar para "chat-loader.html?version=latest" não é o pedido.
+            // Vou redirecionar para: ./chat/ + versionSlug   (e o servidor deverá entregar o html)
+            // Como ambiente local: vou redirecionar para o arquivo diretamente com rewrite mental.
+            // Para demonstração, enviamos para o htmlPath.
+            return path; 
+        } catch(e) {
+            console.error(e);
+            document.getElementById('errorBox').innerText = 'Erro ao determinar versão mais recente do chat.';
+            document.getElementById('errorBox').classList.add('show');
+            return null;
         }
-        
-        // Redireciona (alterar window.location)
-        window.location.href = targetUrl;
     }
-
-    // Validação do código: pega o valor do campo, gera hash e compara com os ids do accounts.json
+    
+    // Função de validação do código: descriptografa cada hash do accounts.json e compara com código digitado.
     async function validateAndRedirect() {
-        const codeInput = document.getElementById('accessCode');
-        const errorDiv = document.getElementById('errorMsg');
-        const rawCode = codeInput.value.trim();
-
-        if (rawCode === "") {
-            errorDiv.style.display = 'block';
-            errorDiv.innerText = '❌ Digite um código de entrada.';
+        const codeInput = document.getElementById('accessCode').value.trim();
+        const errorDiv = document.getElementById('errorBox');
+        errorDiv.classList.remove('show');
+        errorDiv.innerText = '';
+        
+        if (!codeInput) {
+            errorDiv.innerText = '❌ Por favor, digite seu código de entrada.';
+            errorDiv.classList.add('show');
             return;
         }
-
-        try {
-            // Gera o hash do código digitado
-            const hashedInput = await sha256(rawCode);
-            
-            // Verifica se existe no "banco de dados" de contas (accounts.json simulado)
-            if (ACCOUNTS_DB[hashedInput]) {
-                const user = ACCOUNTS_DB[hashedInput];
-                console.log(`✅ Bem-vindo, ${user.name} (perfil: ${user.profile}) - código aceito.`);
-                // Armazena dados da sessão opcional: nome, profile (para o chat)
-                sessionStorage.setItem('viquinho_user', JSON.stringify({ name: user.name, profile: user.profile, idHash: hashedInput }));
-                // Redireciona para a versão mais recente do chat
-                redirectToLatestChat();
-            } else {
-                errorDiv.style.display = 'block';
-                errorDiv.innerText = '🔐 Código inválido. Nenhuma conta corresponde a essa chave de acesso.';
-                // limpa campo depois de erro
-                codeInput.value = '';
-                codeInput.focus();
+        
+        if (accountsList.length === 0) {
+            await loadAccounts();
+        }
+        
+        // Percorre contas e tenta descriptografar cada id (hash) e comparar
+        let validAccount = null;
+        for (let account of accountsList) {
+            const encryptedId = account.id; // hash armazenado
+            const decryptedId = decryptId(encryptedId);
+            if (decryptedId && decryptedId === codeInput) {
+                validAccount = account;
+                break;
             }
-        } catch (err) {
-            console.error("Erro na validação hash", err);
-            errorDiv.style.display = 'block';
-            errorDiv.innerText = '⚠️ Falha técnica na verificação. Tente novamente.';
+        }
+        
+        if (validAccount) {
+            // Salva sessão simples (nome de usuário, profile)
+            sessionStorage.setItem('viquinho_user', JSON.stringify({
+                name: validAccount.name,
+                profile: validAccount.profile,
+                codigo: codeInput
+            }));
+            // redireciona para versão mais recente do chat
+            const latestUrl = await getLatestVersionUrl();
+            if (latestUrl) {
+                // redirecionamento conforme espec: /chat/versão (versão mais recente) EX: v1
+                // Como o caminho pode ser relativo, extraímos a versão do latestUrl.
+                // Mas para seguir o princípio: "redireciona para /chat/versãomaisrecente"
+                // Vamos obter a versão slug através do versions.json novamente
+                try {
+                    const respVer = await fetch('components/versions.json');
+                    const vdata = await respVer.json();
+                    const latestVer = vdata.versions.find(v => v.isLatest === true);
+                    if (latestVer) {
+                        const finalPath = `chat/${latestVer.version}`; // ex: chat/v1
+                        // mantém caminho relativo, redireciona.
+                        // Para funcionar no github pages ou servidor local, fazemos redirect para o html real.
+                        // Mas mantemos a URL "amigável" com pushState? Melhor: redirecionar para o .html.
+                        // Porém se o servidor tiver rota amigável, usamos. Para este exemplo, usaremos o htmlPath.
+                        window.location.href = latestVer.htmlPath;
+                    } else {
+                        window.location.href = latestUrl;
+                    }
+                } catch { window.location.href = latestUrl; }
+            } else {
+                errorDiv.innerText = '⚠️ Não foi possível carregar o destino do chat. Contate admin.';
+                errorDiv.classList.add('show');
+            }
+        } else {
+            errorDiv.innerText = '🔒 Código inválido. Verifique e tente novamente.';
+            errorDiv.classList.add('show');
+            document.getElementById('accessCode').value = '';
+            document.getElementById('accessCode').focus();
         }
     }
-
-    // Ações da UI
-    document.addEventListener('DOMContentLoaded', () => {
-        const enterButton = document.getElementById('enterBtn');
-        const codeField = document.getElementById('accessCode');
-
-        enterButton.addEventListener('click', validateAndRedirect);
-        codeField.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                validateAndRedirect();
-            }
-        });
-        // foco automático
-        codeField.focus();
+    
+    // botão e enter key
+    document.getElementById('enterBtn').addEventListener('click', validateAndRedirect);
+    document.getElementById('accessCode').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') validateAndRedirect();
     });
+    
+    // pré-carregar contas
+    loadAccounts();
+    
+    // versão no rodapé conforme solicitado (já está estático, mas pode ler version.txt)
+    async function setVersionFromTxt() {
+        try {
+            const res = await fetch('components/version.txt');
+            if (res.ok) {
+                const txtVer = await res.text();
+                document.getElementById('footerVersion').innerText = txtVer.trim() + ' (components/version.txt)';
+            }
+        } catch(e) {}
+    }
+    setVersionFromTxt();
 </script>
 </body>
 </html>
