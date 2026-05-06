@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>ViquinhoChat · Entrada criptografada</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0c;
+            background-image: radial-gradient(circle at 15% 30%, #1a150e 0%, #030303 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', monospace;
+            color: #ececec;
+        }
+
+        /* container central flex */
+        .main-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1.5rem;
+        }
+
+        /* card principal - estilo preto acetinado com detalhes laranja */
+        .access-card {
+            background: #111112;
+            backdrop-filter: blur(2px);
+            border: 1px solid #2a2a2a;
+            border-radius: 2.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 100, 0, 0.15) inset;
+            max-width: 520px;
+            width: 100%;
+            padding: 2.5rem 2rem;
+            transition: all 0.2s ease;
+        }
+
+        .access-card:hover {
+            border-color: #e36209;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.8), 0 0 0 1px #ff8c3a inset;
+        }
+
+        /* título principal */
+        .chat-title {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #f0f0f0 0%, #ffa047 80%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 3px rgba(0,0,0,0.2);
+        }
+
+        .sub {
+            font-size: 0.95rem;
+            color: #c0c0c0;
+            border-left: 3px solid #f97316;
+            padding-left: 0.8rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .desc-text {
+            font-size: 0.9rem;
+            color: #bdbdbd;
+            background: rgba(30, 30, 35, 0.6);
+            padding: 0.9rem 1rem;
+            border-radius: 1.2rem;
+            margin: 1.4rem 0 1rem 0;
+            border: 1px solid #262626;
+        }
+
+        .input-group {
+            margin: 1.8rem 0 1.2rem;
+        }
+
+        label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            color: #f97316;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .code-field {
+            width: 100%;
+            background: #1c1c1f;
+            border: 1px solid #2f2f2f;
+            border-radius: 2rem;
+            padding: 0.9rem 1.5rem;
+            font-size: 1rem;
+            color: #ffd9b5;
+            font-family: monospace;
+            font-weight: 500;
+            transition: 0.2s;
+            outline: none;
+        }
+
+        .code-field:focus {
+            border-color: #f97316;
+            box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.3);
+            background: #121212;
+        }
+
+        .enter-btn {
+            background: #f97316;
+            border: none;
+            width: 100%;
+            padding: 0.9rem;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 3rem;
+            color: #0c0c0c;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 5px rgba(249, 115, 22, 0.2);
+        }
+
+        .enter-btn:hover {
+            background: #ff8c42;
+            transform: scale(1.01);
+            box-shadow: 0 8px 18px rgba(249, 115, 22, 0.3);
+        }
+
+        .error-message {
+            font-size: 0.8rem;
+            color: #ff884d;
+            margin-top: 0.8rem;
+            text-align: center;
+            background: #1e1915;
+            padding: 0.4rem;
+            border-radius: 2rem;
+            border-left: 3px solid #f97316;
+        }
+
+        /* rodapé com informações */
+        .footer {
+            background: #060606d9;
+            backdrop-filter: blur(8px);
+            border-top: 1px solid #2c2c2c;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            font-size: 0.7rem;
+            font-family: monospace;
+            letter-spacing: 0.3px;
+        }
+
+        .footer-left, .footer-right {
+            opacity: 0.75;
+        }
+
+        .footer-right {
+            color: #f7933c;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        @media (max-width: 550px) {
+            .access-card {
+                padding: 1.8rem;
+            }
+            .chat-title {
+                font-size: 2.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-container">
+    <div class="access-card">
+        <h1 class="chat-title">ViquinhoChat</h1>
+        <div class="sub">🔒 Serviço de chat privado e criptografado</div>
+
+        <div class="desc-text">
+            ⚡ Digite seu código de entrada para acessar o Taboi-Chat.<br>
+            Código seguro com validação hash (SHA-256 simulada).
+        </div>
+
+        <div class="input-group">
+            <label>🔐 CÓDIGO DE ENTRADA (ID)</label>
+            <input type="password" id="accessCode" class="code-field" placeholder="ex: 7f9a2b... ou código alfanumérico" autocomplete="off">
+        </div>
+
+        <button id="enterBtn" class="enter-btn">➤ ENTRAR NO CHAT</button>
+        <div id="errorMsg" class="error-message" style="display: none;"></div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-left">
+        © 2026 ViquinhoChat · todos os direitos reservados | Desenvolvido por: ViquinhoDev (Vicente Bajay)
+    </div>
+    <div class="footer-right">
+        v1.6 (versão em components/version.txt)
+    </div>
+</footer>
+
+<script>
+    // ----------------------------------------------
+    // SIMULAÇÃO dos arquivos JSON (accounts.json + versions.json)
+    // Em produção, substituir por fetch real.
+    // ----------------------------------------------
+    const ACCOUNTS_DB = {
+        // id (hash simbólico) : { name, profile }
+        "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08": { name: "Vicente", profile: "V" },
+        "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8": { name: "AnaCripto", profile: "A" },
+        "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f": { name: "Taboi", profile: "T" },
+        "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3": { name: "Convidado", profile: "C" }
+    };
+
+    // Estrutura de versions.json: versão, nome, descrição, pathHTML, isLatest
+    const VERSIONS_LIST = [
+        { version: "v1", nome: "Estável", descricao: "Chat cripto base", pathHTML: "versions/v1/v1.html", isLatest: false },
+        { version: "v2", nome: "Átomos", descricao: "Modo escuro turbo", pathHTML: "versions/v2/v2.html", isLatest: true },
+        { version: "v3-beta", nome: "Neurônio", descricao: "Preview reação", pathHTML: "versions/v3-beta/v3.html", isLatest: false }
+    ];
+
+    // Função de hash SHA-256 simulada (para compatibilidade com qualquer ambiente)
+    // Em produção real usar SubtleCrypto, mas aqui mantém simples e compatível.
+    async function sha256(message) {
+        if (typeof crypto !== 'undefined' && crypto.subtle) {
+            const msgBuffer = new TextEncoder().encode(message);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            return hashHex;
+        } else {
+            // fallback didático (não criptográfico real - apenas para demonstração)
+            console.warn("Usando fallback simples (apenas demonstração)");
+            let hash = 0;
+            for (let i = 0; i < message.length; i++) {
+                hash = ((hash << 5) - hash) + message.charCodeAt(i);
+                hash |= 0;
+            }
+            return (hash >>> 0).toString(16).padStart(64, '0').slice(0,64);
+        }
+    }
+
+    // Buscar a versão mais recente (isLatest === true)
+    function getLatestVersion() {
+        const latest = VERSIONS_LIST.find(v => v.isLatest === true);
+        if (!latest) {
+            // fallback: a primeira da lista
+            return VERSIONS_LIST[0];
+        }
+        return latest;
+    }
+
+    // Redirecionamento para /chat/versão (sem .html)
+    // Exemplo: baseUrl deve ser viquinhodev.github.io/chat/
+    function redirectToLatestChat() {
+        const latestVer = getLatestVersion();
+        // slug da versão: ex: v2
+        const versionSlug = latestVer.version;   // "v2"
+        // caminho amigável: /chat/v2   (sem .html)
+        // ATENÇÃO: Para GitHub Pages, se o index estiver na raiz do projeto '/'
+        // E as versões dentro de /versions/v2/v2.html
+        // A URL real pode ser configurada com rewrite .htaccess inexistente,
+        // aqui seguimos a especificação: viquinhodev.github.io/chat/v2 (esconde .html)
+        // internamente carregará o arquivo versions/v2/v2.html via JS no lado do cliente
+        // mas para simplificar, o redirecionamento leva para "/chat/" + versionSlug
+        
+        // Obtém a origem (ex: https://viquinhodev.github.io)
+        const origin = window.location.origin;
+        // path base: assumindo que a página de entrada está em /chat/ ou na raiz? 
+        // Por segurança, buscamos o diretório atual sem o filename
+        let basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+        if (!basePath.endsWith('/')) basePath += '/';
+        
+        // Se a página de entrada estiver em: / (raiz) -> basePath = '/'
+        // Concatena "chat/" se necessário? Conforme especificação: /chat/versão
+        // Muitos setups: domínio/chat/index.html . Vamos deduzir:
+        let targetUrl;
+        if (basePath === '/' || basePath === '/index.html') {
+            targetUrl = `/chat/${versionSlug}`;
+        } else if (basePath.includes('/chat/')) {
+            targetUrl = `${basePath}${versionSlug}`;
+        } else {
+            targetUrl = `/chat/${versionSlug}`;
+        }
+        
+        // Redireciona (alterar window.location)
+        window.location.href = targetUrl;
+    }
+
+    // Validação do código: pega o valor do campo, gera hash e compara com os ids do accounts.json
+    async function validateAndRedirect() {
+        const codeInput = document.getElementById('accessCode');
+        const errorDiv = document.getElementById('errorMsg');
+        const rawCode = codeInput.value.trim();
+
+        if (rawCode === "") {
+            errorDiv.style.display = 'block';
+            errorDiv.innerText = '❌ Digite um código de entrada.';
+            return;
+        }
+
+        try {
+            // Gera o hash do código digitado
+            const hashedInput = await sha256(rawCode);
+            
+            // Verifica se existe no "banco de dados" de contas (accounts.json simulado)
+            if (ACCOUNTS_DB[hashedInput]) {
+                const user = ACCOUNTS_DB[hashedInput];
+                console.log(`✅ Bem-vindo, ${user.name} (perfil: ${user.profile}) - código aceito.`);
+                // Armazena dados da sessão opcional: nome, profile (para o chat)
+                sessionStorage.setItem('viquinho_user', JSON.stringify({ name: user.name, profile: user.profile, idHash: hashedInput }));
+                // Redireciona para a versão mais recente do chat
+                redirectToLatestChat();
+            } else {
+                errorDiv.style.display = 'block';
+                errorDiv.innerText = '🔐 Código inválido. Nenhuma conta corresponde a essa chave de acesso.';
+                // limpa campo depois de erro
+                codeInput.value = '';
+                codeInput.focus();
+            }
+        } catch (err) {
+            console.error("Erro na validação hash", err);
+            errorDiv.style.display = 'block';
+            errorDiv.innerText = '⚠️ Falha técnica na verificação. Tente novamente.';
+        }
+    }
+
+    // Ações da UI
+    document.addEventListener('DOMContentLoaded', () => {
+        const enterButton = document.getElementById('enterBtn');
+        const codeField = document.getElementById('accessCode');
+
+        enterButton.addEventListener('click', validateAndRedirect);
+        codeField.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                validateAndRedirect();
+            }
+        });
+        // foco automático
+        codeField.focus();
+    });
+</script>
+</body>
+</html>
