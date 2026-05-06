@@ -1,0 +1,18 @@
+{
+  "versions": [
+    {
+      "version": "v1",
+      "name": "Beta inicial",
+      "description": "Primeira versão estável do chat privado.",
+      "htmlPath": "versions/v1/v1.html",
+      "isLatest": false
+    },
+    {
+      "version": "v1.6",
+      "name": "Chat Cripto 1.6",
+      "description": "Melhorias de desempenho e nova interface.",
+      "htmlPath": "versions/v1.6/chat-v1.6.html",
+      "isLatest": true
+    }
+  ]
+}
