@@ -1,372 +1,99 @@
+<!-- chat.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>ViquinhoChat · Entrada segura</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: system-ui, 'Segoe UI', 'Inter', 'Roboto', monospace;
-        }
-
-        body {
-            min-height: 100vh;
-            background: radial-gradient(circle at 20% 30%, #121212, #000000);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-        }
-
-        /* conteúdo principal ocupa espaço e centraliza o formulário */
-        .main-content {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-        }
-
-        /* caixa de login sem container externo, apenas o card elegante */
-        .login-card {
-            background: rgba(25, 25, 25, 0.85);
-            backdrop-filter: blur(12px);
-            border-radius: 2rem;
-            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 100, 0, 0.2);
-            max-width: 550px;
-            width: 100%;
-            padding: 2.5rem 2rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 140, 0, 0.2);
-        }
-
-        /* cabeçalho */
-        .title {
-            font-size: 3.2rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #FF9F2E, #FF6B00);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            letter-spacing: -0.8px;
-            text-align: center;
-            margin-bottom: 0.3rem;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-        }
-
-        .sub-wrapper {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .sub {
-            color: #c0c0c0;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            font-size: 0.9rem;
-            background: rgba(255, 140, 0, 0.1);
-            display: inline-block;
-            padding: 0.4rem 1.2rem;
-            border-radius: 60px;
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 140, 0, 0.3);
-        }
-
-        .description {
-            color: #e0e0e0;
-            text-align: center;
-            margin: 1.8rem 0 1.2rem 0;
-            font-size: 0.95rem;
-            background: #1f1f1f80;
-            padding: 10px 20px;
-            border-radius: 60px;
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-            border: 1px solid #2c2c2c;
-        }
-
-        .code-label {
-            display: block;
-            font-weight: 700;
-            margin: 1rem 0 0.6rem 0;
-            color: #FF8C00;
-            font-size: 0.8rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        .code-input {
-            width: 100%;
-            padding: 1rem 1.3rem;
-            font-size: 1.1rem;
-            background: #1e1e1e;
-            border: 2px solid #2e2e2e;
-            border-radius: 60px;
-            color: #fff;
-            font-weight: 500;
-            transition: all 0.2s;
-            outline: none;
-            text-align: center;
-            letter-spacing: 1px;
-        }
-
-        .code-input:focus {
-            border-color: #FF8C00;
-            box-shadow: 0 0 0 4px rgba(255, 140, 0, 0.2);
-            background: #181818;
-        }
-
-        .btn-entrar {
-            background: linear-gradient(95deg, #FF8C00, #FF6200);
-            border: none;
-            width: 100%;
-            padding: 1rem;
-            margin-top: 1.8rem;
-            border-radius: 60px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: #111;
-            cursor: pointer;
-            transition: 0.2s;
-            box-shadow: 0 5px 0 #9b4d00;
-            transform: translateY(-2px);
-            letter-spacing: 0.5px;
-        }
-
-        .btn-entrar:hover {
-            background: linear-gradient(95deg, #FF9F2E, #FF7710);
-            transform: translateY(-3px);
-            box-shadow: 0 7px 0 #9b4d00;
-        }
-
-        .btn-entrar:active {
-            transform: translateY(3px);
-            box-shadow: 0 1px 0 #9b4d00;
-        }
-
-        .error-msg {
-            background: #ff3b301a;
-            border-left: 4px solid #ff5e3a;
-            padding: 12px 16px;
-            margin-top: 1.2rem;
-            border-radius: 18px;
-            color: #ffaa88;
-            font-size: 0.85rem;
-            text-align: center;
-            display: none;
-            backdrop-filter: blur(4px);
-        }
-
-        .error-msg.show {
-            display: block;
-        }
-
-        /* rodapé grudado no chão */
-        footer {
-            background: #0c0c0cee;
-            backdrop-filter: blur(8px);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            font-size: 0.7rem;
-            color: #999;
-            padding: 1.2rem 2rem;
-            border-top: 1px solid rgba(255, 140, 0, 0.2);
-            margin-top: auto;
-            width: 100%;
-        }
-
-        .copy {
-            letter-spacing: 0.3px;
-            font-weight: 400;
-        }
-
-        .dev-by {
-            color: #ffaa55;
-            font-weight: 500;
-        }
-
-        .version-badge {
-            background: #1f1f1f;
-            padding: 5px 12px;
-            border-radius: 60px;
-            font-family: monospace;
-            font-weight: 600;
-            font-size: 0.7rem;
-            color: #ffab5e;
-            border: 1px solid #ff8c0040;
-        }
-
-        @media (max-width: 600px) {
-            .login-card {
-                padding: 1.8rem;
-                margin: 1rem;
-            }
-            .title {
-                font-size: 2.4rem;
-            }
-            footer {
-                flex-direction: column;
-                text-align: center;
-                gap: 8px;
-                padding: 1rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ViquinhoChat</title>
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#121212;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+.container{
+  text-align:center;
+}
+h1{
+  color:#ff7a00;
+  margin-bottom:5px;
+}
+h2{
+  font-weight:normal;
+  color:#ccc;
+  margin-bottom:20px;
+}
+input{
+  padding:10px;
+  width:250px;
+  border:none;
+  border-radius:5px;
+  margin-bottom:10px;
+}
+button{
+  padding:10px 20px;
+  background:#ff7a00;
+  border:none;
+  color:#fff;
+  border-radius:5px;
+  cursor:pointer;
+}
+footer{
+  position:absolute;
+  bottom:10px;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:0 20px;
+  font-size:12px;
+  color:#aaa;
+}
+</style>
 </head>
 <body>
-    <div class="main-content">
-        <div class="login-card">
-            <div class="title">ViquinhoChat</div>
-            <div class="sub-wrapper">
-                <div class="sub">✦ Serviço de chat privado e criptografado ✦</div>
-            </div>
-            <div class="description">🔐 digite seu código de entrada para acessar o taboi-chat</div>
 
-            <div>
-                <label class="code-label">CÓDIGO DE ACESSO</label>
-                <input type="password" class="code-input" id="accessCode" placeholder="Ex: VQ-8A7F3D" autocomplete="off">
-                <button class="btn-entrar" id="enterBtn">➤ ENTRAR NO CHAT</button>
-                <div id="errorBox" class="error-msg"></div>
-            </div>
-        </div>
-    </div>
+<div class="container">
+  <h1>ViquinhoChat</h1>
+  <h2>Serviço de chat privado e criptografado</h2>
+  <p>Digite seu código de entrada para entrar no taboi-chat</p>
+  <input type="text" id="code" placeholder="Código de entrada">
+  <br>
+  <button onclick="login()">Entrar</button>
+</div>
 
-    <footer>
-        <div class="copy">© 2026 ViquinhoChat · todos os direitos reservados</div>
-        <div class="dev-by">Desenvolvido por: <strong>ViquinhoDev (Vicente Bajay)</strong></div>
-        <div class="version-badge" id="footerVersion">v1.6 (components/version.txt)</div>
-    </footer>
+<footer>
+  <div>copyright 2026 ViquinhoChat todos os direitos reservados | Desenvolvido por: ViquinhoDev (Vicente Bajay)</div>
+  <div id="version">v1.6</div>
+</footer>
 
-    <script>
-        // --------------------------------------------------------------
-        // Chave secreta (simétrica para demonstração)
-        const SECRET_KEY = "Viquinho2026Secure";
-        
-        // Funções de hash reversível (cifra XOR + base64)
-        function decryptId(encryptedHash) {
-            try {
-                const decoded = atob(encryptedHash);
-                let plain = "";
-                for (let i = 0; i < decoded.length; i++) {
-                    let charCode = decoded.charCodeAt(i) ^ SECRET_KEY.charCodeAt(i % SECRET_KEY.length);
-                    plain += String.fromCharCode(charCode);
-                }
-                return plain;
-            } catch(e) {
-                return null;
-            }
-        }
-        
-        // Variável global de contas
-        let accountsList = [];
-        
-        async function loadAccounts() {
-            try {
-                const response = await fetch('components/accounts.json');
-                if (!response.ok) throw new Error('Falha ao carregar contas');
-                const data = await response.json();
-                accountsList = data.accounts;
-            } catch(err) {
-                console.error(err);
-                const errorDiv = document.getElementById('errorBox');
-                errorDiv.innerText = 'Erro crítico: base de contas indisponível.';
-                errorDiv.classList.add('show');
-            }
-        }
-        
-        async function getLatestVersionInfo() {
-            try {
-                const resp = await fetch('components/versions.json');
-                if (!resp.ok) throw new Error('sem versões');
-                const versionsData = await resp.json();
-                const latest = versionsData.versions.find(v => v.isLatest === true);
-                if (!latest) throw new Error('nenhuma versão marcada como latest');
-                return latest;
-            } catch(e) {
-                console.error(e);
-                document.getElementById('errorBox').innerText = 'Erro ao carregar versão do chat.';
-                document.getElementById('errorBox').classList.add('show');
-                return null;
-            }
-        }
-        
-        async function validateAndRedirect() {
-            const codeInput = document.getElementById('accessCode').value.trim();
-            const errorDiv = document.getElementById('errorBox');
-            errorDiv.classList.remove('show');
-            errorDiv.innerText = '';
-            
-            if (!codeInput) {
-                errorDiv.innerText = '❌ Digite seu código de entrada.';
-                errorDiv.classList.add('show');
-                return;
-            }
-            
-            if (accountsList.length === 0) {
-                await loadAccounts();
-            }
-            
-            let validAccount = null;
-            for (let account of accountsList) {
-                const encryptedId = account.id;
-                const decryptedId = decryptId(encryptedId);
-                if (decryptedId && decryptedId === codeInput) {
-                    validAccount = account;
-                    break;
-                }
-            }
-            
-            if (validAccount) {
-                // Salva sessão do usuário
-                sessionStorage.setItem('viquinho_user', JSON.stringify({
-                    name: validAccount.name,
-                    profile: validAccount.profile,
-                    codigo: codeInput
-                }));
-                
-                const latestVer = await getLatestVersionInfo();
-                if (latestVer && latestVer.htmlPath) {
-                    // Redireciona para a versão mais recente do chat
-                    window.location.href = latestVer.htmlPath;
-                } else {
-                    errorDiv.innerText = '⚠️ Não foi possível determinar a versão mais recente.';
-                    errorDiv.classList.add('show');
-                }
-            } else {
-                errorDiv.innerText = '🔒 Código inválido. Acesso negado.';
-                errorDiv.classList.add('show');
-                document.getElementById('accessCode').value = '';
-                document.getElementById('accessCode').focus();
-            }
-        }
-        
-        // Eventos
-        document.getElementById('enterBtn').addEventListener('click', validateAndRedirect);
-        document.getElementById('accessCode').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') validateAndRedirect();
-        });
-        
-        // Carregar contas ao iniciar
-        loadAccounts();
-        
-        // Versão do rodapé (lê version.txt se disponível)
-        async function setVersionFromTxt() {
-            try {
-                const res = await fetch('components/version.txt');
-                if (res.ok) {
-                    const txtVer = await res.text();
-                    document.getElementById('footerVersion').innerHTML = txtVer.trim() + ' <span style="opacity:0.7;">(version.txt)</span>';
-                }
-            } catch(e) {}
-        }
-        setVersionFromTxt();
-    </script>
-</body>
-</html>
+<script>
+async function login(){
+  const inputCode = document.getElementById('code').value;
+
+  const accounts = await fetch('components/accounts.json').then(r=>r.json());
+  const versions = await fetch('components/versions.json').then(r=>r.json());
+
+  // hash simples (simulação)
+  async function hash(text){
+    const msgUint8 = new TextEncoder().encode(text);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(b => b.toString(16).padStart(2,'0')).join('');
+  }
+
+  const hashedInput = await hash(inputCode);
+
+  const valid = accounts.find(acc => acc.id === hashedInput);
+
+  if(valid){
+    const latest = versions.find(v => v.latest === true);
+    if(latest){
+      window.location.href = latest.path.replace('.html','');
+    }
+  }else{
