@@ -5,54 +5,116 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ViquinhoChat</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-body{
+:root{
+  --bg:#0f1115;
+  --card:#1a1d23;
+  --accent:#ff7a00;
+  --accent-soft:#ff7a0020;
+  --text:#ffffff;
+  --muted:#a0a6b0;
+}
+
+*{
   margin:0;
-  font-family: Arial, sans-serif;
-  background:#121212;
-  color:#fff;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background: radial-gradient(circle at top, #1a1d23, #0f1115);
+  color:var(--text);
   height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
+
 .container{
+  background:var(--card);
+  padding:40px;
+  border-radius:20px;
+  width:320px;
   text-align:center;
+  box-shadow:0 10px 40px rgba(0,0,0,0.6);
+  border:1px solid rgba(255,255,255,0.05);
+  animation:fadeIn 0.6s ease;
 }
+
 h1{
-  color:#ff7a00;
-  margin-bottom:5px;
+  color:var(--accent);
+  font-size:28px;
+  margin-bottom:6px;
 }
+
 h2{
-  font-weight:normal;
-  color:#ccc;
-  margin-bottom:20px;
+  font-weight:400;
+  font-size:14px;
+  color:var(--muted);
+  margin-bottom:25px;
 }
+
+p{
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:15px;
+}
+
 input{
-  padding:10px;
-  width:250px;
-  border:none;
-  border-radius:5px;
-  margin-bottom:10px;
-}
-button{
-  padding:10px 20px;
-  background:#ff7a00;
-  border:none;
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:#111317;
   color:#fff;
-  border-radius:5px;
-  cursor:pointer;
+  outline:none;
+  margin-bottom:12px;
+  transition:0.2s;
 }
+
+input:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 2px var(--accent-soft);
+}
+
+button{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:none;
+  background:linear-gradient(135deg,#ff7a00,#ff9a2f);
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(255,122,0,0.3);
+}
+
+button:active{
+  transform:scale(0.98);
+}
+
 footer{
-  position:absolute;
+  position:fixed;
   bottom:10px;
   width:100%;
   display:flex;
   justify-content:space-between;
   padding:0 20px;
-  font-size:12px;
-  color:#aaa;
+  font-size:11px;
+  color:var(--muted);
+  opacity:0.8;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);} 
+  to{opacity:1; transform:translateY(0);} 
 }
 </style>
 </head>
@@ -63,7 +125,6 @@ footer{
   <h2>Serviço de chat privado e criptografado</h2>
   <p>Digite seu código de entrada para entrar no taboi-chat</p>
   <input type="text" id="code" placeholder="Código de entrada">
-  <br>
   <button onclick="login()">Entrar</button>
 </div>
 
@@ -76,10 +137,12 @@ footer{
 async function login(){
   const inputCode = document.getElementById('code').value;
 
-  const accounts = await fetch('components/accounts.json').then(r=>r.json());
-  const versions = await fetch('components/versions.json').then(r=>r.json());
+  const accountsData = await fetch('components/accounts.json').then(r=>r.json());
+  const versionsData = await fetch('components/versions.json').then(r=>r.json());
 
-  // hash simples (simulação)
+  const accounts = accountsData.accounts;
+  const versions = versionsData.versions;
+
   async function hash(text){
     const msgUint8 = new TextEncoder().encode(text);
     const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);
@@ -88,7 +151,6 @@ async function login(){
   }
 
   const hashedInput = await hash(inputCode);
-
   const valid = accounts.find(acc => acc.id === hashedInput);
 
   if(valid){
@@ -97,3 +159,10 @@ async function login(){
       window.location.href = latest.path.replace('.html','');
     }
   }else{
+    alert('Código inválido');
+  }
+}
+</script>
+
+</body>
+</html>
