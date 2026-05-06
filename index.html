@@ -1,0 +1,188 @@
+<!-- index.html - ViquinhoChat -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViquinhoChat · Redirecionando</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #0b1120 0%, #111827 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', system-ui, 'Inter', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+            padding: 1.5rem;
+        }
+
+        .card {
+            background: rgba(18, 25, 40, 0.75);
+            backdrop-filter: blur(12px);
+            border-radius: 2.5rem;
+            padding: 2rem 2rem 2.25rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(79, 156, 255, 0.15);
+            text-align: center;
+            max-width: 520px;
+            width: 100%;
+            transition: all 0.2s ease;
+        }
+
+        .logo {
+            font-size: 4.2rem;
+            margin-bottom: 0.75rem;
+            display: inline-block;
+            filter: drop-shadow(0 8px 12px rgba(0,0,0,0.3));
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #C0E0FF, #7AA9FF);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-version {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #1e2a3e80;
+            backdrop-filter: blur(4px);
+            padding: 0.35rem 1rem;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #2d3e5a;
+            color: #a3c2ff;
+            margin: 0.75rem 0 1.25rem;
+        }
+
+        .repo-link {
+            font-family: monospace;
+            font-size: 0.85rem;
+            background: #0f172a;
+            padding: 0.25rem 0.7rem;
+            border-radius: 36px;
+            color: #7aa9ff;
+            text-decoration: none;
+            border: 1px solid #2d3e5a;
+            transition: 0.2s;
+        }
+
+        .repo-link:hover {
+            background: #1e2a4a;
+            border-color: #5d8eff;
+            color: white;
+        }
+
+        .message {
+            margin: 1.5rem 0 1.8rem;
+            font-size: 1rem;
+            color: #cddcff;
+            background: #0f172a80;
+            padding: 0.8rem 1rem;
+            border-radius: 2rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .redirect-timer {
+            font-size: 0.9rem;
+            font-weight: 500;
+            background: #00000030;
+            display: inline-block;
+            padding: 0.35rem 1rem;
+            border-radius: 40px;
+            color: #bbd7fb;
+        }
+
+        button {
+            background: #2d4ed0;
+            border: none;
+            padding: 0.7rem 1.8rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: white;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 4px 12px #1e3a8a40;
+        }
+
+        button:hover {
+            background: #1e40af;
+            transform: scale(0.97);
+        }
+
+        footer {
+            margin-top: 1.6rem;
+            font-size: 0.7rem;
+            color: #5b6e8c;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="logo">💬🐧</div>
+    <h1>ViquinhoChat</h1>
+    
+    <div class="badge-version">
+        <span>📌</span> 
+        <span>viquinhodev.github.io/viquinho-chat/versão</span>
+    </div>
+
+    <div class="message">
+        🚀 <strong>Redirecionando para o chat</strong><br>
+        <span style="font-size:0.85rem;">Aguarde ou clique abaixo</span>
+    </div>
+
+    <div class="redirect-timer" id="timerDisplay">
+        Redirecionando em <span id="countdown">3</span>s
+    </div>
+
+    <button id="redirectNowBtn">▶ Ir para chat.html agora</button>
+
+    <footer>
+        ViquinhoChat · interface inteligente
+    </footer>
+</div>
+
+<script>
+    // 🔁 Redirecionamento automático com contagem regressiva
+    let secondsLeft = 3;
+    const countdownSpan = document.getElementById('countdown');
+    const timerDisplayDiv = document.getElementById('timerDisplay');
+    const redirectBtn = document.getElementById('redirectNowBtn');
+
+    function updateCountdown() {
+        if (secondsLeft <= 0) {
+            // redireciona para chat.html (mesmo diretório)
+            window.location.href = 'chat.html';
+            return;
+        }
+        countdownSpan.textContent = secondsLeft;
+        secondsLeft--;
+        setTimeout(updateCountdown, 1000);
+    }
+
+    // inicia a contagem
+    updateCountdown();
+
+    // redirecionamento manual ao clicar no botão
+    redirectBtn.addEventListener('click', () => {
+        window.location.href = 'chat.html';
+    });
+</script>
+</body>
+</html>
