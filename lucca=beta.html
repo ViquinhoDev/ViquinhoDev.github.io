@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>O Ciclo da Formiga | Trabalho de Inglês</title>
+    <title>O Ciclo da Formiga | Modo Gamer | Trabalho de Inglês</title>
     <style>
         * {
             margin: 0;
@@ -12,81 +12,105 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(145deg, #e9f5e1 0%, #c8e0b0 100%);
+            font-family: 'Poppins', 'Segoe UI', 'Orbitron', 'Courier New', monospace;
+            background: radial-gradient(circle at 20% 30%, #0a0f1e, #03060c);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 2rem 1.5rem;
+            position: relative;
         }
 
-        /* Card principal inspirado na natureza */
-        .card {
-            max-width: 1100px;
+        /* overlay de grid gamer / neon */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            background: #fffef7;
-            border-radius: 2.5rem;
-            box-shadow: 0 25px 45px rgba(60, 40, 20, 0.25), 0 8px 18px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: all 0.2s ease;
-            border: 1px solid #e2d7b6;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 100, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 100, 0.03) 1px, transparent 1px);
+            background-size: 35px 35px;
+            pointer-events: none;
+            z-index: 0;
         }
 
-        /* cabeçalho com decoração */
+        /* Card estilo gamer neon */
+        .card {
+            max-width: 1200px;
+            width: 100%;
+            background: #0c0f1c;
+            border-radius: 2rem;
+            box-shadow: 0 0 25px rgba(0, 255, 170, 0.25), 0 0 5px #00ffaa88, 0 8px 25px rgba(0,0,0,0.7);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #2effb0;
+            backdrop-filter: blur(2px);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* header cyber */
         .hero {
-            background: #2d6a2e;
-            background-image: radial-gradient(circle at 10% 30%, rgba(255,215,130,0.2) 2%, transparent 2.5%);
-            background-size: 28px 28px;
-            padding: 1.8rem 2rem 1.5rem 2rem;
+            background: #07110e;
+            background-image: repeating-linear-gradient(45deg, #0a2a1a22 0px, #0a2a1a22 2px, transparent 2px, transparent 8px);
+            padding: 1.5rem 2rem 1.5rem 2rem;
             text-align: center;
-            border-bottom: 6px solid #f5bc70;
+            border-bottom: 3px solid #0effa0;
+            box-shadow: inset 0 -1px 0 #1effa0, 0 5px 15px rgba(0,255,150,0.2);
         }
 
         .hero h1 {
-            font-size: 2.8rem;
-            letter-spacing: -0.5px;
-            color: #fef7cf;
-            text-shadow: 4px 4px 0 #1f4f1a;
+            font-size: 2.7rem;
+            letter-spacing: 2px;
             font-weight: 800;
+            font-family: 'Orbitron', monospace;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #b5ffcf, #2effa0, #00cc88);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 8px #00ffaa77;
             word-break: keep-all;
         }
 
-        /* botão dupla língua */
+        /* barra de idioma estilo controle */
         .lang-bar {
             display: flex;
             justify-content: flex-end;
-            padding: 0.9rem 2rem;
-            background: #faf3e0;
-            border-bottom: 1px solid #e9dbbc;
+            padding: 0.8rem 2rem;
+            background: #04070e;
+            border-bottom: 1px solid #1effb0;
         }
 
         .toggle-btn {
-            background: #4a7c3f;
-            border: none;
+            background: linear-gradient(145deg, #121a24, #03070f);
+            border: 1px solid #2effb0;
             padding: 0.5rem 1.4rem;
-            border-radius: 60px;
+            border-radius: 40px;
             font-weight: bold;
-            font-size: 0.9rem;
-            color: white;
+            font-size: 0.85rem;
+            color: #b0ffd0;
             cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            font-family: inherit;
-            letter-spacing: 0.5px;
+            transition: 0.2s;
+            font-family: 'Orbitron', monospace;
+            letter-spacing: 1px;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 0 5px #00ffaa66;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .toggle-btn:hover {
-            background: #2b5e24;
-            transform: scale(0.97);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        .toggle-btn:active {
-            transform: scale(0.96);
+            background: linear-gradient(145deg, #1c2b1a, #051007);
+            box-shadow: 0 0 12px #2effb0;
+            color: #e3ffe6;
+            border-color: #aaffdd;
+            transform: scale(1.02);
         }
 
         /* conteúdo principal */
@@ -94,363 +118,344 @@
             padding: 2rem 2rem 1.5rem 2rem;
         }
 
-        /* descrição / intro */
+        /* descrição neon card */
         .description {
-            background: #fef9ea;
-            padding: 1.2rem 1.6rem;
-            border-radius: 1.8rem;
+            background: #0b101acc;
+            padding: 1.2rem 1.8rem;
+            border-radius: 1.5rem;
             margin-bottom: 2rem;
-            border-left: 8px solid #e7a13e;
-            font-size: 1.1rem;
-            line-height: 1.45;
-            color: #2e3b2c;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            border-left: 6px solid #28ffa0;
+            border-right: 1px solid #28ffa055;
+            backdrop-filter: blur(2px);
+            font-family: 'Segoe UI', system-ui;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #dbffe8;
+            text-shadow: 0 0 2px #004422;
+            box-shadow: 0 0 12px rgba(0, 255, 150, 0.2);
         }
 
         .description p {
             margin: 0;
+            font-weight: 500;
         }
 
-        /* imagem do ciclo responsiva */
+        /* imagem cycle gamer glow */
         .image-cycle {
             text-align: center;
-            margin: 1.5rem 0 2rem 0;
-            background: #fff8ec;
+            margin: 1.8rem 0 2.2rem 0;
+            background: #070c12aa;
             padding: 1rem;
             border-radius: 2rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 0 18px #00ffaa33, inset 0 0 8px #00ffaa1a;
+            border: 1px solid #2affaa44;
         }
 
         .cycle-img {
             max-width: 100%;
             height: auto;
-            border-radius: 1.5rem;
-            box-shadow: 0 12px 22px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-            border: 2px solid #dbc27a;
+            border-radius: 1.2rem;
+            filter: drop-shadow(0 0 6px #0affaa);
+            transition: all 0.3s;
         }
 
         .cycle-img:hover {
+            filter: drop-shadow(0 0 15px #2effaa);
             transform: scale(1.01);
         }
 
-        /* lista de tópicos - estrutura bonita */
+        /* lista de tópicos - estilo skills gamer */
         .topics-section {
             margin: 2rem 0 1.2rem;
         }
 
         .topics-title {
-            font-size: 1.7rem;
-            font-weight: 700;
-            color: #2c5e2a;
-            border-bottom: 3px dashed #edc286;
+            font-size: 1.6rem;
+            font-weight: 800;
+            font-family: 'Orbitron', monospace;
+            color: #acffcf;
+            border-bottom: 3px solid #2effb0;
             display: inline-block;
-            margin-bottom: 1.2rem;
-            padding-right: 1rem;
+            margin-bottom: 1.5rem;
+            padding-right: 0.8rem;
+            letter-spacing: 1px;
+            text-shadow: 0 0 5px #00ff99;
         }
 
         .topics-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
             gap: 1rem;
             list-style: none;
-            margin-top: 0.5rem;
+            margin-top: 0.8rem;
         }
 
         .topic-item {
-            background: #fefcf3;
+            background: #0d1422dd;
+            backdrop-filter: blur(3px);
             padding: 0.9rem 1.2rem;
-            border-radius: 1.5rem;
+            border-radius: 1.2rem;
             font-weight: 500;
             display: flex;
             align-items: center;
-            gap: 12px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-            transition: all 0.2s;
-            border: 1px solid #f0e2c5;
+            gap: 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 0 1px #2effb044;
+            transition: 0.2s;
+            border-left: 3px solid #1effa0;
+            color: #daffe6;
         }
 
         .topic-item:hover {
-            background: #fff5e2;
-            transform: translateY(-2px);
-            border-color: #deb887;
+            transform: translateY(-3px) scale(1.01);
+            background: #111b2bdd;
+            box-shadow: 0 0 14px #00ffaa55, 0 0 0 1px #7effc0;
+            border-left: 4px solid #77ffbb;
         }
 
         .emoji-bullet {
-            font-size: 1.6rem;
+            font-size: 1.7rem;
+            filter: drop-shadow(0 0 3px #0affaa);
         }
 
         .topic-text {
-            font-size: 1rem;
-            line-height: 1.3;
-            color: #2d401f;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            font-family: 'Segoe UI', 'Poppins', monospace;
         }
 
-        /* rodapé com assinatura dev */
+        .topic-text strong {
+            color: #c7ffb1;
+            font-family: monospace;
+            letter-spacing: 0.5px;
+        }
+
+        /* rodapé gamer */
         .footer {
-            background: #2c3a1f;
-            color: #e9f0da;
+            background: #03060cbb;
+            backdrop-filter: blur(8px);
             text-align: center;
-            padding: 1.2rem 1.5rem;
+            padding: 1.2rem 1.2rem;
             font-size: 0.85rem;
-            border-top: 1px solid #f1cf8a;
-            font-weight: 500;
-            letter-spacing: 0.3px;
+            border-top: 2px solid #1effa0;
+            font-weight: bold;
+            font-family: 'Orbitron', monospace;
+            color: #bbffcc;
         }
 
         .footer span {
-            color: #ffdfa5;
-            font-weight: bold;
+            color: #b2ffcf;
+            text-shadow: 0 0 4px #00ffaa;
         }
 
         .footer small {
-            opacity: 0.9;
+            opacity: 0.85;
+            font-family: monospace;
         }
 
-        /* para responsividade */
         @media (max-width: 650px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.6rem;
             }
             .content {
-                padding: 1.5rem;
+                padding: 1.2rem;
             }
-            .topic-item {
-                padding: 0.7rem 1rem;
+            .topics-title {
+                font-size: 1.3rem;
             }
             .toggle-btn {
-                padding: 0.4rem 1rem;
-                font-size: 0.8rem;
+                padding: 0.3rem 1rem;
+                font-size: 0.7rem;
             }
         }
 
-        /* transição de idioma suave */
-        .lang-pt, .lang-en {
-            transition: opacity 0.2s ease;
-        }
-
-        /* elementos toggle */
+        /* alternância de idioma via data-lang */
         [data-lang="pt"] .lang-en {
             display: none;
         }
         [data-lang="en"] .lang-pt {
             display: none;
         }
+
+        /* para os textos dentro do SVG também aplicamos (eles tem classes lang-pt/lang-en) */
+        .lang-pt, .lang-en {
+            transition: all 0.1s;
+        }
     </style>
 </head>
 <body>
 <div class="card" id="appCard" data-lang="pt">
-    <!-- Barra de idioma com botão dinâmico -->
     <div class="lang-bar">
         <button class="toggle-btn" id="languageToggleBtn">
-            <span>🌐</span> 
-            <span class="lang-pt">Mudar para Inglês</span>
-            <span class="lang-en">Switch to Portuguese</span>
+            <span>🎮</span>
+            <span class="lang-pt">🔁 MUDAR PARA INGLÊS (EN)</span>
+            <span class="lang-en">🔁 SWITCH TO PORTUGUESE (PT)</span>
         </button>
     </div>
 
-    <!-- HEADER com título único -->
     <div class="hero">
         <h1>
-            <span class="lang-pt">🐜 O Ciclo da Formiga</span>
-            <span class="lang-en">🐜 The Ant Cycle</span>
+            <span class="lang-pt">⚡ O CICLO DA FORMIGA ⚡</span>
+            <span class="lang-en">⚡ THE ANT CYCLE ⚡</span>
         </h1>
+        <div style="font-size: 0.7rem; color: #48ffb0; margin-top: 6px; font-family: monospace;">
+            <span class="lang-pt">[ MODO GAMER • EVOLUÇÃO INSECT ]</span>
+            <span class="lang-en">[ GAMER MODE • INSECT EVOLUTION ]</span>
+        </div>
     </div>
 
     <div class="content">
-        <!-- descrição principal -->
+        <!-- descrição -->
         <div class="description">
             <p class="lang-pt">
-                🌿 O ciclo de vida da formiga é fascinante e dividido em quatro fases principais: ovo, larva, pupa e adulto. 
-                As formigas são insetos sociais que vivem em colônias organizadas, e cada indivíduo desempenha um papel essencial 
-                para a sobrevivência do formigueiro. Conheça abaixo as etapas e os hábitos incríveis dessas pequenas grandes trabalhadoras!
+                🎮🌀 <strong style="color:#adffaa;">Ciclo da Formiga: Level UP!</strong> As formigas passam por 4 fases épicas: Ovo → Larva → Pupa → Adulto. 
+                Colônias organizadas tipo clãs, cada formiga tem sua classe (tank, suporte, rainha). Desvende essa jornada gamer da natureza e conquiste o formigueiro!
             </p>
             <p class="lang-en">
-                🌿 The ant life cycle is fascinating and divided into four main stages: egg, larva, pupa, and adult. 
-                Ants are social insects that live in organized colonies, and each individual plays an essential role 
-                for the survival of the anthill. Discover below the stages and incredible habits of these tiny hard workers!
+                🎮🌀 <strong style="color:#adffaa;">Ant Cycle: Level UP!</strong> Ants go through 4 epic stages: Egg → Larva → Pupa → Adult. 
+                Organized colonies like guilds, each ant has its class (tank, support, queen). Unlock this gaming nature journey and conquer the anthill!
             </p>
         </div>
 
-        <!-- imagem do ciclo da formiga (ilustração SVG educativa + opcional fallback) -->
+        <!-- imagem SVG com estilo neon e detalhes gamer -->
         <div class="image-cycle">
-            <!-- Imagem vetorial com diagrama do ciclo: ovo, larva, pupa, formiga adulta.
-                 Utilizo uma imagem SVG didática, desenhada com formas simples e cores amigáveis -->
-            <svg class="cycle-img" width="100%" height="auto" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" style="background: #fef3da; border-radius: 24px;">
+            <svg class="cycle-img" width="100%" height="auto" viewBox="0 0 860 420" xmlns="http://www.w3.org/2000/svg" style="background: #091015; border-radius: 28px; box-shadow: 0 0 12px #1effaa33;">
                 <defs>
                     <style>
-                        .cycle-text { font-family: 'Segoe UI', Arial, sans-serif; font-weight: bold; fill: #3a2a1f; }
-                        .stage-title { font-size: 20px; font-weight: bold; fill: #2b5724; }
-                        .sub-label { font-size: 14px; fill: #5a3e1f; }
+                        .cycle-title { font-family: 'Orbitron', monospace; font-weight: bold; fill: #bbffdd; font-size: 20px; text-shadow: 0 0 4px #00f2a0; }
+                        .stage-text { font-family: 'Courier New', monospace; font-weight: bold; fill: #ddffcc; font-size: 18px; }
+                        .subtext { font-family: monospace; fill: #b2ffb2; font-size: 11px; }
+                        .glow-line { stroke: #1effb0; stroke-width: 3; filter: drop-shadow(0 0 3px #0affaa); }
                     </style>
+                    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+                        <polygon points="0 0, 10 4, 0 8" fill="#3effb0" stroke="#0affaa" stroke-width="0.5"/>
+                    </marker>
+                    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="2.5"/>
+                        <feMerge>
+                            <feMergeNode in="offsetblur" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
                 </defs>
-                <!-- fundo suave -->
-                <rect width="800" height="400" fill="#FDF6E3" rx="20" ry="20"></rect>
-                <!-- Título do diagrama -->
-                <text x="400" y="40" text-anchor="middle" class="cycle-text stage-title" font-size="22">🐜 Ant Life Cycle / Ciclo da Formiga 🐜</text>
+                <rect width="860" height="420" fill="#0d121f" rx="24" ry="24" stroke="#28ffa0" stroke-width="1.5" stroke-dasharray="4 3"/>
+                <text x="430" y="42" text-anchor="middle" class="cycle-title" filter="url(#neonGlow)">🐜 ANT CYCLE • GAMER EDITION 🎮</text>
                 
-                <!-- 1 - Ovo / Egg -->
-                <circle cx="120" cy="150" r="28" fill="#E8D2A8" stroke="#936e38" stroke-width="2.5"/>
-                <text x="120" y="145" text-anchor="middle" class="cycle-text" font-size="16">🥚</text>
-                <text x="120" y="175" text-anchor="middle" class="sub-label lang-pt">Ovo</text>
-                <text x="120" y="175" text-anchor="middle" class="sub-label lang-en">Egg</text>
-                <text x="120" y="195" text-anchor="middle" class="sub-label" font-size="11" fill="#6d4b1f">(3-4 semanas)</text>
+                <!-- 1 - OVO -->
+                <circle cx="110" cy="170" r="32" fill="#17211f" stroke="#3effb0" stroke-width="2.5" filter="url(#neonGlow)"/>
+                <text x="110" y="165" text-anchor="middle" font-size="24" fill="#caffdd">🥚</text>
+                <text x="110" y="195" text-anchor="middle" class="stage-text lang-pt">OVO</text>
+                <text x="110" y="195" text-anchor="middle" class="stage-text lang-en">EGG</text>
+                <text x="110" y="215" text-anchor="middle" class="subtext">(3-4 weeks)</text>
                 
-                <!-- Seta 1 -->
-                <path d="M160,150 L210,150" stroke="#b97f3a" stroke-width="3" marker-end="url(#arrowBrown)" fill="none"/>
-                <defs><marker id="arrowBrown" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#b97f3a"/></marker></defs>
+                <path d="M150,170 L200,170" stroke="#22ffaa" stroke-width="3" marker-end="url(#arrowGreen)" stroke-dasharray="3 2"/>
                 
-                <!-- 2 - Larva / Larva -->
-                <circle cx="270" cy="150" r="32" fill="#DCC48E" stroke="#a5712c" stroke-width="2.5"/>
-                <text x="270" y="145" text-anchor="middle" class="cycle-text" font-size="21">🐛</text>
-                <text x="270" y="175" text-anchor="middle" class="sub-label lang-pt">Larva</text>
-                <text x="270" y="175" text-anchor="middle" class="sub-label lang-en">Larva</text>
-                <text x="270" y="195" text-anchor="middle" class="sub-label" font-size="11" fill="#6d4b1f">(alimentada por obreiras)</text>
+                <!-- 2 - LARVA -->
+                <circle cx="260" cy="170" r="35" fill="#19241e" stroke="#3effb0" stroke-width="2.5" filter="url(#neonGlow)"/>
+                <text x="260" y="165" text-anchor="middle" font-size="26" fill="#e2ffcf">🐛</text>
+                <text x="260" y="198" text-anchor="middle" class="stage-text lang-pt">LARVA</text>
+                <text x="260" y="198" text-anchor="middle" class="stage-text lang-en">LARVA</text>
+                <text x="260" y="218" text-anchor="middle" class="subtext">(fed by workers)</text>
                 
-                <!-- Seta 2 -->
-                <path d="M310,150 L360,150" stroke="#b97f3a" stroke-width="3" marker-end="url(#arrowBrown)"/>
+                <path d="M305,170 L355,170" stroke="#22ffaa" stroke-width="3" marker-end="url(#arrowGreen)"/>
                 
-                <!-- 3 - Pupa / Pupa -->
-                <circle cx="420" cy="150" r="32" fill="#CBAF7A" stroke="#8b5a2b" stroke-width="2.5"/>
-                <text x="420" y="146" text-anchor="middle" class="cycle-text" font-size="22">🪨</text>
-                <text x="420" y="175" text-anchor="middle" class="sub-label lang-pt">Pupa</text>
-                <text x="420" y="175" text-anchor="middle" class="sub-label lang-en">Pupa</text>
-                <text x="420" y="195" text-anchor="middle" class="sub-label" font-size="11" fill="#6d4b1f">(metamorfose)</text>
+                <!-- 3 - PUPA -->
+                <circle cx="420" cy="170" r="34" fill="#19201c" stroke="#3effb0" stroke-width="2.5" filter="url(#neonGlow)"/>
+                <text x="420" y="165" text-anchor="middle" font-size="26" fill="#def3c4">🪨</text>
+                <text x="420" y="198" text-anchor="middle" class="stage-text lang-pt">PUPA</text>
+                <text x="420" y="198" text-anchor="middle" class="stage-text lang-en">PUPA</text>
+                <text x="420" y="218" text-anchor="middle" class="subtext">(metamorphosis)</text>
                 
-                <!-- Seta 3 -->
-                <path d="M460,150 L510,150" stroke="#b97f3a" stroke-width="3" marker-end="url(#arrowBrown)"/>
+                <path d="M465,170 L515,170" stroke="#22ffaa" stroke-width="3" marker-end="url(#arrowGreen)"/>
                 
-                <!-- 4 - Formiga Adulta / Adult Ant -->
-                <circle cx="570" cy="150" r="34" fill="#B48647" stroke="#6b3e1a" stroke-width="2.5"/>
-                <text x="570" y="146" text-anchor="middle" class="cycle-text" font-size="27">🐜</text>
-                <text x="570" y="178" text-anchor="middle" class="sub-label lang-pt">Formiga Adulta</text>
-                <text x="570" y="178" text-anchor="middle" class="sub-label lang-en">Adult Ant</text>
-                <text x="570" y="198" text-anchor="middle" class="sub-label" font-size="11" fill="#6d4b1f">(operária, rainha ou macho)</text>
+                <!-- 4 - ADULTA -->
+                <circle cx="580" cy="170" r="38" fill="#102214" stroke="#6affc2" stroke-width="3" filter="url(#neonGlow)"/>
+                <text x="580" y="165" text-anchor="middle" font-size="28" fill="#e3ffd3">🐜</text>
+                <text x="580" y="202" text-anchor="middle" class="stage-text lang-pt">ADULTA</text>
+                <text x="580" y="202" text-anchor="middle" class="stage-text lang-en">ADULT</text>
+                <text x="580" y="222" text-anchor="middle" class="subtext">(soldier / queen / worker)</text>
                 
-                <!-- Ciclo de retorno com curva embaixo -->
-                <path d="M570,190 C570,280 120,280 120,180" stroke="#cc9c5c" stroke-width="2.8" fill="none" stroke-dasharray="6 5" marker-end="url(#arrowBrown)"/>
-                <text x="350" y="290" text-anchor="middle" class="sub-label" font-size="13" fill="#926d2c">
-                    <tspan class="lang-pt">⟳ Reinício do ciclo (nova postura de ovos)</tspan>
-                    <tspan class="lang-en">⟳ Cycle restarts (new eggs laying)</tspan>
+                <!-- loop de replay -->
+                <path d="M580,215 C580,320 110,315 110,205" stroke="#44ffaa" stroke-width="2.5" fill="none" stroke-dasharray="8 5" marker-end="url(#arrowGreen)" opacity="0.9"/>
+                <text x="345" y="330" text-anchor="middle" fill="#aaffcc" font-size="13" font-family="monospace">
+                    <tspan class="lang-pt">⟳ LOOP INFINITO | REPRODUÇÃO DA RAINHA ⟳</tspan>
+                    <tspan class="lang-en">⟳ INFINITE LOOP | QUEEN REPRODUCTION ⟳</tspan>
                 </text>
+                <!-- emblema XP -->
+                <text x="730" y="380" fill="#3effb0" font-size="12" font-family="monospace">+XP COLONY</text>
             </svg>
-            <!-- fallback descrição acessível e compatível -->
-            <p style="font-size: 0.75rem; margin-top: 8px; color:#7a5a38;" class="lang-pt">🎨 Diagrama ilustrativo: Ovo → Larva → Pupa → Formiga adulta.</p>
-            <p style="font-size: 0.75rem; margin-top: 8px; color:#7a5a38;" class="lang-en">🎨 Illustrative diagram: Egg → Larva → Pupa → Adult ant.</p>
+            <div style="margin-top: 8px;">
+                <span class="lang-pt" style="color:#96ffc0; font-size:0.7rem;">🎮 Diagrama do ciclo em estilo RPG 🎮</span>
+                <span class="lang-en" style="color:#96ffc0; font-size:0.7rem;">🎮 RPG-style cycle diagram 🎮</span>
+            </div>
         </div>
 
-        <!-- Lista de tópicos da vida da formiga -->
+        <!-- Tópicos da vida da formiga no estilo Gamer -->
         <div class="topics-section">
             <div class="topics-title">
-                <span class="lang-pt">📋 Etapas e curiosidades do ciclo</span>
-                <span class="lang-en">📋 Stages & curiosities of the cycle</span>
+                <span class="lang-pt">📜 MISSÕES & EVOLUÇÕES</span>
+                <span class="lang-en">📜 QUESTS & EVOLUTIONS</span>
             </div>
             <ul class="topics-grid">
-                <!-- Cada tópico com emoji e descrição bilíngue usando spans internos -->
-                <li class="topic-item"><span class="emoji-bullet">🥚</span> <span class="topic-text"><strong class="lang-pt">1. Ovo:</strong><span class="lang-en"><strong>1. Egg:</strong></span> <span class="lang-pt">A rainha deposita ovos microscópicos. Após alguns dias, eclodem as larvas.</span><span class="lang-en">The queen lays microscopic eggs. After a few days, they hatch into larvae.</span></span></li>
-                <li class="topic-item"><span class="emoji-bullet">🐛</span> <span class="topic-text"><strong class="lang-pt">2. Larva:</strong><span class="lang-en"><strong>2. Larva:</strong></span> <span class="lang-pt">Não possuem patas e são alimentadas pelas operárias. Crescem rapidamente.</span><span class="lang-en">Legless and fed by workers. They grow very fast.</span></span></li>
-                <li class="topic-item"><span class="emoji-bullet">🪨</span> <span class="topic-text"><strong class="lang-pt">3. Pupa:</strong><span class="lang-en"><strong>3. Pupa:</strong></span> <span class="lang-pt">Estágio de repouso e transformação. Desenvolvem olhos, antenas e pernas.</span><span class="lang-en">Resting stage and transformation. They develop eyes, antennae and legs.</span></span></li>
-                <li class="topic-item"><span class="emoji-bullet">🐜</span> <span class="topic-text"><strong class="lang-pt">4. Adulta:</strong><span class="lang-en"><strong>4. Adult:</strong></span> <span class="lang-pt">Formiga completamente formada. Funções: operária, soldado, rainha ou zangão.</span><span class="lang-en">Fully formed ant. Roles: worker, soldier, queen or drone.</span></span></li>
-                <li class="topic-item"><span class="emoji-bullet">🏡</span> <span class="topic-text"><strong class="lang-pt">Organização social:</strong><span class="lang-en"><strong>Social organization:</strong></span> <span class="lang-pt">Vivem em colônias hierárquicas com divisão de tarefas.</span><span class="lang-en">Live in hierarchical colonies with task division.</span></span></li>
-                <li class="topic-item"><span class="emoji-bullet">🌍</span> <span class="topic-text"><strong class="lang-pt">Longevidade:</strong><span class="lang-en"><strong>Longevity:</strong></span> <span class="lang-pt">Rainhas vivem até 15 anos, operárias de semanas a meses.</span><span class="lang-en">Queens live up to 15 years, workers weeks to months.</span></span></li>
-                <li class="topic-item"><span class="emoji-bullet">🍃</span> <span class="topic-text"><strong class="lang-pt">Impacto ecológico:</strong><span class="lang-en"><strong>Ecological impact:</strong></span> <span class="lang-pt">Aeram o solo, dispersam sementes e controlam pragas.</span><span class="lang-en">Aerate soil, disperse seeds and control pests.</span></span></li>
-                <li class="topic-item"><span class="emoji-bullet">⚙️</span> <span class="topic-text"><strong class="lang-pt">Comunicação:</strong><span class="lang-en"><strong>Communication:</strong></span> <span class="lang-pt">Usam feromônios para criar trilhas e alertar perigos.</span><span class="lang-en">Use pheromones to create trails and alert dangers.</span></span></li>
+                <li class="topic-item"><span class="emoji-bullet">🥚</span> <span class="topic-text"><strong class="lang-pt">【OVO LV1】</strong><strong class="lang-en">【EGG LV1】</strong> <span class="lang-pt">Início da jornada. Rainha deposita ovos em safe zone. Protegido por obreiras.</span><span class="lang-en">Start of journey. Queen lays eggs in safe zone. Protected by workers.</span></span></li>
+                <li class="topic-item"><span class="emoji-bullet">🐛</span> <span class="topic-text"><strong class="lang-pt">【LARVA LV5】</strong><strong class="lang-en">【LARVA LV5】</strong> <span class="lang-pt">Fase hungry! Consome muito. Cresce stats rapidamente. Sem pernas mas faminta.</span><span class="lang-en">Hungry phase! Consumes a lot. Grows stats fast. Legless but hungry.</span></span></li>
+                <li class="topic-item"><span class="emoji-bullet">🪨</span> <span class="topic-text"><strong class="lang-pt">【PUPA LV15】</strong><strong class="lang-en">【PUPA LV15】</strong> <span class="lang-pt">Modo dormência, metamorfose extrema. Evolui para forma final.</span><span class="lang-en">Dormancy mode, extreme metamorphosis. Evolves to final form.</span></span></li>
+                <li class="topic-item"><span class="emoji-bullet">🐜</span> <span class="topic-text"><strong class="lang-pt">【ADULTO LV MAX】</strong><strong class="lang-en">【ADULT LV MAX】</strong> <span class="lang-pt">Classe definida: guerreira, coletora, rainha suprema ou drone voador.</span><span class="lang-en">Class defined: warrior, gatherer, supreme queen or flying drone.</span></span></li>
+                <li class="topic-item"><span class="emoji-bullet">🏆</span> <span class="topic-text"><strong class="lang-pt">SISTEMA DE CASTAS</strong><strong class="lang-en">CASTE SYSTEM</strong> <span class="lang-pt">Operárias — suporte, Soldados — tank, Rainha — líder absoluto.</span><span class="lang-en">Workers — support, Soldiers — tank, Queen — absolute leader.</span></span></li>
+                <li class="topic-item"><span class="emoji-bullet">🔥</span> <span class="topic-text"><strong class="lang-pt">COMUNICAÇÃO QUÍMICA</strong><strong class="lang-en">CHEMICAL COM</strong> <span class="lang-pt">Uso de feromônios (efeito area buff) para alertar e criar trilhas.</span><span class="lang-en">Pheromone usage (area buff) to alert and create trails.</span></span></li>
+                <li class="topic-item"><span class="emoji-bullet">🌿</span> <span class="topic-text"><strong class="lang-pt">ECOSSISTEMA BOSS</strong><strong class="lang-en">ECOSYSTEM BOSS</strong> <span class="lang-pt">Aeram solo, dispersam seeds, controlam pragas. MVPs da natureza.</span><span class="lang-en">Aerate soil, disperse seeds, control pests. Nature MVPs.</span></span></li>
+                <li class="topic-item"><span class="emoji-bullet">⚔️</span> <span class="topic-text"><strong class="lang-pt">LONGEVIDADE RECORDE</strong><strong class="lang-en">LONGEVITY RECORD</strong> <span class="lang-pt">Rainha vive até 15 anos (HighScore), operárias meses.</span><span class="lang-en">Queen lives up to 15 years (HighScore), workers months.</span></span></li>
             </ul>
         </div>
     </div>
 
-    <!-- Rodapé com informações do desenvolvedor -->
     <div class="footer">
-        <span>🐜 Site desenvolvido por Vicente Bajay (ViquinhoDev) 🐜</span><br />
-        <small class="lang-pt">🇧🇷 site de inglês sobre o ciclo das formigas — versão bilíngue 🇬🇧</small>
-        <small class="lang-en">🇬🇧 English website about the ant cycle — bilingual version 🇧🇷</small>
+        <span>🐜🔥 SITE DESENVOLVIDO POR VICENTE BAJAY (VIQUINHODEV) 🔥🐜</span><br />
+        <small class="lang-pt">🇧🇷 TEMA GAMER • TRABALHO DE INGLÊS • CICLO DAS FORMIGAS • VERSÃO BILÍNGUE 🇬🇧</small>
+        <small class="lang-en">🇬🇧 GAMER THEME • ENGLISH ASSIGNMENT • ANT CYCLE • BILINGUAL VERSION 🇧🇷</small>
+        <div style="margin-top: 5px; font-size: 0.65rem;">🎮 neon ant evolution - power up colony 🎮</div>
     </div>
 </div>
 
 <script>
     (function() {
-        // Elemento raiz onde aplicamos o data-lang
         const appCard = document.getElementById('appCard');
         const toggleBtn = document.getElementById('languageToggleBtn');
-        
-        // idioma atual (padrão 'pt')
-        let currentLang = 'pt';  // 'pt' ou 'en'
-        
-        // Função para atualizar o texto do botão e o atributo data-lang
+        let currentLang = 'pt';
+
         function setLanguage(lang) {
             if (lang !== 'pt' && lang !== 'en') return;
             currentLang = lang;
             appCard.setAttribute('data-lang', currentLang);
-            
-            // Atualizar o texto interno do botão (os spans são alternados via CSS)
-            // Mas vamos garantir que a acessibilidade também mude o conteúdo textual.
-            // Como temos spans com lang-pt e lang-en dentro do botão, o CSS já faz o trabalho.
-            // adicionalmente alteramos o atributo aria-label para leitores de tela:
-            const btnTextPt = toggleBtn.querySelector('.lang-pt');
-            const btnTextEn = toggleBtn.querySelector('.lang-en');
+            localStorage.setItem('antCycleLangGamer', currentLang);
+            // atualiza acessibilidade do botão
             if (currentLang === 'pt') {
-                toggleBtn.setAttribute('aria-label', 'Mudar para inglês');
-                // Forçamos consistência, mas sem loop, apenas para semântica
-                if (btnTextPt) btnTextPt.style.display = 'inline';
-                if (btnTextEn) btnTextEn.style.display = 'inline';
-                // o css alterna display block ou inline, mas preserva
+                toggleBtn.setAttribute('aria-label', 'Switch to English');
             } else {
-                toggleBtn.setAttribute('aria-label', 'Switch to Portuguese');
+                toggleBtn.setAttribute('aria-label', 'Mudar para Português');
             }
-            // Adicional: Qualquer outra lógica pode ser aplicada, mas a alternância de conteúdo é puramente CSS.
-            // Garantir que o título e descrição já estão cobertos.
-            
-            // Opcional: pequena animação ou salvar preferência no localStorage
-            localStorage.setItem('antCycleLanguage', currentLang);
         }
-        
-        // Evento de clique: alterna entre pt e en
+
         function toggleLanguage() {
-            const newLang = (currentLang === 'pt') ? 'en' : 'pt';
+            const newLang = currentLang === 'pt' ? 'en' : 'pt';
             setLanguage(newLang);
         }
-        
-        // carregar preferência salva
-        function loadSavedLanguage() {
-            const saved = localStorage.getItem('antCycleLanguage');
+
+        function loadLanguage() {
+            const saved = localStorage.getItem('antCycleLangGamer');
             if (saved === 'pt' || saved === 'en') {
                 setLanguage(saved);
             } else {
-                // detectar idioma do navegador como preferência inicial (caso queira inglês automático)
-                // Mas mantemos PT como padrão porque é trabalho de inglês, mas o usuário pode alternar.
-                // Deixamos PT mesmo.
                 setLanguage('pt');
             }
         }
-        
-        // Adicionar evento do botão
-        if (toggleBtn) {
-            toggleBtn.addEventListener('click', toggleLanguage);
-        }
-        
-        // Carrega idioma salvo
-        loadSavedLanguage();
-        
-        // Correção para garantir que todos os elementos com classe lang-pt / lang-en respondam corretamente
-        // também observar possíveis SVG textos - embora os textos no SVG estejam com classes "lang-pt" e "lang-en"
-        // no entanto, dentro do SVG o CSS pode não alternar da mesma forma porque o SVG encapsula o DOM.
-        // Para garantir que os textos dentro do SVG também alternem de visibilidade, precisamos manipular via JS?
-        // Os textos dentro do SVG estão marcados com class="lang-pt" e class="lang-en". O CSS global funciona? Sim, desde que os seletores .lang-pt e .lang-en afetem dentro do SVG sim,
-        // porque SVG elements suportam classes e o CSS se aplica normalmente (estilo incluso no head).
-        // Contudo, em alguns navegadores o display:none pode não funcionar perfeitamente em elementos <text>?
-        // Na prática funciona bem. Mas vamos adicionar um pequeno fallback para garantir que os textos do diagrama ciclico também ocultem/exibam.
-        // A abordagem: adicionar uma classe extra no svg? Não necessário, pois estamos usando data-lang no card raiz, e regras CSS:
-        // [data-lang="pt"] .lang-en { display: none; } [data-lang="en"] .lang-pt { display: none; }
-        // Isso funciona para qualquer elemento incluindo SVG text. Mas como os textos podem estar com display: inline ou block padrão, faremos um ajuste fino:
-        // Garantir que os elementos text do SVG tenham exibição padrão inline, mas isso é padrão. Vamos também aplicar um atributo de estilos inline se necessário.
-        // Contudo vou validar acrescentando uma pequena correção: após carregar, garantir que nenhum conflito.
-        // A solução é perfeita. Mas vamos também forçar reaplicação caso algum texto fique visível duplicado.
-        // Está tudo consistente.
-        
-        // Além disso, caso existam imagens com alt e legendas, mas está ótimo.
-        // Para maior confiabilidade, se houver algum erro de renderização, forçamos um reflow.
-        window.addEventListener('load', function() {
-            // Pequeno trigger para garantir que a visualização reflita o idioma atual
+
+        if (toggleBtn) toggleBtn.addEventListener('click', toggleLanguage);
+        loadLanguage();
+
+        // garantir compatibilidade total com os textos SVG: eles já estão com classes lang-pt/lang-en
+        // a regra CSS cuida da exibição graças ao data-lang no card.
+        // Efeito extra: quando mudar idioma, pequeno feedback
+        window.addEventListener('load', () => {
             setLanguage(currentLang);
         });
     })();
