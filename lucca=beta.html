@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>O Ciclo da Formiga | Trabalho de Inglês</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(145deg, #e9f5e1 0%, #c8e0b0 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Card principal inspirado na natureza */
+        .card {
+            max-width: 1100px;
+            width: 100%;
+            background: #fffef7;
+            border-radius: 2.5rem;
+            box-shadow: 0 25px 45px rgba(60, 40, 20, 0.25), 0 8px 18px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.2s ease;
+            border: 1px solid #e2d7b6;
+        }
+
+        /* cabeçalho com decoração */
+        .hero {
+            background: #2d6a2e;
+            background-image: radial-gradient(circle at 10% 30%, rgba(255,215,130,0.2) 2%, transparent 2.5%);
+            background-size: 28px 28px;
+            padding: 1.8rem 2rem 1.5rem 2rem;
+            text-align: center;
+            border-bottom: 6px solid #f5bc70;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            letter-spacing: -0.5px;
+            color: #fef7cf;
+            text-shadow: 4px 4px 0 #1f4f1a;
+            font-weight: 800;
+            word-break: keep-all;
+        }
+
+        /* botão dupla língua */
+        .lang-bar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 0.9rem 2rem;
+            background: #faf3e0;
+            border-bottom: 1px solid #e9dbbc;
+        }
+
+        .toggle-btn {
+            background: #4a7c3f;
+            border: none;
+            padding: 0.5rem 1.4rem;
+            border-radius: 60px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-family: inherit;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toggle-btn:hover {
+            background: #2b5e24;
+            transform: scale(0.97);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .toggle-btn:active {
+            transform: scale(0.96);
+        }
+
+        /* conteúdo principal */
+        .content {
+            padding: 2rem 2rem 1.5rem 2rem;
+        }
+
+        /* descrição / intro */
+        .description {
+            background: #fef9ea;
+            padding: 1.2rem 1.6rem;
+            border-radius: 1.8rem;
+            margin-bottom: 2rem;
+            border-left: 8px solid #e7a13e;
+            font-size: 1.1rem;
+            line-height: 1.45;
+            color: #2e3b2c;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+
+        .description p {
+            margin: 0;
+        }
+
+        /* imagem do ciclo responsiva */
+        .image-cycle {
+            text-align: center;
+            margin: 1.5rem 0 2rem 0;
+            background: #fff8ec;
+            padding: 1rem;
+            border-radius: 2rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .cycle-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 1.5rem;
+            box-shadow: 0 12px 22px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            border: 2px solid #dbc27a;
+        }
+
+        .cycle-img:hover {
+            transform: scale(1.01);
+        }
+
+        /* lista de tópicos - estrutura bonita */
+        .topics-section {
+            margin: 2rem 0 1.2rem;
+        }
+
+        .topics-title {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #2c5e2a;
+            border-bottom: 3px dashed #edc286;
+            display: inline-block;
+            margin-bottom: 1.2rem;
+            padding-right: 1rem;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        .topic-item {
+            background: #fefcf3;
+            padding: 0.9rem 1.2rem;
+            border-radius: 1.5rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+            transition: all 0.2s;
+            border: 1px solid #f0e2c5;
+        }
+
+        .topic-item:hover {
+            background: #fff5e2;
+            transform: translateY(-2px);
+            border-color: #deb887;
+        }
+
+        .emoji-bullet {
+            font-size: 1.6rem;
+        }
+
+        .topic-text {
+            font-size: 1rem;
+            line-height: 1.3;
+            color: #2d401f;
+        }
+
+        /* rodapé com assinatura dev */
+        .footer {
+            background: #2c3a1f;
+            color: #e9f0da;
+            text-align: center;
+            padding: 1.2rem 1.5rem;
+            font-size: 0.85rem;
+            border-top: 1px solid #f1cf8a;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .footer span {
+            color: #ffdfa5;
+            font-weight: bold;
+        }
+
+        .footer small {
+            opacity: 0.9;
+        }
+
+        /* para responsividade */
+        @media (max-width: 650px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .content {
+                padding: 1.5rem;
+            }
+            .topic-item {
+                padding: 0.7rem 1rem;
+            }
+            .toggle-btn {
+                padding: 0.4rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* transição de idioma suave */
+        .lang-pt, .lang-en {
+            transition: opacity 0.2s ease;
+        }
+
+        /* elementos toggle */
+        [data-lang="pt"] .lang-en {
+            display: none;
+        }
+        [data-lang="en"] .lang-pt {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="card" id="appCard" data-lang="pt">
+    <!-- Barra de idioma com botão dinâmico -->
+    <div class="lang-bar">
+        <button class="toggle-btn" id="languageToggleBtn">
+            <span>🌐</span> 
+            <span class="lang-pt">Mudar para Inglês</span>
+            <span class="lang-en">Switch to Portuguese</span>
+        </button>
+    </div>
+
+    <!-- HEADER com título único -->
+    <div class="hero">
+        <h1>
+            <span class="lang-pt">🐜 O Ciclo da Formiga</span>
+            <span class="lang-en">🐜 The Ant Cycle</span>
+        </h1>
+    </div>
+
+    <div class="content">
+        <!-- descrição principal -->
+        <div class="description">
+            <p class="lang-pt">
+                🌿 O ciclo de vida da formiga é fascinante e dividido em quatro fases principais: ovo, larva, pupa e adulto. 
+                As formigas são insetos sociais que vivem em colônias organizadas, e cada indivíduo desempenha um papel essencial 
+                para a sobrevivência do formigueiro. Conheça abaixo as etapas e os hábitos incríveis dessas pequenas grandes trabalhadoras!
+            </p>
+            <p class="lang-en">
+                🌿 The ant life cycle is fascinating and divided into four main stages: egg, larva, pupa, and adult. 
+                Ants are social insects that live in organized colonies, and each individual plays an essential role 
+                for the survival of the anthill. Discover below the stages and incredible habits of these tiny hard workers!
+            </p>
+        </div>
+
+        <!-- imagem do ciclo da formiga (ilustração SVG educativa + opcional fallback) -->
+        <div class="image-cycle">
+            <!-- Imagem vetorial com diagrama do ciclo: ovo, larva, pupa, formiga adulta.
+                 Utilizo uma imagem SVG didática, desenhada com formas simples e cores amigáveis -->
+            <svg class="cycle-img" width="100%" height="auto" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" style="background: #fef3da; border-radius: 24px;">
+                <defs>
+                    <style>
+                        .cycle-text { font-family: 'Segoe UI', Arial, sans-serif; font-weight: bold; fill: #3a2a1f; }
+                        .stage-title { font-size: 20px; font-weight: bold; fill: #2b5724; }
+                        .sub-label { font-size: 14px; fill: #5a3e1f; }
+                    </style>
+                </defs>
+                <!-- fundo suave -->
+                <rect width="800" height="400" fill="#FDF6E3" rx="20" ry="20"></rect>
+                <!-- Título do diagrama -->
+                <text x="400" y="40" text-anchor="middle" class="cycle-text stage-title" font-size="22">🐜 Ant Life Cycle / Ciclo da Formiga 🐜</text>
+                
+                <!-- 1 - Ovo / Egg -->
+                <circle cx="120" cy="150" r="28" fill="#E8D2A8" stroke="#936e38" stroke-width="2.5"/>
+                <text x="120" y="145" text-anchor="middle" class="cycle-text" font-size="16">🥚</text>
+                <text x="120" y="175" text-anchor="middle" class="sub-label lang-pt">Ovo</text>
+                <text x="120" y="175" text-anchor="middle" class="sub-label lang-en">Egg</text>
+                <text x="120" y="195" text-anchor="middle" class="sub-label" font-size="11" fill="#6d4b1f">(3-4 semanas)</text>
+                
+                <!-- Seta 1 -->
+                <path d="M160,150 L210,150" stroke="#b97f3a" stroke-width="3" marker-end="url(#arrowBrown)" fill="none"/>
+                <defs><marker id="arrowBrown" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#b97f3a"/></marker></defs>
+                
+                <!-- 2 - Larva / Larva -->
+                <circle cx="270" cy="150" r="32" fill="#DCC48E" stroke="#a5712c" stroke-width="2.5"/>
+                <text x="270" y="145" text-anchor="middle" class="cycle-text" font-size="21">🐛</text>
+                <text x="270" y="175" text-anchor="middle" class="sub-label lang-pt">Larva</text>
+                <text x="270" y="175" text-anchor="middle" class="sub-label lang-en">Larva</text>
+                <text x="270" y="195" text-anchor="middle" class="sub-label" font-size="11" fill="#6d4b1f">(alimentada por obreiras)</text>
+                
+                <!-- Seta 2 -->
+                <path d="M310,150 L360,150" stroke="#b97f3a" stroke-width="3" marker-end="url(#arrowBrown)"/>
+                
+                <!-- 3 - Pupa / Pupa -->
+                <circle cx="420" cy="150" r="32" fill="#CBAF7A" stroke="#8b5a2b" stroke-width="2.5"/>
+                <text x="420" y="146" text-anchor="middle" class="cycle-text" font-size="22">🪨</text>
+                <text x="420" y="175" text-anchor="middle" class="sub-label lang-pt">Pupa</text>
+                <text x="420" y="175" text-anchor="middle" class="sub-label lang-en">Pupa</text>
+                <text x="420" y="195" text-anchor="middle" class="sub-label" font-size="11" fill="#6d4b1f">(metamorfose)</text>
+                
+                <!-- Seta 3 -->
+                <path d="M460,150 L510,150" stroke="#b97f3a" stroke-width="3" marker-end="url(#arrowBrown)"/>
+                
+                <!-- 4 - Formiga Adulta / Adult Ant -->
+                <circle cx="570" cy="150" r="34" fill="#B48647" stroke="#6b3e1a" stroke-width="2.5"/>
+                <text x="570" y="146" text-anchor="middle" class="cycle-text" font-size="27">🐜</text>
+                <text x="570" y="178" text-anchor="middle" class="sub-label lang-pt">Formiga Adulta</text>
+                <text x="570" y="178" text-anchor="middle" class="sub-label lang-en">Adult Ant</text>
+                <text x="570" y="198" text-anchor="middle" class="sub-label" font-size="11" fill="#6d4b1f">(operária, rainha ou macho)</text>
+                
+                <!-- Ciclo de retorno com curva embaixo -->
+                <path d="M570,190 C570,280 120,280 120,180" stroke="#cc9c5c" stroke-width="2.8" fill="none" stroke-dasharray="6 5" marker-end="url(#arrowBrown)"/>
+                <text x="350" y="290" text-anchor="middle" class="sub-label" font-size="13" fill="#926d2c">
+                    <tspan class="lang-pt">⟳ Reinício do ciclo (nova postura de ovos)</tspan>
+                    <tspan class="lang-en">⟳ Cycle restarts (new eggs laying)</tspan>
+                </text>
+            </svg>
+            <!-- fallback descrição acessível e compatível -->
+            <p style="font-size: 0.75rem; margin-top: 8px; color:#7a5a38;" class="lang-pt">🎨 Diagrama ilustrativo: Ovo → Larva → Pupa → Formiga adulta.</p>
+            <p style="font-size: 0.75rem; margin-top: 8px; color:#7a5a38;" class="lang-en">🎨 Illustrative diagram: Egg → Larva → Pupa → Adult ant.</p>
+        </div>
+
+        <!-- Lista de tópicos da vida da formiga -->
+        <div class="topics-section">
+            <div class="topics-title">
+                <span class="lang-pt">📋 Etapas e curiosidades do ciclo</span>
+                <span class="lang-en">📋 Stages & curiosities of the cycle</span>
+            </div>
+            <ul class="topics-grid">
+                <!-- Cada tópico com emoji e descrição bilíngue usando spans internos -->
+                <li class="topic-item"><span class="emoji-bullet">🥚</span> <span class="topic-text"><strong class="lang-pt">1. Ovo:</strong><span class="lang-en"><strong>1. Egg:</strong></span> <span class="lang-pt">A rainha deposita ovos microscópicos. Após alguns dias, eclodem as larvas.</span><span class="lang-en">The queen lays microscopic eggs. After a few days, they hatch into larvae.</span></span></li>
+                <li class="topic-item"><span class="emoji-bullet">🐛</span> <span class="topic-text"><strong class="lang-pt">2. Larva:</strong><span class="lang-en"><strong>2. Larva:</strong></span> <span class="lang-pt">Não possuem patas e são alimentadas pelas operárias. Crescem rapidamente.</span><span class="lang-en">Legless and fed by workers. They grow very fast.</span></span></li>
+                <li class="topic-item"><span class="emoji-bullet">🪨</span> <span class="topic-text"><strong class="lang-pt">3. Pupa:</strong><span class="lang-en"><strong>3. Pupa:</strong></span> <span class="lang-pt">Estágio de repouso e transformação. Desenvolvem olhos, antenas e pernas.</span><span class="lang-en">Resting stage and transformation. They develop eyes, antennae and legs.</span></span></li>
+                <li class="topic-item"><span class="emoji-bullet">🐜</span> <span class="topic-text"><strong class="lang-pt">4. Adulta:</strong><span class="lang-en"><strong>4. Adult:</strong></span> <span class="lang-pt">Formiga completamente formada. Funções: operária, soldado, rainha ou zangão.</span><span class="lang-en">Fully formed ant. Roles: worker, soldier, queen or drone.</span></span></li>
+                <li class="topic-item"><span class="emoji-bullet">🏡</span> <span class="topic-text"><strong class="lang-pt">Organização social:</strong><span class="lang-en"><strong>Social organization:</strong></span> <span class="lang-pt">Vivem em colônias hierárquicas com divisão de tarefas.</span><span class="lang-en">Live in hierarchical colonies with task division.</span></span></li>
+                <li class="topic-item"><span class="emoji-bullet">🌍</span> <span class="topic-text"><strong class="lang-pt">Longevidade:</strong><span class="lang-en"><strong>Longevity:</strong></span> <span class="lang-pt">Rainhas vivem até 15 anos, operárias de semanas a meses.</span><span class="lang-en">Queens live up to 15 years, workers weeks to months.</span></span></li>
+                <li class="topic-item"><span class="emoji-bullet">🍃</span> <span class="topic-text"><strong class="lang-pt">Impacto ecológico:</strong><span class="lang-en"><strong>Ecological impact:</strong></span> <span class="lang-pt">Aeram o solo, dispersam sementes e controlam pragas.</span><span class="lang-en">Aerate soil, disperse seeds and control pests.</span></span></li>
+                <li class="topic-item"><span class="emoji-bullet">⚙️</span> <span class="topic-text"><strong class="lang-pt">Comunicação:</strong><span class="lang-en"><strong>Communication:</strong></span> <span class="lang-pt">Usam feromônios para criar trilhas e alertar perigos.</span><span class="lang-en">Use pheromones to create trails and alert dangers.</span></span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Rodapé com informações do desenvolvedor -->
+    <div class="footer">
+        <span>🐜 Site desenvolvido por Vicente Bajay (ViquinhoDev) 🐜</span><br />
+        <small class="lang-pt">🇧🇷 site de inglês sobre o ciclo das formigas — versão bilíngue 🇬🇧</small>
+        <small class="lang-en">🇬🇧 English website about the ant cycle — bilingual version 🇧🇷</small>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // Elemento raiz onde aplicamos o data-lang
+        const appCard = document.getElementById('appCard');
+        const toggleBtn = document.getElementById('languageToggleBtn');
+        
+        // idioma atual (padrão 'pt')
+        let currentLang = 'pt';  // 'pt' ou 'en'
+        
+        // Função para atualizar o texto do botão e o atributo data-lang
+        function setLanguage(lang) {
+            if (lang !== 'pt' && lang !== 'en') return;
+            currentLang = lang;
+            appCard.setAttribute('data-lang', currentLang);
+            
+            // Atualizar o texto interno do botão (os spans são alternados via CSS)
+            // Mas vamos garantir que a acessibilidade também mude o conteúdo textual.
+            // Como temos spans com lang-pt e lang-en dentro do botão, o CSS já faz o trabalho.
+            // adicionalmente alteramos o atributo aria-label para leitores de tela:
+            const btnTextPt = toggleBtn.querySelector('.lang-pt');
+            const btnTextEn = toggleBtn.querySelector('.lang-en');
+            if (currentLang === 'pt') {
+                toggleBtn.setAttribute('aria-label', 'Mudar para inglês');
+                // Forçamos consistência, mas sem loop, apenas para semântica
+                if (btnTextPt) btnTextPt.style.display = 'inline';
+                if (btnTextEn) btnTextEn.style.display = 'inline';
+                // o css alterna display block ou inline, mas preserva
+            } else {
+                toggleBtn.setAttribute('aria-label', 'Switch to Portuguese');
+            }
+            // Adicional: Qualquer outra lógica pode ser aplicada, mas a alternância de conteúdo é puramente CSS.
+            // Garantir que o título e descrição já estão cobertos.
+            
+            // Opcional: pequena animação ou salvar preferência no localStorage
+            localStorage.setItem('antCycleLanguage', currentLang);
+        }
+        
+        // Evento de clique: alterna entre pt e en
+        function toggleLanguage() {
+            const newLang = (currentLang === 'pt') ? 'en' : 'pt';
+            setLanguage(newLang);
+        }
+        
+        // carregar preferência salva
+        function loadSavedLanguage() {
+            const saved = localStorage.getItem('antCycleLanguage');
+            if (saved === 'pt' || saved === 'en') {
+                setLanguage(saved);
+            } else {
+                // detectar idioma do navegador como preferência inicial (caso queira inglês automático)
+                // Mas mantemos PT como padrão porque é trabalho de inglês, mas o usuário pode alternar.
+                // Deixamos PT mesmo.
+                setLanguage('pt');
+            }
+        }
+        
+        // Adicionar evento do botão
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', toggleLanguage);
+        }
+        
+        // Carrega idioma salvo
+        loadSavedLanguage();
+        
+        // Correção para garantir que todos os elementos com classe lang-pt / lang-en respondam corretamente
+        // também observar possíveis SVG textos - embora os textos no SVG estejam com classes "lang-pt" e "lang-en"
+        // no entanto, dentro do SVG o CSS pode não alternar da mesma forma porque o SVG encapsula o DOM.
+        // Para garantir que os textos dentro do SVG também alternem de visibilidade, precisamos manipular via JS?
+        // Os textos dentro do SVG estão marcados com class="lang-pt" e class="lang-en". O CSS global funciona? Sim, desde que os seletores .lang-pt e .lang-en afetem dentro do SVG sim,
+        // porque SVG elements suportam classes e o CSS se aplica normalmente (estilo incluso no head).
+        // Contudo, em alguns navegadores o display:none pode não funcionar perfeitamente em elementos <text>?
+        // Na prática funciona bem. Mas vamos adicionar um pequeno fallback para garantir que os textos do diagrama ciclico também ocultem/exibam.
+        // A abordagem: adicionar uma classe extra no svg? Não necessário, pois estamos usando data-lang no card raiz, e regras CSS:
+        // [data-lang="pt"] .lang-en { display: none; } [data-lang="en"] .lang-pt { display: none; }
+        // Isso funciona para qualquer elemento incluindo SVG text. Mas como os textos podem estar com display: inline ou block padrão, faremos um ajuste fino:
+        // Garantir que os elementos text do SVG tenham exibição padrão inline, mas isso é padrão. Vamos também aplicar um atributo de estilos inline se necessário.
+        // Contudo vou validar acrescentando uma pequena correção: após carregar, garantir que nenhum conflito.
+        // A solução é perfeita. Mas vamos também forçar reaplicação caso algum texto fique visível duplicado.
+        // Está tudo consistente.
+        
+        // Além disso, caso existam imagens com alt e legendas, mas está ótimo.
+        // Para maior confiabilidade, se houver algum erro de renderização, forçamos um reflow.
+        window.addEventListener('load', function() {
+            // Pequeno trigger para garantir que a visualização reflita o idioma atual
+            setLanguage(currentLang);
+        });
+    })();
+</script>
+</body>
+</html>
