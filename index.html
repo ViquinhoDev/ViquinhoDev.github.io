@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ViquinhoDev | Portfólio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0b0b0f;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(11, 11, 15, 0.95);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #00d9ff;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.8);
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00d9ff;
+    }
+
+    section {
+      padding: 120px 8% 80px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero-text p.top {
+      color: #00d9ff;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    .hero-text h1 {
+      font-size: 70px;
+      line-height: 1.1;
+      margin-bottom: 25px;
+    }
+
+    .hero-text h1 span {
+      color: #00d9ff;
+    }
+
+    .hero-text p.desc {
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+      max-width: 650px;
+      font-size: 18px;
+    }
+
+    .buttons {
+      margin-top: 35px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 14px;
+      text-decoration: none;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    .btn-primary {
+      background: #00d9ff;
+      color: black;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-5px);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: #00d9ff;
+      color: #00d9ff;
+    }
+
+    .card-profile {
+      width: 350px;
+      height: 350px;
+      border-radius: 35px;
+      background: linear-gradient(135deg, rgba(0,217,255,0.15), rgba(0,89,255,0.1));
+      border: 1px solid rgba(0,217,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #00d9ff;
+      color: black;
+      font-size: 60px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .card-profile h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .card-profile p {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .title {
+      font-size: 45px;
+      margin-bottom: 30px;
+    }
+
+    .about p {
+      color: rgba(255,255,255,0.7);
+      line-height: 1.9;
+      margin-bottom: 20px;
+      max-width: 900px;
+    }
+
+    .skills {
+      margin-top: 35px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .skill {
+      padding: 14px 20px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 30px;
+      border-radius: 24px;
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(0,217,255,0.4);
+    }
+
+    .project-card h3 {
+      margin-bottom: 15px;
+      font-size: 28px;
+    }
+
+    .project-card p {
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .techs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tech {
+      background: rgba(0,217,255,0.1);
+      color: #7befff;
+      border: 1px solid rgba(0,217,255,0.2);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, rgba(0,217,255,0.1), rgba(0,89,255,0.08));
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 60px;
+      border-radius: 35px;
+      text-align: center;
+    }
+
+    .contact-box p {
+      color: rgba(255,255,255,0.7);
+      margin: 20px auto 35px;
+      max-width: 700px;
+      line-height: 1.8;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .socials a {
+      text-decoration: none;
+      color: white;
+      padding: 14px 22px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      border-color: #00d9ff;
+      color: #00d9ff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: rgba(255,255,255,0.4);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    @media(max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 50px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .card-profile {
+        width: 100%;
+        max-width: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Viquinho<span>Dev</span></div>
+
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <p class="top">Programador & Desenvolvedor</p>
+
+      <h1>
+        Olá, eu sou <br>
+        <span>Vicente</span>
+      </h1>
+
+      <p class="desc">
+        Sou Vicente Cisotto Bajay (ViquinhoDev), programador focado em criar experiências modernas para a web. Desenvolvo sites, jogos, interfaces interativas e scripts personalizados utilizando HTML, CSS, JavaScript, Python, Java e Bash.
+      </p>
+
+      <div class="buttons">
+        <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+        <a href="#contato" class="btn btn-outline">Contato</a>
+      </div>
+    </div>
+
+    <div class="card-profile">
+      <div>
+        <div class="avatar">V</div>
+        <h2>ViquinhoDev</h2>
+        <p>Web • Jogos • Scripts</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="about">
+    <h2 class="title">Sobre Mim</h2>
+
+    <p>
+      Atuo no desenvolvimento de sites modernos, experiências interativas, jogos e scripts personalizados. Meu foco é unir criatividade, desempenho e um visual profissional em cada projeto.
+    </p>
+
+    <p>
+      Tenho experiência com HTML, CSS, JavaScript, Python, Java e Bash criando projetos rápidos, responsivos e modernos.
+    </p>
+
+    <div class="skills">
+      <div class="skill">HTML5</div>
+      <div class="skill">CSS3</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Python</div>
+      <div class="skill">Java</div>
+      <div class="skill">Bash</div>
+      <div class="skill">UI Design</div>
+      <div class="skill">Game Interfaces</div>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <h2 class="title">Principais Projetos</h2>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <h3>ViquinhoChat</h3>
+
+        <p>
+          Serviço de chat privado e criptografado com interface moderna e tema gamer.
+        </p>
+
+        <div class="techs">
+          <div class="tech">HTML</div>
+          <div class="tech">CSS</div>
+          <div class="tech">JavaScript</div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>Farme Aura</h3>
+
+        <p>
+          Jogo estilo gamer dark com sistema de dificuldade e interface personalizada.
+        </p>
+
+        <div class="techs">
+          <div class="tech">JavaScript</div>
+          <div class="tech">CSS</div>
+          <div class="tech">Game Design</div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>Operação Taboi</h3>
+
+        <p>
+          Painel interativo com autenticação, calendário e sistema de informações.
+        </p>
+
+        <div class="techs">
+          <div class="tech">HTML</div>
+          <div class="tech">CSS</div>
+          <div class="tech">JavaScript</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="contact-box">
+      <h2 class="title">Vamos criar algo incrível.</h2>
+
+      <p>
+        Entre em contato para projetos, parcerias ou ideias criativas.
+      </p>
+
+      <div class="socials">
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://discord.com" target="_blank">Discord</a>
+        <a href="https://dev.to" target="_blank">Dev Community</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Desenvolvido por Vicente Cisotto Bajay (ViquinhoDev) • 2026
+  </footer>
+
+</body>
+</html>
