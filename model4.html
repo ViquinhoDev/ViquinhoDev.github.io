@@ -1,0 +1,543 @@
+<html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViquinhoDev — Portfólio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script crossorigin="" src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin="" src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.top-0{top:0px}.z-10{z-index:10}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mt-12{margin-top:3rem}.mt-2{margin-top:0.5rem}.mt-8{margin-top:2rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-14{height:3.5rem}.h-32{height:8rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-80{height:20rem}.min-h-\[calc\(100dvh-4\.5rem\)\]{min-height:calc(100dvh - 4.5rem)}.min-h-screen{min-height:100vh}.w-14{width:3.5rem}.w-32{width:8rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-80{width:20rem}.max-w-2xl{max-width:42rem}.max-w-6xl{max-width:72rem}.max-w-xl{max-width:36rem}.shrink-0{flex-shrink:0}.scroll-mt-24{scroll-margin-top:6rem}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-10{gap:2.5rem}.gap-12{gap:3rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-\[40px\]{border-radius:40px}.rounded-full{border-radius:9999px}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-cyan-400\/20{border-color:rgb(34 211 238 / 0.2)}.border-white\/10{border-color:rgb(255 255 255 / 0.1)}.border-white\/20{border-color:rgb(255 255 255 / 0.2)}.bg-\[\#0b0b0f\]{--tw-bg-opacity:1;background-color:rgb(11 11 15 / var(--tw-bg-opacity, 1))}.bg-\[\#0b0b0f\]\/90{background-color:rgb(11 11 15 / 0.9)}.bg-cyan-400{--tw-bg-opacity:1;background-color:rgb(34 211 238 / var(--tw-bg-opacity, 1))}.bg-cyan-400\/10{background-color:rgb(34 211 238 / 0.1)}.bg-white\/5{background-color:rgb(255 255 255 / 0.05)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.from-cyan-400\/10{--tw-gradient-from:rgb(34 211 238 / 0.1) var(--tw-gradient-from-position);--tw-gradient-to:rgb(34 211 238 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-cyan-400\/20{--tw-gradient-from:rgb(34 211 238 / 0.2) var(--tw-gradient-from-position);--tw-gradient-to:rgb(34 211 238 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-blue-600\/10{--tw-gradient-to:rgb(37 99 235 / 0.1) var(--tw-gradient-to-position)}.to-blue-600\/20{--tw-gradient-to:rgb(37 99 235 / 0.2) var(--tw-gradient-to-position)}.p-10{padding:2.5rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-24{padding-top:6rem;padding-bottom:6rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.text-center{text-align:center}.font-sans{font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"}.text-2xl{font-size:1.5rem;line-height:2rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-\[0\.3em\]{letter-spacing:0.3em}.tracking-wide{letter-spacing:0.025em}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.text-cyan-300{--tw-text-opacity:1;color:rgb(103 232 249 / var(--tw-text-opacity, 1))}.text-cyan-400{--tw-text-opacity:1;color:rgb(34 211 238 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-white\/50{color:rgb(255 255 255 / 0.5)}.text-white\/60{color:rgb(255 255 255 / 0.6)}.text-white\/70{color:rgb(255 255 255 / 0.7)}.text-white\/80{color:rgb(255 255 255 / 0.8)}.text-white\/90{color:rgb(255 255 255 / 0.9)}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-cyan-500\/10{--tw-shadow-color:rgb(6 182 212 / 0.1);--tw-shadow:var(--tw-shadow-colored)}.blur-3xl{--tw-blur:blur(64px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.hover\:-translate-y-2:hover{--tw-translate-y:-0.5rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-110:hover{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-cyan-400:hover{--tw-border-opacity:1;border-color:rgb(34 211 238 / var(--tw-border-opacity, 1))}.hover\:border-cyan-400\/40:hover{border-color:rgb(34 211 238 / 0.4)}.hover\:text-cyan-400:hover{--tw-text-opacity:1;color:rgb(34 211 238 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:text-cyan-400{--tw-text-opacity:1;color:rgb(34 211 238 / var(--tw-text-opacity, 1))}@media (min-width: 768px){.md\:mt-10{margin-top:2.5rem}.md\:flex{display:flex}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:gap-16{gap:4rem}.md\:p-16{padding:4rem}.md\:py-12{padding-top:3rem;padding-bottom:3rem}.md\:text-5xl{font-size:3rem;line-height:1}.md\:text-6xl{font-size:3.75rem;line-height:1}.md\:text-lg{font-size:1.125rem;line-height:1.75rem}}@media (min-width: 1024px){.lg\:text-7xl{font-size:4.5rem;line-height:1}}.\[\&\>svg\]\:h-full>svg{height:100%}.\[\&\>svg\]\:w-full>svg{width:100%}</style><script>const email = 'contato@viquinhodev.com';
+const telefone = '+55 (11) 99999-9999';
+function IconeRede({
+  children
+}) {
+  return /*#__PURE__*/React.createElement("span", {
+    className: "w-6 h-6 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full"
+  }, children);
+}
+function Portfolio() {
+  const projetos = [{
+    titulo: 'ViquinhoChat',
+    descricao: 'Serviço de chat privado e criptografado com interface moderna e tema gamer.',
+    tecnologias: ['HTML', 'CSS', 'JavaScript']
+  }, {
+    titulo: 'Farme Aura',
+    descricao: 'Jogo estilo gamer dark com sistema de dificuldade e interface personalizada.',
+    tecnologias: ['JavaScript', 'Game Design', 'CSS']
+  }, {
+    titulo: 'Operação Comunidade Taboi',
+    descricao: 'Painel interativo com autenticação, calendário e sistema de informações.',
+    tecnologias: ['HTML', 'CSS', 'JavaScript']
+  }];
+  const redes = [{
+    nome: 'Instagram',
+    link: 'https://instagram.com/',
+    icon: /*#__PURE__*/React.createElement(IconeRede, null, /*#__PURE__*/React.createElement("svg", {
+      viewBox: "0 0 24 24",
+      fill: "currentColor",
+      "aria-hidden": "true"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.427.403a4.92 4.92 0 0 1 1.78 1.153 4.92 4.92 0 0 1 1.153 1.78c.163.457.349 1.257.403 2.427.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.427a4.92 4.92 0 0 1-1.153 1.78 4.92 4.92 0 0 1-1.78 1.153c-.457.163-1.257.349-2.427.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.427-.403a4.92 4.92 0 0 1-1.78-1.153 4.92 4.92 0 0 1-1.153-1.78c-.163-.457-.349-1.257-.403-2.427C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.427a4.92 4.92 0 0 1 1.153-1.78 4.92 4.92 0 0 1 1.78-1.153c.457-.163 1.257-.349 2.427-.403C8.416 2.175 8.796 2.163 12 2.163zm0 1.622c-3.16 0-3.533.012-4.769.069-1.036.047-1.6.218-1.974.363a3.4 3.4 0 0 0-1.227.798 3.4 3.4 0 0 0-.798 1.227c-.145.374-.316.938-.363 1.974-.057 1.236-.069 1.609-.069 4.769s.012 3.533.069 4.769c.047 1.036.218 1.6.363 1.974.18.466.42.87.798 1.227a3.4 3.4 0 0 0 1.227.798c.374.145.938.316 1.974.363 1.236.057 1.609.069 4.769.069s3.533-.012 4.769-.069c1.036-.047 1.6-.218 1.974-.363a3.4 3.4 0 0 0 1.227-.798 3.4 3.4 0 0 0 .798-1.227c.145-.374.316-.938.363-1.974.057-1.236.069-1.609.069-4.769s-.012-3.533-.069-4.769c-.047-1.036-.218-1.6-.363-1.974a3.4 3.4 0 0 0-.798-1.227 3.4 3.4 0 0 0-1.227-.798c-.374-.145-.938-.316-1.974-.363-1.236-.057-1.609-.069-4.769-.069zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 1.622a3.378 3.378 0 1 1 0 6.756 3.378 3.378 0 0 1 0-6.756zm5.338-3.47a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"
+    })))
+  }, {
+    nome: 'LinkedIn',
+    link: 'https://linkedin.com/',
+    icon: /*#__PURE__*/React.createElement(IconeRede, null, /*#__PURE__*/React.createElement("svg", {
+      viewBox: "0 0 24 24",
+      fill: "currentColor",
+      "aria-hidden": "true"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+    })))
+  }, {
+    nome: 'Discord',
+    link: 'https://discord.com/',
+    icon: /*#__PURE__*/React.createElement(IconeRede, null, /*#__PURE__*/React.createElement("svg", {
+      viewBox: "0 0 24 24",
+      fill: "currentColor",
+      "aria-hidden": "true"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037 12.3 12.3 0 0 0-.608 1.25 18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"
+    })))
+  }, {
+    nome: 'Dev Community',
+    link: 'https://dev.to/',
+    icon: /*#__PURE__*/React.createElement(IconeRede, null, /*#__PURE__*/React.createElement("svg", {
+      viewBox: "0 0 24 24",
+      fill: "currentColor",
+      "aria-hidden": "true"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M7.42 10.05c-.18-.16-.46-.23-.84-.23H6.3V11h.28c.34 0 .61-.07.79-.21.18-.14.27-.35.27-.63 0-.28-.09-.49-.22-.11zm-.22 2.26c-.2.18-.5.27-.9.27H6.3v1.59h.9c.4 0 .7-.09.9-.27.2-.18.3-.44.3-.78 0-.34-.1-.6-.3-.78zm5.74-2.26c-.18-.16-.46-.23-.84-.23h-.28v1.18h.28c.34 0 .61-.07.79-.21.18-.14.27-.35.27-.63 0-.28-.09-.49-.22-.11zM12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.01 14.42h-1.58v2.84h-1.9v-2.84h-3.4v-1.58l3.4-4.86h1.9v4.5h1.58v1.74zm-8.29 0H6.3V6.78h2.84c.96 0 1.71.25 2.25.74.54.5.81 1.19.81 2.07 0 .88-.27 1.57-.81 2.07-.54.49-1.29.74-2.25.74z"
+    })))
+  }];
+  const skills = ['HTML5', 'CSS3', 'JavaScript', 'UI Design', 'Responsividade', 'Game Interfaces', 'Python', 'Java', 'Bash'];
+  return /*#__PURE__*/React.createElement("div", {
+    className: "min-h-screen bg-[#0b0b0f] text-white font-sans"
+  }, /*#__PURE__*/React.createElement("header", {
+    className: "border-b border-white/10 backdrop-blur sticky top-0 z-50 bg-[#0b0b0f]/90"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "max-w-6xl mx-auto flex items-center justify-between px-6 py-4"
+  }, /*#__PURE__*/React.createElement("h1", {
+    className: "text-2xl font-bold tracking-wide"
+  }, "Viquinho", /*#__PURE__*/React.createElement("span", {
+    className: "text-cyan-400"
+  }, "Dev")), /*#__PURE__*/React.createElement("nav", {
+    className: "hidden md:flex gap-8 text-sm text-white/80"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "#sobre",
+    className: "hover:text-cyan-400 transition"
+  }, "Sobre"), /*#__PURE__*/React.createElement("a", {
+    href: "#projetos",
+    className: "hover:text-cyan-400 transition"
+  }, "Projetos"), /*#__PURE__*/React.createElement("a", {
+    href: "#contato",
+    className: "hover:text-cyan-400 transition"
+  }, "Contato")))), /*#__PURE__*/React.createElement("section", {
+    id: "inicio",
+    className: "min-h-[calc(100dvh-4.5rem)] max-w-6xl mx-auto px-6 py-10 md:py-12 grid md:grid-cols-2 gap-10 md:gap-16 items-center"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
+    className: "text-cyan-400 text-sm uppercase tracking-[0.3em] mb-4"
+  }, "Programador & Desenvolvedor"), /*#__PURE__*/React.createElement("h2", {
+    className: "text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6"
+  }, "Ol\xE1, eu sou ", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+    className: "text-cyan-400"
+  }, "Vicente")), /*#__PURE__*/React.createElement("p", {
+    className: "text-white/70 text-base md:text-lg leading-relaxed max-w-xl"
+  }, "Sou Vicente Cisotto Bajay, tamb\xE9m conhecido como ViquinhoDev. Trabalho como programador de sites na web e desenvolvedor de scripts personalizados. Desenvolvo experi\xEAncias modernas para a web, interfaces criativas, jogos e sistemas utilizando HTML, CSS, JavaScript, Python, Java e Bash."), /*#__PURE__*/React.createElement("div", {
+    className: "flex flex-wrap gap-4 mt-8 md:mt-10"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "#projetos",
+    className: "px-6 py-3 rounded-2xl bg-cyan-400 text-black font-semibold hover:scale-105 transition"
+  }, "Ver Projetos"), /*#__PURE__*/React.createElement("a", {
+    href: "#contato",
+    className: "px-6 py-3 rounded-2xl border border-white/20 hover:border-cyan-400 hover:text-cyan-400 transition"
+  }, "Entrar em Contato"))), /*#__PURE__*/React.createElement("div", {
+    className: "flex justify-center"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "relative w-80 h-80 rounded-[40px] bg-gradient-to-br from-cyan-400/20 to-blue-600/20 border border-cyan-400/20 flex items-center justify-center shadow-2xl shadow-cyan-500/10"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "absolute inset-0 rounded-[40px] blur-3xl bg-cyan-400/10"
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "relative text-center z-10"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "w-32 h-32 rounded-full bg-cyan-400 flex items-center justify-center text-5xl font-black text-black mx-auto mb-6"
+  }, "V"), /*#__PURE__*/React.createElement("h3", {
+    className: "text-2xl font-bold"
+  }, "ViquinhoDev"), /*#__PURE__*/React.createElement("p", {
+    className: "text-white/60 mt-2"
+  }, "Web \u2022 Jogos \u2022 Scripts"))))), /*#__PURE__*/React.createElement("section", {
+    id: "sobre",
+    className: "max-w-6xl mx-auto px-6 py-24 scroll-mt-24"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "grid md:grid-cols-2 gap-12"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", {
+    className: "text-4xl font-bold mb-6"
+  }, "Sobre Mim"), /*#__PURE__*/React.createElement("p", {
+    className: "text-white/70 leading-relaxed mb-4"
+  }, "Sou Vicente Cisotto Bajay (ViquinhoDev), programador focado em criar experi\xEAncias modernas para a web. Desenvolvo sites, jogos, interfaces interativas e scripts personalizados utilizando HTML, CSS, JavaScript, Python, Java e Bash."), /*#__PURE__*/React.createElement("p", {
+    className: "text-white/70 leading-relaxed"
+  }, "Atuo no desenvolvimento de sites modernos, experi\xEAncias interativas, jogos e scripts personalizados. Meu foco \xE9 unir criatividade, desempenho e um visual profissional em cada projeto.")), /*#__PURE__*/React.createElement("div", {
+    className: "grid grid-cols-2 gap-4"
+  }, skills.map(skill => /*#__PURE__*/React.createElement("div", {
+    key: skill,
+    className: "p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-cyan-400/40 transition"
+  }, /*#__PURE__*/React.createElement("p", {
+    className: "font-semibold"
+  }, skill)))))), /*#__PURE__*/React.createElement("section", {
+    id: "projetos",
+    className: "max-w-6xl mx-auto px-6 py-20"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex items-center justify-between mb-12"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
+    className: "text-cyan-400 uppercase tracking-[0.3em] text-sm mb-3"
+  }, "Portf\xF3lio"), /*#__PURE__*/React.createElement("h3", {
+    className: "text-4xl font-bold"
+  }, "Principais Projetos"))), /*#__PURE__*/React.createElement("div", {
+    className: "grid md:grid-cols-3 gap-6"
+  }, projetos.map(projeto => /*#__PURE__*/React.createElement("div", {
+    key: projeto.titulo,
+    className: "group rounded-3xl border border-white/10 bg-white/5 p-6 hover:border-cyan-400/40 hover:-translate-y-2 transition duration-300"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "w-14 h-14 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-400 text-2xl mb-6"
+  }, '</>'), /*#__PURE__*/React.createElement("h4", {
+    className: "text-2xl font-bold mb-4 group-hover:text-cyan-400 transition"
+  }, projeto.titulo), /*#__PURE__*/React.createElement("p", {
+    className: "text-white/70 leading-relaxed mb-6"
+  }, projeto.descricao), /*#__PURE__*/React.createElement("div", {
+    className: "flex flex-wrap gap-2"
+  }, projeto.tecnologias.map(tech => /*#__PURE__*/React.createElement("span", {
+    key: tech,
+    className: "px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-sm text-cyan-300"
+  }, tech))))))), /*#__PURE__*/React.createElement("section", {
+    id: "contato",
+    className: "max-w-6xl mx-auto px-6 py-20"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "rounded-[40px] border border-white/10 bg-gradient-to-br from-cyan-400/10 to-blue-600/10 p-10 md:p-16 text-center"
+  }, /*#__PURE__*/React.createElement("h3", {
+    className: "text-4xl md:text-5xl font-black mb-6"
+  }, "Vamos criar algo incr\xEDvel."), /*#__PURE__*/React.createElement("p", {
+    className: "text-white/70 max-w-2xl mx-auto leading-relaxed mb-10"
+  }, "Entre em contato para projetos, parcerias ou ideias criativas."), /*#__PURE__*/React.createElement("div", {
+    className: "flex flex-col items-center gap-3 mb-10 text-lg"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: `mailto:${email}`,
+    className: "text-white/90 hover:text-cyan-400 transition flex items-center gap-3"
+  }, /*#__PURE__*/React.createElement("svg", {
+    className: "w-5 h-5 text-cyan-400 shrink-0",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    d: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+  })), email), /*#__PURE__*/React.createElement("a", {
+    href: `tel:${telefone.replace(/\s/g, '')}`,
+    className: "text-white/90 hover:text-cyan-400 transition flex items-center gap-3"
+  }, /*#__PURE__*/React.createElement("svg", {
+    className: "w-5 h-5 text-cyan-400 shrink-0",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    d: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+  })), telefone)), /*#__PURE__*/React.createElement("div", {
+    className: "flex flex-wrap justify-center gap-4"
+  }, redes.map(rede => /*#__PURE__*/React.createElement("a", {
+    key: rede.nome,
+    href: rede.link,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    "aria-label": rede.nome,
+    title: rede.nome,
+    className: "w-14 h-14 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-white/80 hover:border-cyan-400 hover:text-cyan-400 hover:scale-110 transition"
+  }, rede.icon))), /*#__PURE__*/React.createElement("div", {
+    className: "mt-12 text-white/50 text-sm"
+  }, "Desenvolvido por Vicente Cisotto Bajay (ViquinhoDev) \u2022 2026"))));
+}
+const rootEl = document.getElementById('root');
+if (rootEl) {
+  ReactDOM.createRoot(rootEl).render(/*#__PURE__*/React.createElement(Portfolio, null));
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJlbWFpbCIsInRlbGVmb25lIiwiSWNvbmVSZWRlIiwiY2hpbGRyZW4iLCJSZWFjdCIsImNyZWF0ZUVsZW1lbnQiLCJjbGFzc05hbWUiLCJQb3J0Zm9saW8iLCJwcm9qZXRvcyIsInRpdHVsbyIsImRlc2NyaWNhbyIsInRlY25vbG9naWFzIiwicmVkZXMiLCJub21lIiwibGluayIsImljb24iLCJ2aWV3Qm94IiwiZmlsbCIsImQiLCJza2lsbHMiLCJocmVmIiwiaWQiLCJtYXAiLCJza2lsbCIsImtleSIsInByb2pldG8iLCJ0ZWNoIiwic3Ryb2tlIiwic3Ryb2tlV2lkdGgiLCJzdHJva2VMaW5lY2FwIiwic3Ryb2tlTGluZWpvaW4iLCJyZXBsYWNlIiwicmVkZSIsInRhcmdldCIsInJlbCIsInRpdGxlIiwicm9vdEVsIiwiZG9jdW1lbnQiLCJnZXRFbGVtZW50QnlJZCIsIlJlYWN0RE9NIiwiY3JlYXRlUm9vdCIsInJlbmRlciJdLCJzb3VyY2VzIjpbIklubGluZSBCYWJlbCBzY3JpcHQiXSwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICBpbnRlcmZhY2UgUHJvamV0byB7XG4gICAgICAgIHRpdHVsbzogc3RyaW5nO1xuICAgICAgICBkZXNjcmljYW86IHN0cmluZztcbiAgICAgICAgdGVjbm9sb2dpYXM6IHN0cmluZ1tdO1xuICAgICAgfVxuXG4gICAgICBpbnRlcmZhY2UgUmVkZSB7XG4gICAgICAgIG5vbWU6IHN0cmluZztcbiAgICAgICAgbGluazogc3RyaW5nO1xuICAgICAgICBpY29uOiBKU1guRWxlbWVudDtcbiAgICAgIH1cblxuICAgICAgY29uc3QgZW1haWwgPSAnY29udGF0b0B2aXF1aW5ob2Rldi5jb20nO1xuICAgICAgY29uc3QgdGVsZWZvbmUgPSAnKzU1ICgxMSkgOTk5OTktOTk5OSc7XG5cbiAgICAgIGZ1bmN0aW9uIEljb25lUmVkZSh7IGNoaWxkcmVuIH06IHsgY2hpbGRyZW46IEpTWC5FbGVtZW50IH0pIHtcbiAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJ3LTYgaC02IGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIFsmPnN2Z106dy1mdWxsIFsmPnN2Z106aC1mdWxsXCI+XG4gICAgICAgICAgICB7Y2hpbGRyZW59XG4gICAgICAgICAgPC9zcGFuPlxuICAgICAgICApO1xuICAgICAgfVxuXG4gICAgICBmdW5jdGlvbiBQb3J0Zm9saW8oKTogSlNYLkVsZW1lbnQge1xuICAgICAgICBjb25zdCBwcm9qZXRvczogUHJvamV0b1tdID0gW1xuICAgICAgICAgIHtcbiAgICAgICAgICAgIHRpdHVsbzogJ1ZpcXVpbmhvQ2hhdCcsXG4gICAgICAgICAgICBkZXNjcmljYW86XG4gICAgICAgICAgICAgICdTZXJ2acOnbyBkZSBjaGF0IHByaXZhZG8gZSBjcmlwdG9ncmFmYWRvIGNvbSBpbnRlcmZhY2UgbW9kZXJuYSBlIHRlbWEgZ2FtZXIuJyxcbiAgICAgICAgICAgIHRlY25vbG9naWFzOiBbJ0hUTUwnLCAnQ1NTJywgJ0phdmFTY3JpcHQnXSxcbiAgICAgICAgICB9LFxuICAgICAgICAgIHtcbiAgICAgICAgICAgIHRpdHVsbzogJ0Zhcm1lIEF1cmEnLFxuICAgICAgICAgICAgZGVzY3JpY2FvOlxuICAgICAgICAgICAgICAnSm9nbyBlc3RpbG8gZ2FtZXIgZGFyayBjb20gc2lzdGVtYSBkZSBkaWZpY3VsZGFkZSBlIGludGVyZmFjZSBwZXJzb25hbGl6YWRhLicsXG4gICAgICAgICAgICB0ZWNub2xvZ2lhczogWydKYXZhU2NyaXB0JywgJ0dhbWUgRGVzaWduJywgJ0NTUyddLFxuICAgICAgICAgIH0sXG4gICAgICAgICAge1xuICAgICAgICAgICAgdGl0dWxvOiAnT3BlcmHDp8OjbyBDb211bmlkYWRlIFRhYm9pJyxcbiAgICAgICAgICAgIGRlc2NyaWNhbzpcbiAgICAgICAgICAgICAgJ1BhaW5lbCBpbnRlcmF0aXZvIGNvbSBhdXRlbnRpY2HDp8OjbywgY2FsZW5kw6FyaW8gZSBzaXN0ZW1hIGRlIGluZm9ybWHDp8O1ZXMuJyxcbiAgICAgICAgICAgIHRlY25vbG9naWFzOiBbJ0hUTUwnLCAnQ1NTJywgJ0phdmFTY3JpcHQnXSxcbiAgICAgICAgICB9LFxuICAgICAgICBdO1xuXG4gICAgICAgIGNvbnN0IHJlZGVzOiBSZWRlW10gPSBbXG4gICAgICAgICAge1xuICAgICAgICAgICAgbm9tZTogJ0luc3RhZ3JhbScsXG4gICAgICAgICAgICBsaW5rOiAnaHR0cHM6Ly9pbnN0YWdyYW0uY29tLycsXG4gICAgICAgICAgICBpY29uOiAoXG4gICAgICAgICAgICAgIDxJY29uZVJlZGU+XG4gICAgICAgICAgICAgICAgPHN2ZyB2aWV3Qm94PVwiMCAwIDI0IDI0XCIgZmlsbD1cImN1cnJlbnRDb2xvclwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPlxuICAgICAgICAgICAgICAgICAgPHBhdGggZD1cIk0xMiAyLjE2M2MzLjIwNCAwIDMuNTg0LjAxMiA0Ljg1LjA3IDEuMTcuMDU0IDEuOTcuMjQgMi40MjcuNDAzYTQuOTIgNC45MiAwIDAgMSAxLjc4IDEuMTUzIDQuOTIgNC45MiAwIDAgMSAxLjE1MyAxLjc4Yy4xNjMuNDU3LjM0OSAxLjI1Ny40MDMgMi40MjcuMDU4IDEuMjY2LjA3IDEuNjQ2LjA3IDQuODVzLS4wMTIgMy41ODQtLjA3IDQuODVjLS4wNTQgMS4xNy0uMjQgMS45Ny0uNDAzIDIuNDI3YTQuOTIgNC45MiAwIDAgMS0xLjE1MyAxLjc4IDQuOTIgNC45MiAwIDAgMS0xLjc4IDEuMTUzYy0uNDU3LjE2My0xLjI1Ny4zNDktMi40MjcuNDAzLTEuMjY2LjA1OC0xLjY0Ni4wNy00Ljg1LjA3cy0zLjU4NC0uMDEyLTQuODUtLjA3Yy0xLjE3LS4wNTQtMS45Ny0uMjQtMi40MjctLjQwM2E0LjkyIDQuOTIgMCAwIDEtMS43OC0xLjE1MyA0LjkyIDQuOTIgMCAwIDEtMS4xNTMtMS43OGMtLjE2My0uNDU3LS4zNDktMS4yNTctLjQwMy0yLjQyN0MyLjE3NSAxNS43NDcgMi4xNjMgMTUuMzY3IDIuMTYzIDEycy4wMTItMy41ODQuMDctNC44NWMuMDU0LTEuMTcuMjQtMS45Ny40MDMtMi40MjdhNC45MiA0LjkyIDAgMCAxIDEuMTUzLTEuNzggNC45MiA0LjkyIDAgMCAxIDEuNzgtMS4xNTNjLjQ1Ny0uMTYzIDEuMjU3LS4zNDkgMi40MjctLjQwM0M4LjQxNiAyLjE3NSA4Ljc5NiAyLjE2MyAxMiAyLjE2M3ptMCAxLjYyMmMtMy4xNiAwLTMuNTMzLjAxMi00Ljc2OS4wNjktMS4wMzYuMDQ3LTEuNi4yMTgtMS45NzQuMzYzYTMuNCAzLjQgMCAwIDAtMS4yMjcuNzk4IDMuNCAzLjQgMCAwIDAtLjc5OCAxLjIyN2MtLjE0NS4zNzQtLjMxNi45MzgtLjM2MyAxLjk3NC0uMDU3IDEuMjM2LS4wNjkgMS42MDktLjA2OSA0Ljc2OXMuMDEyIDMuNTMzLjA2OSA0Ljc2OWMuMDQ3IDEuMDM2LjIxOCAxLjYuMzYzIDEuOTc0LjE4LjQ2Ni40Mi44Ny43OTggMS4yMjdhMy40IDMuNCAwIDAgMCAxLjIyNy43OThjLjM3NC4xNDUuOTM4LjMxNiAxLjk3NC4zNjMgMS4yMzYuMDU3IDEuNjA5LjA2OSA0Ljc2OS4wNjlzMy41MzMtLjAxMiA0Ljc2OS0uMDY5YzEuMDM2LS4wNDcgMS42LS4yMTggMS45NzQtLjM2M2EzLjQgMy40IDAgMCAwIDEuMjI3LS43OTggMy40IDMuNCAwIDAgMCAuNzk4LTEuMjI3Yy4xNDUtLjM3NC4zMTYtLjkzOC4zNjMtMS45NzQuMDU3LTEuMjM2LjA2OS0xLjYwOS4wNjktNC43NjlzLS4wMTItMy41MzMtLjA2OS00Ljc2OWMtLjA0Ny0xLjAzNi0uMjE4LTEuNi0uMzYzLTEuOTc0YTMuNCAzLjQgMCAwIDAtLjc5OC0xLjIyNyAzLjQgMy40IDAgMCAwLTEuMjI3LS43OThjLS4zNzQtLjE0NS0uOTM4LS4zMTYtMS45NzQtLjM2My0xLjIzNi0uMDU3LTEuNjA5LS4wNjktNC43NjktLjA2OXpNMTIgN2E1IDUgMCAxIDAgMCAxMCA1IDUgMCAwIDAgMC0xMHptMCAxLjYyMmEzLjM3OCAzLjM3OCAwIDEgMSAwIDYuNzU2IDMuMzc4IDMuMzc4IDAgMCAxIDAtNi43NTZ6bTUuMzM4LTMuNDdhMS4yIDEuMiAwIDEgMCAwIDIuNCAxLjIgMS4yIDAgMCAwIDAtMi40elwiIC8+XG4gICAgICAgICAgICAgICAgPC9zdmc+XG4gICAgICAgICAgICAgIDwvSWNvbmVSZWRlPlxuICAgICAgICAgICAgKSxcbiAgICAgICAgICB9LFxuICAgICAgICAgIHtcbiAgICAgICAgICAgIG5vbWU6ICdMaW5rZWRJbicsXG4gICAgICAgICAgICBsaW5rOiAnaHR0cHM6Ly9saW5rZWRpbi5jb20vJyxcbiAgICAgICAgICAgIGljb246IChcbiAgICAgICAgICAgICAgPEljb25lUmVkZT5cbiAgICAgICAgICAgICAgICA8c3ZnIHZpZXdCb3g9XCIwIDAgMjQgMjRcIiBmaWxsPVwiY3VycmVudENvbG9yXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+XG4gICAgICAgICAgICAgICAgICA8cGF0aCBkPVwiTTIwLjQ0NyAyMC40NTJoLTMuNTU0di01LjU2OWMwLTEuMzI4LS4wMjctMy4wMzctMS44NTItMy4wMzctMS44NTMgMC0yLjEzNiAxLjQ0NS0yLjEzNiAyLjkzOXY1LjY2N0g5LjM1MVY5aDMuNDE0djEuNTYxaC4wNDZjLjQ3Ny0uOSAxLjYzNy0xLjg1IDMuMzctMS44NSAzLjYwMSAwIDQuMjY3IDIuMzcgNC4yNjcgNS40NTV2Ni4yODZ6TTUuMzM3IDcuNDMzYTIuMDYyIDIuMDYyIDAgMCAxLTIuMDYzLTIuMDY1IDIuMDY0IDIuMDY0IDAgMSAxIDIuMDYzIDIuMDY1em0xLjc4MiAxMy4wMTlIMy41NTVWOWgzLjU2NHYxMS40NTJ6TTIyLjIyNSAwSDEuNzcxQy43OTIgMCAwIC43NzQgMCAxLjcyOXYyMC41NDJDMCAyMy4yMjcuNzkyIDI0IDEuNzcxIDI0aDIwLjQ1MUMyMy4yIDI0IDI0IDIzLjIyNyAyNCAyMi4yNzFWMS43MjlDMjQgLjc3NCAyMy4yIDAgMjIuMjIyIDBoLjAwM3pcIiAvPlxuICAgICAgICAgICAgICAgIDwvc3ZnPlxuICAgICAgICAgICAgICA8L0ljb25lUmVkZT5cbiAgICAgICAgICAgICksXG4gICAgICAgICAgfSxcbiAgICAgICAgICB7XG4gICAgICAgICAgICBub21lOiAnRGlzY29yZCcsXG4gICAgICAgICAgICBsaW5rOiAnaHR0cHM6Ly9kaXNjb3JkLmNvbS8nLFxuICAgICAgICAgICAgaWNvbjogKFxuICAgICAgICAgICAgICA8SWNvbmVSZWRlPlxuICAgICAgICAgICAgICAgIDxzdmcgdmlld0JveD1cIjAgMCAyNCAyNFwiIGZpbGw9XCJjdXJyZW50Q29sb3JcIiBhcmlhLWhpZGRlbj1cInRydWVcIj5cbiAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9XCJNMjAuMzE3IDQuMzdhMTkuNzkxIDE5Ljc5MSAwIDAgMC00Ljg4NS0xLjUxNS4wNzQuMDc0IDAgMCAwLS4wNzkuMDM3IDEyLjMgMTIuMyAwIDAgMC0uNjA4IDEuMjUgMTguMjcgMTguMjcgMCAwIDAtNS40ODcgMCAxMi42NCAxMi42NCAwIDAgMC0uNjE3LTEuMjUuMDc3LjA3NyAwIDAgMC0uMDc5LS4wMzdBMTkuNzM2IDE5LjczNiAwIDAgMCAzLjY3NyA0LjM3YS4wNy4wNyAwIDAgMC0uMDMyLjAyN0MuNTMzIDkuMDQ2LS4zMiAxMy41OC4wOTkgMTguMDU3YS4wODIuMDgyIDAgMCAwIC4wMzEuMDU3IDE5LjkgMTkuOSAwIDAgMCA1Ljk5MyAzLjAzLjA3OC4wNzggMCAwIDAgLjA4NC0uMDI4IDE0LjA5IDE0LjA5IDAgMCAwIDEuMjI2LTEuOTk0LjA3Ni4wNzYgMCAwIDAtLjA0MS0uMTA2IDEzLjEwNyAxMy4xMDcgMCAwIDEtMS44NzItLjg5Mi4wNzcuMDc3IDAgMCAxLS4wMDgtLjEyOCAxMC4yIDEwLjIgMCAwIDAgLjM3Mi0uMjkyLjA3NC4wNzQgMCAwIDEgLjA3Ny0uMDFjMy45MjggMS43OTMgOC4xOCAxLjc5MyAxMi4wNjIgMGEuMDc0LjA3NCAwIDAgMSAuMDc4LjAxYy4xMi4wOTguMjQ2LjE5OC4zNzMuMjkyYS4wNzcuMDc3IDAgMCAxLS4wMDYuMTI3IDEyLjI5OSAxMi4yOTkgMCAwIDEtMS44NzMuODkyLjA3Ny4wNzcgMCAwIDAtLjA0MS4xMDdjLjM2LjY5OC43NzIgMS4zNjIgMS4yMjUgMS45OTNhLjA3Ni4wNzYgMCAwIDAgLjA4NC4wMjggMTkuODM5IDE5LjgzOSAwIDAgMCA2LjAwMi0zLjAzLjA3Ny4wNzcgMCAwIDAgLjAzMi0uMDU0Yy41LTUuMTc3LS44MzgtOS42NzQtMy41NDktMTMuNjZhLjA2MS4wNjEgMCAwIDAtLjAzMS0uMDN6TTguMDIgMTUuMzNjLTEuMTgzIDAtMi4xNTctMS4wODUtMi4xNTctMi40MTkgMC0xLjMzMy45NTYtMi40MTkgMi4xNTctMi40MTkgMS4yMSAwIDIuMTc2IDEuMDk2IDIuMTU3IDIuNDIgMCAxLjMzMy0uOTU2IDIuNDE4LTIuMTU3IDIuNDE4em03Ljk3NSAwYy0xLjE4MyAwLTIuMTU3LTEuMDg1LTIuMTU3LTIuNDE5IDAtMS4zMzMuOTU1LTIuNDE5IDIuMTU3LTIuNDE5IDEuMjEgMCAyLjE3NiAxLjA5NiAyLjE1NyAyLjQyIDAgMS4zMzMtLjk0NiAyLjQxOC0yLjE1NyAyLjQxOHpcIiAvPlxuICAgICAgICAgICAgICAgIDwvc3ZnPlxuICAgICAgICAgICAgICA8L0ljb25lUmVkZT5cbiAgICAgICAgICAgICksXG4gICAgICAgICAgfSxcbiAgICAgICAgICB7XG4gICAgICAgICAgICBub21lOiAnRGV2IENvbW11bml0eScsXG4gICAgICAgICAgICBsaW5rOiAnaHR0cHM6Ly9kZXYudG8vJyxcbiAgICAgICAgICAgIGljb246IChcbiAgICAgICAgICAgICAgPEljb25lUmVkZT5cbiAgICAgICAgICAgICAgICA8c3ZnIHZpZXdCb3g9XCIwIDAgMjQgMjRcIiBmaWxsPVwiY3VycmVudENvbG9yXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+XG4gICAgICAgICAgICAgICAgICA8cGF0aCBkPVwiTTcuNDIgMTAuMDVjLS4xOC0uMTYtLjQ2LS4yMy0uODQtLjIzSDYuM1YxMWguMjhjLjM0IDAgLjYxLS4wNy43OS0uMjEuMTgtLjE0LjI3LS4zNS4yNy0uNjMgMC0uMjgtLjA5LS40OS0uMjItLjExem0tLjIyIDIuMjZjLS4yLjE4LS41LjI3LS45LjI3SDYuM3YxLjU5aC45Yy40IDAgLjctLjA5LjktLjI3LjItLjE4LjMtLjQ0LjMtLjc4IDAtLjM0LS4xLS42LS4zLS43OHptNS43NC0yLjI2Yy0uMTgtLjE2LS40Ni0uMjMtLjg0LS4yM2gtLjI4djEuMThoLjI4Yy4zNCAwIC42MS0uMDcuNzktLjIxLjE4LS4xNC4yNy0uMzUuMjctLjYzIDAtLjI4LS4wOS0uNDktLjIyLS4xMXpNMTIgMEM1LjM3IDAgMCA1LjM3IDAgMTJzNS4zNyAxMiAxMiAxMiAxMi01LjM3IDEyLTEyUzE4LjYzIDAgMTIgMHptNS4wMSAxNC40MmgtMS41OHYyLjg0aC0xLjl2LTIuODRoLTMuNHYtMS41OGwzLjQtNC44NmgxLjl2NC41aDEuNTh2MS43NHptLTguMjkgMEg2LjNWNi43OGgyLjg0Yy45NiAwIDEuNzEuMjUgMi4yNS43NC41NC41LjgxIDEuMTkuODEgMi4wNyAwIC44OC0uMjcgMS41Ny0uODEgMi4wNy0uNTQuNDktMS4yOS43NC0yLjI1Ljc0elwiIC8+XG4gICAgICAgICAgICAgICAgPC9zdmc+XG4gICAgICAgICAgICAgIDwvSWNvbmVSZWRlPlxuICAgICAgICAgICAgKSxcbiAgICAgICAgICB9LFxuICAgICAgICBdO1xuXG4gICAgICAgIGNvbnN0IHNraWxsczogc3RyaW5nW10gPSBbXG4gICAgICAgICAgJ0hUTUw1JyxcbiAgICAgICAgICAnQ1NTMycsXG4gICAgICAgICAgJ0phdmFTY3JpcHQnLFxuICAgICAgICAgICdVSSBEZXNpZ24nLFxuICAgICAgICAgICdSZXNwb25zaXZpZGFkZScsXG4gICAgICAgICAgJ0dhbWUgSW50ZXJmYWNlcycsXG4gICAgICAgICAgJ1B5dGhvbicsXG4gICAgICAgICAgJ0phdmEnLFxuICAgICAgICAgICdCYXNoJyxcbiAgICAgICAgXTtcblxuICAgICAgICByZXR1cm4gKFxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwibWluLWgtc2NyZWVuIGJnLVsjMGIwYjBmXSB0ZXh0LXdoaXRlIGZvbnQtc2Fuc1wiPlxuICAgICAgICAgICAgPGhlYWRlciBjbGFzc05hbWU9XCJib3JkZXItYiBib3JkZXItd2hpdGUvMTAgYmFja2Ryb3AtYmx1ciBzdGlja3kgdG9wLTAgei01MCBiZy1bIzBiMGIwZl0vOTBcIj5cbiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJtYXgtdy02eGwgbXgtYXV0byBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW4gcHgtNiBweS00XCI+XG4gICAgICAgICAgICAgICAgPGgxIGNsYXNzTmFtZT1cInRleHQtMnhsIGZvbnQtYm9sZCB0cmFja2luZy13aWRlXCI+XG4gICAgICAgICAgICAgICAgICBWaXF1aW5obzxzcGFuIGNsYXNzTmFtZT1cInRleHQtY3lhbi00MDBcIj5EZXY8L3NwYW4+XG4gICAgICAgICAgICAgICAgPC9oMT5cblxuICAgICAgICAgICAgICAgIDxuYXYgY2xhc3NOYW1lPVwiaGlkZGVuIG1kOmZsZXggZ2FwLTggdGV4dC1zbSB0ZXh0LXdoaXRlLzgwXCI+XG4gICAgICAgICAgICAgICAgICA8YSBocmVmPVwiI3NvYnJlXCIgY2xhc3NOYW1lPVwiaG92ZXI6dGV4dC1jeWFuLTQwMCB0cmFuc2l0aW9uXCI+XG4gICAgICAgICAgICAgICAgICAgIFNvYnJlXG4gICAgICAgICAgICAgICAgICA8L2E+XG4gICAgICAgICAgICAgICAgICA8YSBocmVmPVwiI3Byb2pldG9zXCIgY2xhc3NOYW1lPVwiaG92ZXI6dGV4dC1jeWFuLTQwMCB0cmFuc2l0aW9uXCI+XG4gICAgICAgICAgICAgICAgICAgIFByb2pldG9zXG4gICAgICAgICAgICAgICAgICA8L2E+XG4gICAgICAgICAgICAgICAgICA8YSBocmVmPVwiI2NvbnRhdG9cIiBjbGFzc05hbWU9XCJob3Zlcjp0ZXh0LWN5YW4tNDAwIHRyYW5zaXRpb25cIj5cbiAgICAgICAgICAgICAgICAgICAgQ29udGF0b1xuICAgICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICAgIDwvbmF2PlxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDwvaGVhZGVyPlxuXG4gICAgICAgICAgICA8c2VjdGlvblxuICAgICAgICAgICAgICBpZD1cImluaWNpb1wiXG4gICAgICAgICAgICAgIGNsYXNzTmFtZT1cIm1pbi1oLVtjYWxjKDEwMGR2aC00LjVyZW0pXSBtYXgtdy02eGwgbXgtYXV0byBweC02IHB5LTEwIG1kOnB5LTEyIGdyaWQgbWQ6Z3JpZC1jb2xzLTIgZ2FwLTEwIG1kOmdhcC0xNiBpdGVtcy1jZW50ZXJcIlxuICAgICAgICAgICAgPlxuICAgICAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cInRleHQtY3lhbi00MDAgdGV4dC1zbSB1cHBlcmNhc2UgdHJhY2tpbmctWzAuM2VtXSBtYi00XCI+XG4gICAgICAgICAgICAgICAgICBQcm9ncmFtYWRvciAmIERlc2Vudm9sdmVkb3JcbiAgICAgICAgICAgICAgICA8L3A+XG5cbiAgICAgICAgICAgICAgICA8aDIgY2xhc3NOYW1lPVwidGV4dC00eGwgbWQ6dGV4dC02eGwgbGc6dGV4dC03eGwgZm9udC1ibGFjayBsZWFkaW5nLXRpZ2h0IG1iLTZcIj5cbiAgICAgICAgICAgICAgICAgIE9sw6EsIGV1IHNvdSA8YnIgLz5cbiAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cInRleHQtY3lhbi00MDBcIj5WaWNlbnRlPC9zcGFuPlxuICAgICAgICAgICAgICAgIDwvaDI+XG5cbiAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9XCJ0ZXh0LXdoaXRlLzcwIHRleHQtYmFzZSBtZDp0ZXh0LWxnIGxlYWRpbmctcmVsYXhlZCBtYXgtdy14bFwiPlxuICAgICAgICAgICAgICAgICAgU291IFZpY2VudGUgQ2lzb3R0byBCYWpheSwgdGFtYsOpbSBjb25oZWNpZG8gY29tbyBWaXF1aW5ob0Rldi5cbiAgICAgICAgICAgICAgICAgIFRyYWJhbGhvIGNvbW8gcHJvZ3JhbWFkb3IgZGUgc2l0ZXMgbmEgd2ViIGUgZGVzZW52b2x2ZWRvciBkZVxuICAgICAgICAgICAgICAgICAgc2NyaXB0cyBwZXJzb25hbGl6YWRvcy4gRGVzZW52b2x2byBleHBlcmnDqm5jaWFzIG1vZGVybmFzIHBhcmEgYVxuICAgICAgICAgICAgICAgICAgd2ViLCBpbnRlcmZhY2VzIGNyaWF0aXZhcywgam9nb3MgZSBzaXN0ZW1hcyB1dGlsaXphbmRvIEhUTUwsXG4gICAgICAgICAgICAgICAgICBDU1MsIEphdmFTY3JpcHQsIFB5dGhvbiwgSmF2YSBlIEJhc2guXG4gICAgICAgICAgICAgICAgPC9wPlxuXG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGZsZXgtd3JhcCBnYXAtNCBtdC04IG1kOm10LTEwXCI+XG4gICAgICAgICAgICAgICAgICA8YVxuICAgICAgICAgICAgICAgICAgICBocmVmPVwiI3Byb2pldG9zXCJcbiAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwicHgtNiBweS0zIHJvdW5kZWQtMnhsIGJnLWN5YW4tNDAwIHRleHQtYmxhY2sgZm9udC1zZW1pYm9sZCBob3ZlcjpzY2FsZS0xMDUgdHJhbnNpdGlvblwiXG4gICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgIFZlciBQcm9qZXRvc1xuICAgICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICAgICAgPGFcbiAgICAgICAgICAgICAgICAgICAgaHJlZj1cIiNjb250YXRvXCJcbiAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwicHgtNiBweS0zIHJvdW5kZWQtMnhsIGJvcmRlciBib3JkZXItd2hpdGUvMjAgaG92ZXI6Ym9yZGVyLWN5YW4tNDAwIGhvdmVyOnRleHQtY3lhbi00MDAgdHJhbnNpdGlvblwiXG4gICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgIEVudHJhciBlbSBDb250YXRvXG4gICAgICAgICAgICAgICAgICA8L2E+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBqdXN0aWZ5LWNlbnRlclwiPlxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwicmVsYXRpdmUgdy04MCBoLTgwIHJvdW5kZWQtWzQwcHhdIGJnLWdyYWRpZW50LXRvLWJyIGZyb20tY3lhbi00MDAvMjAgdG8tYmx1ZS02MDAvMjAgYm9yZGVyIGJvcmRlci1jeWFuLTQwMC8yMCBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciBzaGFkb3ctMnhsIHNoYWRvdy1jeWFuLTUwMC8xMFwiPlxuICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJhYnNvbHV0ZSBpbnNldC0wIHJvdW5kZWQtWzQwcHhdIGJsdXItM3hsIGJnLWN5YW4tNDAwLzEwXCI+PC9kaXY+XG4gICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInJlbGF0aXZlIHRleHQtY2VudGVyIHotMTBcIj5cbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJ3LTMyIGgtMzIgcm91bmRlZC1mdWxsIGJnLWN5YW4tNDAwIGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHRleHQtNXhsIGZvbnQtYmxhY2sgdGV4dC1ibGFjayBteC1hdXRvIG1iLTZcIj5cbiAgICAgICAgICAgICAgICAgICAgICBWXG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgICA8aDMgY2xhc3NOYW1lPVwidGV4dC0yeGwgZm9udC1ib2xkXCI+VmlxdWluaG9EZXY8L2gzPlxuICAgICAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9XCJ0ZXh0LXdoaXRlLzYwIG10LTJcIj5XZWIg4oCiIEpvZ29zIOKAoiBTY3JpcHRzPC9wPlxuICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPC9zZWN0aW9uPlxuXG4gICAgICAgICAgICA8c2VjdGlvbiBpZD1cInNvYnJlXCIgY2xhc3NOYW1lPVwibWF4LXctNnhsIG14LWF1dG8gcHgtNiBweS0yNCBzY3JvbGwtbXQtMjRcIj5cbiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJncmlkIG1kOmdyaWQtY29scy0yIGdhcC0xMlwiPlxuICAgICAgICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICAgICAgICA8aDMgY2xhc3NOYW1lPVwidGV4dC00eGwgZm9udC1ib2xkIG1iLTZcIj5Tb2JyZSBNaW08L2gzPlxuICAgICAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPVwidGV4dC13aGl0ZS83MCBsZWFkaW5nLXJlbGF4ZWQgbWItNFwiPlxuICAgICAgICAgICAgICAgICAgICBTb3UgVmljZW50ZSBDaXNvdHRvIEJhamF5IChWaXF1aW5ob0RldiksIHByb2dyYW1hZG9yIGZvY2Fkb1xuICAgICAgICAgICAgICAgICAgICBlbSBjcmlhciBleHBlcmnDqm5jaWFzIG1vZGVybmFzIHBhcmEgYSB3ZWIuIERlc2Vudm9sdm8gc2l0ZXMsXG4gICAgICAgICAgICAgICAgICAgIGpvZ29zLCBpbnRlcmZhY2VzIGludGVyYXRpdmFzIGUgc2NyaXB0cyBwZXJzb25hbGl6YWRvc1xuICAgICAgICAgICAgICAgICAgICB1dGlsaXphbmRvIEhUTUwsIENTUywgSmF2YVNjcmlwdCwgUHl0aG9uLCBKYXZhIGUgQmFzaC5cbiAgICAgICAgICAgICAgICAgIDwvcD5cbiAgICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cInRleHQtd2hpdGUvNzAgbGVhZGluZy1yZWxheGVkXCI+XG4gICAgICAgICAgICAgICAgICAgIEF0dW8gbm8gZGVzZW52b2x2aW1lbnRvIGRlIHNpdGVzIG1vZGVybm9zLCBleHBlcmnDqm5jaWFzXG4gICAgICAgICAgICAgICAgICAgIGludGVyYXRpdmFzLCBqb2dvcyBlIHNjcmlwdHMgcGVyc29uYWxpemFkb3MuIE1ldSBmb2NvIMOpIHVuaXJcbiAgICAgICAgICAgICAgICAgICAgY3JpYXRpdmlkYWRlLCBkZXNlbXBlbmhvIGUgdW0gdmlzdWFsIHByb2Zpc3Npb25hbCBlbSBjYWRhXG4gICAgICAgICAgICAgICAgICAgIHByb2pldG8uXG4gICAgICAgICAgICAgICAgICA8L3A+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImdyaWQgZ3JpZC1jb2xzLTIgZ2FwLTRcIj5cbiAgICAgICAgICAgICAgICAgIHtza2lsbHMubWFwKChza2lsbCkgPT4gKFxuICAgICAgICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgICAgICAga2V5PXtza2lsbH1cbiAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJwLTUgcm91bmRlZC0yeGwgYm9yZGVyIGJvcmRlci13aGl0ZS8xMCBiZy13aGl0ZS81IGhvdmVyOmJvcmRlci1jeWFuLTQwMC80MCB0cmFuc2l0aW9uXCJcbiAgICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cImZvbnQtc2VtaWJvbGRcIj57c2tpbGx9PC9wPlxuICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgICkpfVxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDwvc2VjdGlvbj5cblxuICAgICAgICAgICAgPHNlY3Rpb24gaWQ9XCJwcm9qZXRvc1wiIGNsYXNzTmFtZT1cIm1heC13LTZ4bCBteC1hdXRvIHB4LTYgcHktMjBcIj5cbiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW4gbWItMTJcIj5cbiAgICAgICAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPVwidGV4dC1jeWFuLTQwMCB1cHBlcmNhc2UgdHJhY2tpbmctWzAuM2VtXSB0ZXh0LXNtIG1iLTNcIj5cbiAgICAgICAgICAgICAgICAgICAgUG9ydGbDs2xpb1xuICAgICAgICAgICAgICAgICAgPC9wPlxuICAgICAgICAgICAgICAgICAgPGgzIGNsYXNzTmFtZT1cInRleHQtNHhsIGZvbnQtYm9sZFwiPlByaW5jaXBhaXMgUHJvamV0b3M8L2gzPlxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImdyaWQgbWQ6Z3JpZC1jb2xzLTMgZ2FwLTZcIj5cbiAgICAgICAgICAgICAgICB7cHJvamV0b3MubWFwKChwcm9qZXRvKSA9PiAoXG4gICAgICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgICAgIGtleT17cHJvamV0by50aXR1bG99XG4gICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImdyb3VwIHJvdW5kZWQtM3hsIGJvcmRlciBib3JkZXItd2hpdGUvMTAgYmctd2hpdGUvNSBwLTYgaG92ZXI6Ym9yZGVyLWN5YW4tNDAwLzQwIGhvdmVyOi10cmFuc2xhdGUteS0yIHRyYW5zaXRpb24gZHVyYXRpb24tMzAwXCJcbiAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJ3LTE0IGgtMTQgcm91bmRlZC0yeGwgYmctY3lhbi00MDAvMTAgYm9yZGVyIGJvcmRlci1jeWFuLTQwMC8yMCBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciB0ZXh0LWN5YW4tNDAwIHRleHQtMnhsIG1iLTZcIj5cbiAgICAgICAgICAgICAgICAgICAgICB7JzwvPid9XG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgICA8aDQgY2xhc3NOYW1lPVwidGV4dC0yeGwgZm9udC1ib2xkIG1iLTQgZ3JvdXAtaG92ZXI6dGV4dC1jeWFuLTQwMCB0cmFuc2l0aW9uXCI+XG4gICAgICAgICAgICAgICAgICAgICAge3Byb2pldG8udGl0dWxvfVxuICAgICAgICAgICAgICAgICAgICA8L2g0PlxuICAgICAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9XCJ0ZXh0LXdoaXRlLzcwIGxlYWRpbmctcmVsYXhlZCBtYi02XCI+XG4gICAgICAgICAgICAgICAgICAgICAge3Byb2pldG8uZGVzY3JpY2FvfVxuICAgICAgICAgICAgICAgICAgICA8L3A+XG4gICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBmbGV4LXdyYXAgZ2FwLTJcIj5cbiAgICAgICAgICAgICAgICAgICAgICB7cHJvamV0by50ZWNub2xvZ2lhcy5tYXAoKHRlY2gpID0+IChcbiAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuXG4gICAgICAgICAgICAgICAgICAgICAgICAgIGtleT17dGVjaH1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwicHgtMyBweS0xIHJvdW5kZWQtZnVsbCBiZy1jeWFuLTQwMC8xMCBib3JkZXIgYm9yZGVyLWN5YW4tNDAwLzIwIHRleHQtc20gdGV4dC1jeWFuLTMwMFwiXG4gICAgICAgICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgICAgICAgIHt0ZWNofVxuICAgICAgICAgICAgICAgICAgICAgICAgPC9zcGFuPlxuICAgICAgICAgICAgICAgICAgICAgICkpfVxuICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICkpfVxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDwvc2VjdGlvbj5cblxuICAgICAgICAgICAgPHNlY3Rpb24gaWQ9XCJjb250YXRvXCIgY2xhc3NOYW1lPVwibWF4LXctNnhsIG14LWF1dG8gcHgtNiBweS0yMFwiPlxuICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInJvdW5kZWQtWzQwcHhdIGJvcmRlciBib3JkZXItd2hpdGUvMTAgYmctZ3JhZGllbnQtdG8tYnIgZnJvbS1jeWFuLTQwMC8xMCB0by1ibHVlLTYwMC8xMCBwLTEwIG1kOnAtMTYgdGV4dC1jZW50ZXJcIj5cbiAgICAgICAgICAgICAgICA8aDMgY2xhc3NOYW1lPVwidGV4dC00eGwgbWQ6dGV4dC01eGwgZm9udC1ibGFjayBtYi02XCI+XG4gICAgICAgICAgICAgICAgICBWYW1vcyBjcmlhciBhbGdvIGluY3LDrXZlbC5cbiAgICAgICAgICAgICAgICA8L2gzPlxuICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cInRleHQtd2hpdGUvNzAgbWF4LXctMnhsIG14LWF1dG8gbGVhZGluZy1yZWxheGVkIG1iLTEwXCI+XG4gICAgICAgICAgICAgICAgICBFbnRyZSBlbSBjb250YXRvIHBhcmEgcHJvamV0b3MsIHBhcmNlcmlhcyBvdSBpZGVpYXMgY3JpYXRpdmFzLlxuICAgICAgICAgICAgICAgIDwvcD5cblxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBmbGV4LWNvbCBpdGVtcy1jZW50ZXIgZ2FwLTMgbWItMTAgdGV4dC1sZ1wiPlxuICAgICAgICAgICAgICAgICAgPGFcbiAgICAgICAgICAgICAgICAgICAgaHJlZj17YG1haWx0bzoke2VtYWlsfWB9XG4gICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cInRleHQtd2hpdGUvOTAgaG92ZXI6dGV4dC1jeWFuLTQwMCB0cmFuc2l0aW9uIGZsZXggaXRlbXMtY2VudGVyIGdhcC0zXCJcbiAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgPHN2ZyBjbGFzc05hbWU9XCJ3LTUgaC01IHRleHQtY3lhbi00MDAgc2hyaW5rLTBcIiB2aWV3Qm94PVwiMCAwIDI0IDI0XCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjJcIiBhcmlhLWhpZGRlbj1cInRydWVcIj5cbiAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCIgZD1cIk0zIDhsNy44OSA1LjI2YTIgMiAwIDAwMi4yMiAwTDIxIDhNNSAxOWgxNGEyIDIgMCAwMDItMlY3YTIgMiAwIDAwLTItMkg1YTIgMiAwIDAwLTIgMnYxMGEyIDIgMCAwMDIgMnpcIiAvPlxuICAgICAgICAgICAgICAgICAgICA8L3N2Zz5cbiAgICAgICAgICAgICAgICAgICAge2VtYWlsfVxuICAgICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICAgICAgPGFcbiAgICAgICAgICAgICAgICAgICAgaHJlZj17YHRlbDoke3RlbGVmb25lLnJlcGxhY2UoL1xccy9nLCAnJyl9YH1cbiAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwidGV4dC13aGl0ZS85MCBob3Zlcjp0ZXh0LWN5YW4tNDAwIHRyYW5zaXRpb24gZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTNcIlxuICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICA8c3ZnIGNsYXNzTmFtZT1cInctNSBoLTUgdGV4dC1jeWFuLTQwMCBzaHJpbmstMFwiIHZpZXdCb3g9XCIwIDAgMjQgMjRcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMlwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPlxuICAgICAgICAgICAgICAgICAgICAgIDxwYXRoIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIiBkPVwiTTMgNWEyIDIgMCAwMTItMmgzLjI4YTEgMSAwIDAxLjk0OC42ODRsMS40OTggNC40OTNhMSAxIDAgMDEtLjUwMiAxLjIxbC0yLjI1NyAxLjEzYTExLjA0MiAxMS4wNDIgMCAwMDUuNTE2IDUuNTE2bDEuMTMtMi4yNTdhMSAxIDAgMDExLjIxLS41MDJsNC40OTMgMS40OThhMSAxIDAgMDEuNjg0Ljk0OVYxOWEyIDIgMCAwMS0yIDJoLTFDOS43MTYgMjEgMyAxNC4yODQgMyA2VjV6XCIgLz5cbiAgICAgICAgICAgICAgICAgICAgPC9zdmc+XG4gICAgICAgICAgICAgICAgICAgIHt0ZWxlZm9uZX1cbiAgICAgICAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBmbGV4LXdyYXAganVzdGlmeS1jZW50ZXIgZ2FwLTRcIj5cbiAgICAgICAgICAgICAgICAgIHtyZWRlcy5tYXAoKHJlZGUpID0+IChcbiAgICAgICAgICAgICAgICAgICAgPGFcbiAgICAgICAgICAgICAgICAgICAgICBrZXk9e3JlZGUubm9tZX1cbiAgICAgICAgICAgICAgICAgICAgICBocmVmPXtyZWRlLmxpbmt9XG4gICAgICAgICAgICAgICAgICAgICAgdGFyZ2V0PVwiX2JsYW5rXCJcbiAgICAgICAgICAgICAgICAgICAgICByZWw9XCJub29wZW5lciBub3JlZmVycmVyXCJcbiAgICAgICAgICAgICAgICAgICAgICBhcmlhLWxhYmVsPXtyZWRlLm5vbWV9XG4gICAgICAgICAgICAgICAgICAgICAgdGl0bGU9e3JlZGUubm9tZX1cbiAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJ3LTE0IGgtMTQgcm91bmRlZC0yeGwgYm9yZGVyIGJvcmRlci13aGl0ZS8xMCBiZy13aGl0ZS81IGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHRleHQtd2hpdGUvODAgaG92ZXI6Ym9yZGVyLWN5YW4tNDAwIGhvdmVyOnRleHQtY3lhbi00MDAgaG92ZXI6c2NhbGUtMTEwIHRyYW5zaXRpb25cIlxuICAgICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgICAge3JlZGUuaWNvbn1cbiAgICAgICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJtdC0xMiB0ZXh0LXdoaXRlLzUwIHRleHQtc21cIj5cbiAgICAgICAgICAgICAgICAgIERlc2Vudm9sdmlkbyBwb3IgVmljZW50ZSBDaXNvdHRvIEJhamF5IChWaXF1aW5ob0Rldikg4oCiIDIwMjZcbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICA8L3NlY3Rpb24+XG4gICAgICAgICAgPC9kaXY+XG4gICAgICAgICk7XG4gICAgICB9XG5cbiAgICAgIGNvbnN0IHJvb3RFbCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdyb290Jyk7XG4gICAgICBpZiAocm9vdEVsKSB7XG4gICAgICAgIFJlYWN0RE9NLmNyZWF0ZVJvb3Qocm9vdEVsKS5yZW5kZXIoPFBvcnRmb2xpbyAvPik7XG4gICAgICB9XG4gICAgIl0sIm1hcHBpbmdzIjoiQUFhTSxNQUFNQSxLQUFLLEdBQUcseUJBQXlCO0FBQ3ZDLE1BQU1DLFFBQVEsR0FBRyxxQkFBcUI7QUFFdEMsU0FBU0MsU0FBU0EsQ0FBQztFQUFFQztBQUFvQyxDQUFDLEVBQUU7RUFDMUQsb0JBQ0VDLEtBQUEsQ0FBQUMsYUFBQTtJQUFNQyxTQUFTLEVBQUM7RUFBd0UsR0FDckZILFFBQ0csQ0FBQztBQUVYO0FBRUEsU0FBU0ksU0FBU0EsQ0FBQSxFQUFnQjtFQUNoQyxNQUFNQyxRQUFtQixHQUFHLENBQzFCO0lBQ0VDLE1BQU0sRUFBRSxjQUFjO0lBQ3RCQyxTQUFTLEVBQ1AsNkVBQTZFO0lBQy9FQyxXQUFXLEVBQUUsQ0FBQyxNQUFNLEVBQUUsS0FBSyxFQUFFLFlBQVk7RUFDM0MsQ0FBQyxFQUNEO0lBQ0VGLE1BQU0sRUFBRSxZQUFZO0lBQ3BCQyxTQUFTLEVBQ1AsOEVBQThFO0lBQ2hGQyxXQUFXLEVBQUUsQ0FBQyxZQUFZLEVBQUUsYUFBYSxFQUFFLEtBQUs7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</script></head>
+  <body class="antialiased">
+    <div id="root"><div class="min-h-screen bg-[#0b0b0f] text-white font-sans"><header class="border-b border-white/10 backdrop-blur sticky top-0 z-50 bg-[#0b0b0f]/90"><div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4"><h1 class="text-2xl font-bold tracking-wide">Viquinho<span class="text-cyan-400">Dev</span></h1><nav class="hidden md:flex gap-8 text-sm text-white/80"><a href="#sobre" class="hover:text-cyan-400 transition">Sobre</a><a href="#projetos" class="hover:text-cyan-400 transition">Projetos</a><a href="#contato" class="hover:text-cyan-400 transition">Contato</a></nav></div></header><section id="inicio" class="min-h-[calc(100dvh-4.5rem)] max-w-6xl mx-auto px-6 py-10 md:py-12 grid md:grid-cols-2 gap-10 md:gap-16 items-center"><div><p class="text-cyan-400 text-sm uppercase tracking-[0.3em] mb-4">Programador &amp; Desenvolvedor</p><h2 class="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">Olá, eu sou <br><span class="text-cyan-400">Vicente</span></h2><p class="text-white/70 text-base md:text-lg leading-relaxed max-w-xl">Sou Vicente Cisotto Bajay, também conhecido como ViquinhoDev. Trabalho como programador de sites na web e desenvolvedor de scripts personalizados. Desenvolvo experiências modernas para a web, interfaces criativas, jogos e sistemas utilizando HTML, CSS, JavaScript, Python, Java e Bash.</p><div class="flex flex-wrap gap-4 mt-8 md:mt-10"><a href="#projetos" class="px-6 py-3 rounded-2xl bg-cyan-400 text-black font-semibold hover:scale-105 transition">Ver Projetos</a><a href="#contato" class="px-6 py-3 rounded-2xl border border-white/20 hover:border-cyan-400 hover:text-cyan-400 transition">Entrar em Contato</a></div></div><div class="flex justify-center"><div class="relative w-80 h-80 rounded-[40px] bg-gradient-to-br from-cyan-400/20 to-blue-600/20 border border-cyan-400/20 flex items-center justify-center shadow-2xl shadow-cyan-500/10"><div class="absolute inset-0 rounded-[40px] blur-3xl bg-cyan-400/10"></div><div class="relative text-center z-10"><div class="w-32 h-32 rounded-full bg-cyan-400 flex items-center justify-center text-5xl font-black text-black mx-auto mb-6">V</div><h3 class="text-2xl font-bold">ViquinhoDev</h3><p class="text-white/60 mt-2">Web • Jogos • Scripts</p></div></div></div></section><section id="sobre" class="max-w-6xl mx-auto px-6 py-24 scroll-mt-24"><div class="grid md:grid-cols-2 gap-12"><div><h3 class="text-4xl font-bold mb-6">Sobre Mim</h3><p class="text-white/70 leading-relaxed mb-4">Sou Vicente Cisotto Bajay (ViquinhoDev), programador focado em criar experiências modernas para a web. Desenvolvo sites, jogos, interfaces interativas e scripts personalizados utilizando HTML, CSS, JavaScript, Python, Java e Bash.</p><p class="text-white/70 leading-relaxed">Atuo no desenvolvimento de sites modernos, experiências interativas, jogos e scripts personalizados. Meu foco é unir criatividade, desempenho e um visual profissional em cada projeto.</p></div><div class="grid grid-cols-2 gap-4"><div class="p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-cyan-400/40 transition"><p class="font-semibold">HTML5</p></div><div class="p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-cyan-400/40 transition"><p class="font-semibold">CSS3</p></div><div class="p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-cyan-400/40 transition"><p class="font-semibold">JavaScript</p></div><div class="p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-cyan-400/40 transition"><p class="font-semibold">UI Design</p></div><div class="p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-cyan-400/40 transition"><p class="font-semibold">Responsividade</p></div><div class="p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-cyan-400/40 transition"><p class="font-semibold">Game Interfaces</p></div><div class="p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-cyan-400/40 transition"><p class="font-semibold">Python</p></div><div class="p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-cyan-400/40 transition"><p class="font-semibold">Java</p></div><div class="p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-cyan-400/40 transition"><p class="font-semibold">Bash</p></div></div></div></section><section id="projetos" class="max-w-6xl mx-auto px-6 py-20"><div class="flex items-center justify-between mb-12"><div><p class="text-cyan-400 uppercase tracking-[0.3em] text-sm mb-3">Portfólio</p><h3 class="text-4xl font-bold">Principais Projetos</h3></div></div><div class="grid md:grid-cols-3 gap-6"><div class="group rounded-3xl border border-white/10 bg-white/5 p-6 hover:border-cyan-400/40 hover:-translate-y-2 transition duration-300"><div class="w-14 h-14 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-400 text-2xl mb-6">&lt;/&gt;</div><h4 class="text-2xl font-bold mb-4 group-hover:text-cyan-400 transition">ViquinhoChat</h4><p class="text-white/70 leading-relaxed mb-6">Serviço de chat privado e criptografado com interface moderna e tema gamer.</p><div class="flex flex-wrap gap-2"><span class="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-sm text-cyan-300">HTML</span><span class="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-sm text-cyan-300">CSS</span><span class="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-sm text-cyan-300">JavaScript</span></div></div><div class="group rounded-3xl border border-white/10 bg-white/5 p-6 hover:border-cyan-400/40 hover:-translate-y-2 transition duration-300"><div class="w-14 h-14 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-400 text-2xl mb-6">&lt;/&gt;</div><h4 class="text-2xl font-bold mb-4 group-hover:text-cyan-400 transition">Farme Aura</h4><p class="text-white/70 leading-relaxed mb-6">Jogo estilo gamer dark com sistema de dificuldade e interface personalizada.</p><div class="flex flex-wrap gap-2"><span class="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-sm text-cyan-300">JavaScript</span><span class="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-sm text-cyan-300">Game Design</span><span class="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-sm text-cyan-300">CSS</span></div></div><div class="group rounded-3xl border border-white/10 bg-white/5 p-6 hover:border-cyan-400/40 hover:-translate-y-2 transition duration-300"><div class="w-14 h-14 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-400 text-2xl mb-6">&lt;/&gt;</div><h4 class="text-2xl font-bold mb-4 group-hover:text-cyan-400 transition">Operação Comunidade Taboi</h4><p class="text-white/70 leading-relaxed mb-6">Painel interativo com autenticação, calendário e sistema de informações.</p><div class="flex flex-wrap gap-2"><span class="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-sm text-cyan-300">HTML</span><span class="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-sm text-cyan-300">CSS</span><span class="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-sm text-cyan-300">JavaScript</span></div></div></div></section><section id="contato" class="max-w-6xl mx-auto px-6 py-20"><div class="rounded-[40px] border border-white/10 bg-gradient-to-br from-cyan-400/10 to-blue-600/10 p-10 md:p-16 text-center"><h3 class="text-4xl md:text-5xl font-black mb-6">Vamos criar algo incrível.</h3><p class="text-white/70 max-w-2xl mx-auto leading-relaxed mb-10">Entre em contato para projetos, parcerias ou ideias criativas.</p><div class="flex flex-col items-center gap-3 mb-10 text-lg"><a href="mailto:contato@viquinhodev.com" class="text-white/90 hover:text-cyan-400 transition flex items-center gap-3"><svg class="w-5 h-5 text-cyan-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>contato@viquinhodev.com</a><a href="tel:+55(11)99999-9999" class="text-white/90 hover:text-cyan-400 transition flex items-center gap-3"><svg class="w-5 h-5 text-cyan-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>+55 (11) 99999-9999</a></div><div class="flex flex-wrap justify-center gap-4"><a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram" class="w-14 h-14 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-white/80 hover:border-cyan-400 hover:text-cyan-400 hover:scale-110 transition"><span class="w-6 h-6 flex items-center justify-center [&amp;&gt;svg]:w-full [&amp;&gt;svg]:h-full"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.427.403a4.92 4.92 0 0 1 1.78 1.153 4.92 4.92 0 0 1 1.153 1.78c.163.457.349 1.257.403 2.427.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.427a4.92 4.92 0 0 1-1.153 1.78 4.92 4.92 0 0 1-1.78 1.153c-.457.163-1.257.349-2.427.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.427-.403a4.92 4.92 0 0 1-1.78-1.153 4.92 4.92 0 0 1-1.153-1.78c-.163-.457-.349-1.257-.403-2.427C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.427a4.92 4.92 0 0 1 1.153-1.78 4.92 4.92 0 0 1 1.78-1.153c.457-.163 1.257-.349 2.427-.403C8.416 2.175 8.796 2.163 12 2.163zm0 1.622c-3.16 0-3.533.012-4.769.069-1.036.047-1.6.218-1.974.363a3.4 3.4 0 0 0-1.227.798 3.4 3.4 0 0 0-.798 1.227c-.145.374-.316.938-.363 1.974-.057 1.236-.069 1.609-.069 4.769s.012 3.533.069 4.769c.047 1.036.218 1.6.363 1.974.18.466.42.87.798 1.227a3.4 3.4 0 0 0 1.227.798c.374.145.938.316 1.974.363 1.236.057 1.609.069 4.769.069s3.533-.012 4.769-.069c1.036-.047 1.6-.218 1.974-.363a3.4 3.4 0 0 0 1.227-.798 3.4 3.4 0 0 0 .798-1.227c.145-.374.316-.938.363-1.974.057-1.236.069-1.609.069-4.769s-.012-3.533-.069-4.769c-.047-1.036-.218-1.6-.363-1.974a3.4 3.4 0 0 0-.798-1.227 3.4 3.4 0 0 0-1.227-.798c-.374-.145-.938-.316-1.974-.363-1.236-.057-1.609-.069-4.769-.069zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 1.622a3.378 3.378 0 1 1 0 6.756 3.378 3.378 0 0 1 0-6.756zm5.338-3.47a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"></path></svg></span></a><a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn" class="w-14 h-14 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-white/80 hover:border-cyan-400 hover:text-cyan-400 hover:scale-110 transition"><span class="w-6 h-6 flex items-center justify-center [&amp;&gt;svg]:w-full [&amp;&gt;svg]:h-full"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg></span></a><a href="https://discord.com/" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="Discord" class="w-14 h-14 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-white/80 hover:border-cyan-400 hover:text-cyan-400 hover:scale-110 transition"><span class="w-6 h-6 flex items-center justify-center [&amp;&gt;svg]:w-full [&amp;&gt;svg]:h-full"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037 12.3 12.3 0 0 0-.608 1.25 18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"></path></svg></span></a><a href="https://dev.to/" target="_blank" rel="noopener noreferrer" aria-label="Dev Community" title="Dev Community" class="w-14 h-14 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-white/80 hover:border-cyan-400 hover:text-cyan-400 hover:scale-110 transition"><span class="w-6 h-6 flex items-center justify-center [&amp;&gt;svg]:w-full [&amp;&gt;svg]:h-full"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.42 10.05c-.18-.16-.46-.23-.84-.23H6.3V11h.28c.34 0 .61-.07.79-.21.18-.14.27-.35.27-.63 0-.28-.09-.49-.22-.11zm-.22 2.26c-.2.18-.5.27-.9.27H6.3v1.59h.9c.4 0 .7-.09.9-.27.2-.18.3-.44.3-.78 0-.34-.1-.6-.3-.78zm5.74-2.26c-.18-.16-.46-.23-.84-.23h-.28v1.18h.28c.34 0 .61-.07.79-.21.18-.14.27-.35.27-.63 0-.28-.09-.49-.22-.11zM12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.01 14.42h-1.58v2.84h-1.9v-2.84h-3.4v-1.58l3.4-4.86h1.9v4.5h1.58v1.74zm-8.29 0H6.3V6.78h2.84c.96 0 1.71.25 2.25.74.54.5.81 1.19.81 2.07 0 .88-.27 1.57-.81 2.07-.54.49-1.29.74-2.25.74z"></path></svg></span></a></div><div class="mt-12 text-white/50 text-sm">Desenvolvido por Vicente Cisotto Bajay (ViquinhoDev) • 2026</div></div></section></div></div>
+
+    <script type="text/babel" data-presets="react,typescript">
+      interface Projeto {
+        titulo: string;
+        descricao: string;
+        tecnologias: string[];
+      }
+
+      interface Rede {
+        nome: string;
+        link: string;
+        icon: JSX.Element;
+      }
+
+      const email = 'contato@viquinhodev.com';
+      const telefone = '+55 (11) 99999-9999';
+
+      function IconeRede({ children }: { children: JSX.Element }) {
+        return (
+          <span className="w-6 h-6 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full">
+            {children}
+          </span>
+        );
+      }
+
+      function Portfolio(): JSX.Element {
+        const projetos: Projeto[] = [
+          {
+            titulo: 'ViquinhoChat',
+            descricao:
+              'Serviço de chat privado e criptografado com interface moderna e tema gamer.',
+            tecnologias: ['HTML', 'CSS', 'JavaScript'],
+          },
+          {
+            titulo: 'Farme Aura',
+            descricao:
+              'Jogo estilo gamer dark com sistema de dificuldade e interface personalizada.',
+            tecnologias: ['JavaScript', 'Game Design', 'CSS'],
+          },
+          {
+            titulo: 'Operação Comunidade Taboi',
+            descricao:
+              'Painel interativo com autenticação, calendário e sistema de informações.',
+            tecnologias: ['HTML', 'CSS', 'JavaScript'],
+          },
+        ];
+
+        const redes: Rede[] = [
+          {
+            nome: 'Instagram',
+            link: 'https://instagram.com/',
+            icon: (
+              <IconeRede>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.427.403a4.92 4.92 0 0 1 1.78 1.153 4.92 4.92 0 0 1 1.153 1.78c.163.457.349 1.257.403 2.427.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.427a4.92 4.92 0 0 1-1.153 1.78 4.92 4.92 0 0 1-1.78 1.153c-.457.163-1.257.349-2.427.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.427-.403a4.92 4.92 0 0 1-1.78-1.153 4.92 4.92 0 0 1-1.153-1.78c-.163-.457-.349-1.257-.403-2.427C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.427a4.92 4.92 0 0 1 1.153-1.78 4.92 4.92 0 0 1 1.78-1.153c.457-.163 1.257-.349 2.427-.403C8.416 2.175 8.796 2.163 12 2.163zm0 1.622c-3.16 0-3.533.012-4.769.069-1.036.047-1.6.218-1.974.363a3.4 3.4 0 0 0-1.227.798 3.4 3.4 0 0 0-.798 1.227c-.145.374-.316.938-.363 1.974-.057 1.236-.069 1.609-.069 4.769s.012 3.533.069 4.769c.047 1.036.218 1.6.363 1.974.18.466.42.87.798 1.227a3.4 3.4 0 0 0 1.227.798c.374.145.938.316 1.974.363 1.236.057 1.609.069 4.769.069s3.533-.012 4.769-.069c1.036-.047 1.6-.218 1.974-.363a3.4 3.4 0 0 0 1.227-.798 3.4 3.4 0 0 0 .798-1.227c.145-.374.316-.938.363-1.974.057-1.236.069-1.609.069-4.769s-.012-3.533-.069-4.769c-.047-1.036-.218-1.6-.363-1.974a3.4 3.4 0 0 0-.798-1.227 3.4 3.4 0 0 0-1.227-.798c-.374-.145-.938-.316-1.974-.363-1.236-.057-1.609-.069-4.769-.069zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 1.622a3.378 3.378 0 1 1 0 6.756 3.378 3.378 0 0 1 0-6.756zm5.338-3.47a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z" />
+                </svg>
+              </IconeRede>
+            ),
+          },
+          {
+            nome: 'LinkedIn',
+            link: 'https://linkedin.com/',
+            icon: (
+              <IconeRede>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+              </IconeRede>
+            ),
+          },
+          {
+            nome: 'Discord',
+            link: 'https://discord.com/',
+            icon: (
+              <IconeRede>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037 12.3 12.3 0 0 0-.608 1.25 18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+                </svg>
+              </IconeRede>
+            ),
+          },
+          {
+            nome: 'Dev Community',
+            link: 'https://dev.to/',
+            icon: (
+              <IconeRede>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M7.42 10.05c-.18-.16-.46-.23-.84-.23H6.3V11h.28c.34 0 .61-.07.79-.21.18-.14.27-.35.27-.63 0-.28-.09-.49-.22-.11zm-.22 2.26c-.2.18-.5.27-.9.27H6.3v1.59h.9c.4 0 .7-.09.9-.27.2-.18.3-.44.3-.78 0-.34-.1-.6-.3-.78zm5.74-2.26c-.18-.16-.46-.23-.84-.23h-.28v1.18h.28c.34 0 .61-.07.79-.21.18-.14.27-.35.27-.63 0-.28-.09-.49-.22-.11zM12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.01 14.42h-1.58v2.84h-1.9v-2.84h-3.4v-1.58l3.4-4.86h1.9v4.5h1.58v1.74zm-8.29 0H6.3V6.78h2.84c.96 0 1.71.25 2.25.74.54.5.81 1.19.81 2.07 0 .88-.27 1.57-.81 2.07-.54.49-1.29.74-2.25.74z" />
+                </svg>
+              </IconeRede>
+            ),
+          },
+        ];
+
+        const skills: string[] = [
+          'HTML5',
+          'CSS3',
+          'JavaScript',
+          'UI Design',
+          'Responsividade',
+          'Game Interfaces',
+          'Python',
+          'Java',
+          'Bash',
+        ];
+
+        return (
+          <div className="min-h-screen bg-[#0b0b0f] text-white font-sans">
+            <header className="border-b border-white/10 backdrop-blur sticky top-0 z-50 bg-[#0b0b0f]/90">
+              <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+                <h1 className="text-2xl font-bold tracking-wide">
+                  Viquinho<span className="text-cyan-400">Dev</span>
+                </h1>
+
+                <nav className="hidden md:flex gap-8 text-sm text-white/80">
+                  <a href="#sobre" className="hover:text-cyan-400 transition">
+                    Sobre
+                  </a>
+                  <a href="#projetos" className="hover:text-cyan-400 transition">
+                    Projetos
+                  </a>
+                  <a href="#contato" className="hover:text-cyan-400 transition">
+                    Contato
+                  </a>
+                </nav>
+              </div>
+            </header>
+
+            <section
+              id="inicio"
+              className="min-h-[calc(100dvh-4.5rem)] max-w-6xl mx-auto px-6 py-10 md:py-12 grid md:grid-cols-2 gap-10 md:gap-16 items-center"
+            >
+              <div>
+                <p className="text-cyan-400 text-sm uppercase tracking-[0.3em] mb-4">
+                  Programador & Desenvolvedor
+                </p>
+
+                <h2 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
+                  Olá, eu sou <br />
+                  <span className="text-cyan-400">Vicente</span>
+                </h2>
+
+                <p className="text-white/70 text-base md:text-lg leading-relaxed max-w-xl">
+                  Sou Vicente Cisotto Bajay, também conhecido como ViquinhoDev.
+                  Trabalho como programador de sites na web e desenvolvedor de
+                  scripts personalizados. Desenvolvo experiências modernas para a
+                  web, interfaces criativas, jogos e sistemas utilizando HTML,
+                  CSS, JavaScript, Python, Java e Bash.
+                </p>
+
+                <div className="flex flex-wrap gap-4 mt-8 md:mt-10">
+                  <a
+                    href="#projetos"
+                    className="px-6 py-3 rounded-2xl bg-cyan-400 text-black font-semibold hover:scale-105 transition"
+                  >
+                    Ver Projetos
+                  </a>
+                  <a
+                    href="#contato"
+                    className="px-6 py-3 rounded-2xl border border-white/20 hover:border-cyan-400 hover:text-cyan-400 transition"
+                  >
+                    Entrar em Contato
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex justify-center">
+                <div className="relative w-80 h-80 rounded-[40px] bg-gradient-to-br from-cyan-400/20 to-blue-600/20 border border-cyan-400/20 flex items-center justify-center shadow-2xl shadow-cyan-500/10">
+                  <div className="absolute inset-0 rounded-[40px] blur-3xl bg-cyan-400/10"></div>
+                  <div className="relative text-center z-10">
+                    <div className="w-32 h-32 rounded-full bg-cyan-400 flex items-center justify-center text-5xl font-black text-black mx-auto mb-6">
+                      V
+                    </div>
+                    <h3 className="text-2xl font-bold">ViquinhoDev</h3>
+                    <p className="text-white/60 mt-2">Web • Jogos • Scripts</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="sobre" className="max-w-6xl mx-auto px-6 py-24 scroll-mt-24">
+              <div className="grid md:grid-cols-2 gap-12">
+                <div>
+                  <h3 className="text-4xl font-bold mb-6">Sobre Mim</h3>
+                  <p className="text-white/70 leading-relaxed mb-4">
+                    Sou Vicente Cisotto Bajay (ViquinhoDev), programador focado
+                    em criar experiências modernas para a web. Desenvolvo sites,
+                    jogos, interfaces interativas e scripts personalizados
+                    utilizando HTML, CSS, JavaScript, Python, Java e Bash.
+                  </p>
+                  <p className="text-white/70 leading-relaxed">
+                    Atuo no desenvolvimento de sites modernos, experiências
+                    interativas, jogos e scripts personalizados. Meu foco é unir
+                    criatividade, desempenho e um visual profissional em cada
+                    projeto.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  {skills.map((skill) => (
+                    <div
+                      key={skill}
+                      className="p-5 rounded-2xl border border-white/10 bg-white/5 hover:border-cyan-400/40 transition"
+                    >
+                      <p className="font-semibold">{skill}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            <section id="projetos" className="max-w-6xl mx-auto px-6 py-20">
+              <div className="flex items-center justify-between mb-12">
+                <div>
+                  <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm mb-3">
+                    Portfólio
+                  </p>
+                  <h3 className="text-4xl font-bold">Principais Projetos</h3>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-6">
+                {projetos.map((projeto) => (
+                  <div
+                    key={projeto.titulo}
+                    className="group rounded-3xl border border-white/10 bg-white/5 p-6 hover:border-cyan-400/40 hover:-translate-y-2 transition duration-300"
+                  >
+                    <div className="w-14 h-14 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-400 text-2xl mb-6">
+                      {'</>'}
+                    </div>
+                    <h4 className="text-2xl font-bold mb-4 group-hover:text-cyan-400 transition">
+                      {projeto.titulo}
+                    </h4>
+                    <p className="text-white/70 leading-relaxed mb-6">
+                      {projeto.descricao}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {projeto.tecnologias.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-sm text-cyan-300"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section id="contato" className="max-w-6xl mx-auto px-6 py-20">
+              <div className="rounded-[40px] border border-white/10 bg-gradient-to-br from-cyan-400/10 to-blue-600/10 p-10 md:p-16 text-center">
+                <h3 className="text-4xl md:text-5xl font-black mb-6">
+                  Vamos criar algo incrível.
+                </h3>
+                <p className="text-white/70 max-w-2xl mx-auto leading-relaxed mb-10">
+                  Entre em contato para projetos, parcerias ou ideias criativas.
+                </p>
+
+                <div className="flex flex-col items-center gap-3 mb-10 text-lg">
+                  <a
+                    href={`mailto:${email}`}
+                    className="text-white/90 hover:text-cyan-400 transition flex items-center gap-3"
+                  >
+                    <svg className="w-5 h-5 text-cyan-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    {email}
+                  </a>
+                  <a
+                    href={`tel:${telefone.replace(/\s/g, '')}`}
+                    className="text-white/90 hover:text-cyan-400 transition flex items-center gap-3"
+                  >
+                    <svg className="w-5 h-5 text-cyan-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    {telefone}
+                  </a>
+                </div>
+
+                <div className="flex flex-wrap justify-center gap-4">
+                  {redes.map((rede) => (
+                    <a
+                      key={rede.nome}
+                      href={rede.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={rede.nome}
+                      title={rede.nome}
+                      className="w-14 h-14 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-white/80 hover:border-cyan-400 hover:text-cyan-400 hover:scale-110 transition"
+                    >
+                      {rede.icon}
+                    </a>
+                  ))}
+                </div>
+                <div className="mt-12 text-white/50 text-sm">
+                  Desenvolvido por Vicente Cisotto Bajay (ViquinhoDev) • 2026
+                </div>
+              </div>
+            </section>
+          </div>
+        );
+      }
+
+      const rootEl = document.getElementById('root');
+      if (rootEl) {
+        ReactDOM.createRoot(rootEl).render(<Portfolio />);
+      }
+    </script>
+  
+
+</body></html>
