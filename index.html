@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ViquinhoDev — Portfólio de Vicente Cisotto Bajay. Desenvolvedor web, jogos e scripts com HTML, CSS, JavaScript, Python, Java e Bash."
+    />
+    <meta name="author" content="Vicente Cisotto Bajay" />
+    <title>ViquinhoDev — Vicente Cisotto Bajay</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#inicio" class="logo" aria-label="ViquinhoDev — Início">
+          Viquinho<span>Dev</span>
+        </a>
+
+        <nav class="nav-desktop" aria-label="Navegação principal">
+          <a href="#inicio" data-i18n="nav.home">Início</a>
+          <a href="#sobre" data-i18n="nav.about">Sobre</a>
+          <a href="#habilidades" data-i18n="nav.skills">Habilidades</a>
+          <a href="#projetos" data-i18n="nav.projects">Projetos</a>
+          <a href="#contato" data-i18n="nav.contact">Contato</a>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            id="lang-toggle"
+            class="icon-btn lang-btn"
+            type="button"
+            aria-label="Alternar idioma"
+            data-i18n-aria="lang.toggle"
+          >
+            <span id="lang-label">PT</span>
+          </button>
+
+          <button
+            id="theme-toggle"
+            class="icon-btn"
+            type="button"
+            aria-label="Alternar tema"
+            data-i18n-aria="theme.toggle"
+          >
+            <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" />
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+            </svg>
+            <svg id="icon-moon" style="display: none" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+
+          <button
+            id="menu-toggle"
+            class="icon-btn menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-mobile"
+            aria-label="Abrir menu"
+          >
+            <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+            <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <nav id="nav-mobile" class="nav-mobile" aria-label="Menu mobile">
+        <a href="#inicio" data-i18n="nav.home">Início</a>
+        <a href="#sobre" data-i18n="nav.about">Sobre</a>
+        <a href="#habilidades" data-i18n="nav.skills">Habilidades</a>
+        <a href="#projetos" data-i18n="nav.projects">Projetos</a>
+        <a href="#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section id="inicio" class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              <span data-i18n="hero.badge">Disponível para projetos</span>
+            </div>
+
+            <p class="section-label" data-i18n="hero.label">Programador & Desenvolvedor</p>
+
+            <h1 class="hero-title">
+              <span data-i18n="hero.title">Olá, eu sou</span>
+              <br />
+              <span class="highlight" data-i18n="hero.name">Vicente</span>
+            </h1>
+
+            <p class="hero-text" data-i18n="hero.text">
+              Sou Vicente Cisotto Bajay (ViquinhoDev), programador focado em criar
+              experiências modernas para a web. Desenvolvo sites, jogos, interfaces
+              interativas e scripts personalizados.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projetos" class="btn btn-primary" data-i18n="hero.cta.projects">
+                Ver Projetos
+              </a>
+              <a href="#contato" class="btn btn-secondary" data-i18n="hero.cta.contact">
+                Entrar em Contato
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="hero-card-bg" aria-hidden="true"></div>
+            <div class="hero-card-inner">
+              <div class="avatar" aria-hidden="true">V</div>
+              <p class="hero-card-name">ViquinhoDev</p>
+              <p class="hero-card-tags" data-i18n="hero.card.tags">Web • Jogos • Scripts</p>
+              <div class="lang-tags">
+                <span class="lang-tag">PT</span>
+                <span class="lang-tag">EN</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="sobre">
+        <div class="container about-grid">
+          <div class="about-text">
+            <p class="section-label" data-i18n="about.label">Quem sou eu</p>
+            <h2 class="section-title" data-i18n="about.title">Sobre Mim</h2>
+            <p data-i18n="about.p1">
+              Sou Vicente Cisotto Bajay (ViquinhoDev), programador focado em criar
+              experiências modernas para a web. Desenvolvo sites, jogos, interfaces
+              interativas e scripts personalizados utilizando HTML, CSS, JavaScript,
+              Python, Java e Bash.
+            </p>
+            <p data-i18n="about.p2">
+              Atuo no desenvolvimento de sites modernos, experiências interativas,
+              jogos e scripts personalizados. Meu foco é unir criatividade,
+              desempenho e um visual profissional em cada projeto.
+            </p>
+          </div>
+
+          <div class="specialties">
+            <article class="specialty-card">
+              <div class="specialty-icon" aria-hidden="true" data-icon="globe"></div>
+              <h4 data-i18n="about.web.title">Web</h4>
+              <p data-i18n="about.web.desc">HTML, CSS e JavaScript para sites modernos e responsivos.</p>
+            </article>
+            <article class="specialty-card">
+              <div class="specialty-icon" aria-hidden="true" data-icon="zap"></div>
+              <h4 data-i18n="about.scripts.title">Scripts</h4>
+              <p data-i18n="about.scripts.desc">Python, Bash, Java e automações personalizadas.</p>
+            </article>
+            <article class="specialty-card">
+              <div class="specialty-icon" aria-hidden="true" data-icon="gamepad"></div>
+              <h4 data-i18n="about.apps.title">Apps & Jogos</h4>
+              <p data-i18n="about.apps.desc">Interfaces interativas e experiências gamificadas.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="habilidades" class="skills-section">
+        <div class="container">
+          <p class="section-label" data-i18n="skills.label">Stack</p>
+          <h2 class="section-title" data-i18n="skills.title">Habilidades & Ferramentas</h2>
+          <p class="section-desc" data-i18n="skills.desc">
+            Tecnologias e ferramentas que utilizo no dia a dia para transformar ideias em projetos reais.
+          </p>
+
+          <div class="skills-grid" style="margin-top: 2.5rem">
+            <div class="skills-group">
+              <h4 data-i18n="skills.languages">Linguagens</h4>
+              <div id="language-tags" class="skill-tags"></div>
+            </div>
+            <div class="skills-group">
+              <h4 data-i18n="skills.tools">Ferramentas</h4>
+              <div id="tools-grid" class="tools-grid"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projetos">
+        <div class="container">
+          <p class="section-label" data-i18n="projects.label">Portfólio</p>
+          <h2 class="section-title" data-i18n="projects.title">Principais Projetos</h2>
+          <p class="section-desc" data-i18n="projects.desc">
+            Alguns dos projetos que desenvolvi com foco em experiência, desempenho e visual profissional.
+          </p>
+          <div id="projects-grid" class="projects-grid"></div>
+
+          <div class="projects-footer">
+            <a
+              href="https://github.com/viquinhodev?tab=repositories"
+              class="btn btn-secondary projects-all-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span data-i18n="projects.viewAll">Ver todos os projetos</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contato">
+        <div class="container">
+          <p class="section-label" data-i18n="contact.label">Fale comigo</p>
+          <h2 class="section-title" data-i18n="contact.title">Vamos criar algo incrível.</h2>
+          <p class="section-desc" data-i18n="contact.desc">
+            Entre em contato para projetos, parcerias ou ideias criativas. Respondo em português e inglês.
+          </p>
+
+          <div class="contact-wrapper">
+            <aside class="contact-info-card">
+              <h3 class="section-title" style="font-size: 1.35rem" data-i18n="contact.info.title">
+                Informações de contato
+              </h3>
+
+              <div id="contact-methods" class="contact-methods"></div>
+
+              <div id="social-links" class="social-links"></div>
+            </aside>
+
+            <div class="contact-form-card">
+              <h3 class="section-title" style="font-size: 1.35rem" data-i18n="contact.form.title">
+                Envie uma mensagem
+              </h3>
+
+              <form id="contact-form" action="https://formsubmit.co/contato@viquinhodev.com" method="POST">
+                <input type="hidden" name="_subject" value="Nova mensagem — ViquinhoDev Portfolio" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="text" name="_honey" style="display: none" tabindex="-1" autocomplete="off" />
+                <input type="hidden" name="_template" value="table" />
+
+                <div class="form-group">
+                  <label for="name" data-i18n="contact.form.name">Nome</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    autocomplete="name"
+                    data-i18n-placeholder="contact.form.name"
+                    placeholder="Nome"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="email" data-i18n="contact.form.email">Seu e-mail</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    autocomplete="email"
+                    data-i18n-placeholder="contact.form.email"
+                    placeholder="Seu e-mail"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="subject" data-i18n="contact.form.subject">Assunto</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    required
+                    data-i18n-placeholder="contact.form.subject"
+                    placeholder="Assunto"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="message" data-i18n="contact.form.message">Mensagem</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    data-i18n-placeholder="contact.form.message"
+                    placeholder="Mensagem"
+                  ></textarea>
+                </div>
+
+                <button type="submit" id="form-submit-btn" class="btn btn-primary" data-i18n="contact.form.submit">
+                  Enviar mensagem
+                </button>
+
+                <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#inicio" class="logo">Viquinho<span>Dev</span></a>
+            <p data-i18n="footer.tagline">
+              Criando experiências modernas para a web, jogos e scripts.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <h5 data-i18n="footer.nav">Navegação</h5>
+            <ul>
+              <li><a href="#inicio" data-i18n="nav.home">Início</a></li>
+              <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+              <li><a href="#habilidades" data-i18n="nav.skills">Habilidades</a></li>
+              <li><a href="#projetos" data-i18n="nav.projects">Projetos</a></li>
+              <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-social">
+            <h5 data-i18n="footer.social">Redes</h5>
+            <div id="footer-social-links" class="social-links"></div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            © <span id="year">2026</span> Vicente Cisotto Bajay (ViquinhoDev) —
+            <span data-i18n="footer.rights">Todos os direitos reservados.</span>
+          </p>
+          <p class="theme-note" data-i18n="footer.themes">Mais temas em breve</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/icons.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
