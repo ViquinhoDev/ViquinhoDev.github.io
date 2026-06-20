@@ -14,7 +14,7 @@ const CONFIG = {
 
 const socialLinks = [
   { name: "GitHub", url: "https://github.com/viquinhodev", icon: "github" },
-  { name: "Discord", url: "https://discord.com/users/viquinhodev", icon: "discord" },
+  { name: "Discord", url: "https://discord.gg/NYta7s5Mtq", icon: "discord" },
   { name: "Dev.to", url: "https://dev.to/viquinhodev", icon: "devto" },
   { name: "LinkedIn", url: "https://linkedin.com/in/viquinhodev", icon: "linkedin" },
   { name: "Instagram", url: "https://instagram.com/viquinhodev", icon: "instagram" },
