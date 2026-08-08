@@ -1,358 +1,509 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="ViquinhoDev — Portfólio de Vicente Cisotto Bajay. Desenvolvedor web, jogos e scripts com HTML, CSS, JavaScript, Python, Java e Bash."
-    />
-    <meta name="author" content="Vicente Cisotto Bajay" />
-    <title>ViquinhoDev — Vicente Cisotto Bajay</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑‍💻</text></svg>">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Outfit:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="site-header">
-      <div class="container header-inner">
-        <a href="#inicio" class="logo" aria-label="ViquinhoDev — Início">
-          Viquinho<span>Dev</span>
-        </a>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViquinhoDev - Portfólio</title>
+    <!-- FontAwesome para os ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-secondary: #94a3b8;
+            --primary-color: #38bdf8;
+            --border-color: #334155;
+        }
 
-        <nav class="nav-desktop" aria-label="Navegação principal">
-          <a href="#inicio" data-i18n="nav.home">Início</a>
-          <a href="#sobre" data-i18n="nav.about">Sobre</a>
-          <a href="#habilidades" data-i18n="nav.skills">Habilidades</a>
-          <a href="#projetos" data-i18n="nav.projects">Projetos</a>
-          <a href="#contato" data-i18n="nav.contact">Contato</a>
-        </nav>
+        [data-theme="light"] {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #0f172a;
+            --text-secondary: #475569;
+            --primary-color: #0284c7;
+            --border-color: #e2e8f0;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 0.4rem;
+            border-radius: 50%;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .social-btn:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .theme-toggle, .lang-toggle {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 0.5rem 0.8rem;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .bio {
+            color: var(--text-secondary);
+            max-width: 650px;
+            margin: 0 auto 1.5rem auto;
+            font-size: 1.1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        section {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .about-content {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            line-height: 1.8;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-cta {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .contact-cta p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">ViquinhoDev</div>
         <div class="header-actions">
-          <button
-            id="lang-toggle"
-            class="icon-btn lang-btn"
-            type="button"
-            aria-label="Alternar idioma"
-            data-i18n-aria="lang.toggle"
-          >
-            <span id="lang-label">PT</span>
-          </button>
-
-          <button
-            id="theme-toggle"
-            class="icon-btn"
-            type="button"
-            aria-label="Alternar tema"
-            data-i18n-aria="theme.toggle"
-          >
-            <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <circle cx="12" cy="12" r="5" />
-              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-            </svg>
-            <svg id="icon-moon" style="display: none" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-            </svg>
-          </button>
-
-          <button
-            id="menu-toggle"
-            class="icon-btn menu-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="nav-mobile"
-            aria-label="Abrir menu"
-          >
-            <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
-            </svg>
-            <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path stroke-linecap="round" d="M6 6l12 12M18 6L6 18" />
-            </svg>
-          </button>
+            <!-- Botão de Idioma -->
+            <button class="lang-toggle" id="langBtn">
+                <i class="fa-solid fa-globe"></i> EN
+            </button>
+            <!-- Botão de Tema -->
+            <button class="theme-toggle" id="themeBtn">
+                <i class="fa-solid fa-moon"></i> <span data-i18n="theme-btn">Tema</span>
+            </button>
+                <a href="https://www.linkedin.com/in/vicente-bajay-941485428/" target="_blank" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/viquinhodev1/" target="_blank" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/ViquinhoDev" target="_blank" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://codepen.io/Vicente-Bajay-the-builder" target="_blank" class="social-btn" title="CodePen"><i class="fa-brands fa-codepen"></i></a>
+                <a href="https://br.pinterest.com/bajayvicente/" target="_blank" class="social-btn" title="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="https://www.duolingo.com/profile/VicenteBaj2" target="_blank" class="social-btn" title="Duolingo"><i class="fa-solid fa-feather"></i></a>
         </div>
-      </div>
-
-      <nav id="nav-mobile" class="nav-mobile" aria-label="Menu mobile">
-        <a href="#inicio" data-i18n="nav.home">Início</a>
-        <a href="#sobre" data-i18n="nav.about">Sobre</a>
-        <a href="#habilidades" data-i18n="nav.skills">Habilidades</a>
-        <a href="#projetos" data-i18n="nav.projects">Projetos</a>
-        <a href="#contato" data-i18n="nav.contact">Contato</a>
-      </nav>
     </header>
 
-    <main>
-      <!-- Hero -->
-      <section id="inicio" class="hero">
-        <div class="container hero-grid">
-          <div>
-            <div class="hero-badge">
-              <span class="hero-badge-dot"></span>
-              <span data-i18n="hero.badge">Disponível para projetos</span>
+    <div class="container">
+        <!-- Perfil Principal -->
+        <div class="hero">
+            <img src="https://avatars.githubusercontent.com/u/257987052?v=4" alt="Foto de Vicente Bajay" class="profile-img">
+            <h1>ViquinhoDev</h1>
+            <p class="bio" data-i18n="hero-bio">Desenvolvedor focado em criar soluções digitais modernas, eficientes e de alto impacto visual. Sempre evoluindo e explorando novas tecnologias.</p>
+            
+            <div class="contact-info">
+                <a href="mailto:bajay.vicente@gmail.com" class="contact-item">
+                    <i class="fa-solid fa-envelope"></i> bajay.vicente@gmail.com
+                </a>
+                <a href="tel:+554892122920" class="contact-item">
+                    <i class="fa-solid fa-phone"></i> +55 48 92122920
+                </a>
             </div>
 
-            <p class="section-label" data-i18n="hero.label">Programador & Desenvolvedor</p>
-
-            <h1 class="hero-title">
-              <span data-i18n="hero.title">Olá, eu sou</span>
-              <br />
-              <span class="highlight" data-i18n="hero.name">Vicente</span>
-            </h1>
-
-            <p class="hero-text" data-i18n="hero.text">
-              Sou Vicente Cisotto Bajay (ViquinhoDev), programador focado em criar
-              experiências modernas para a web. Desenvolvo sites, jogos, interfaces
-              interativas e scripts personalizados.
-            </p>
-
-            <div class="hero-actions">
-              <a href="#projetos" class="btn btn-primary" data-i18n="hero.cta.projects">
-                Ver Projetos
-              </a>
-              <a href="#contato" class="btn btn-secondary" data-i18n="hero.cta.contact">
-                Entrar em Contato
-              </a>
+            <div class="header-actions" style="justify-content: center;">
+                <a href="https://www.linkedin.com/in/vicente-bajay-941485428/" target="_blank" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/viquinhodev1/" target="_blank" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/ViquinhoDev" target="_blank" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://codepen.io/Vicente-Bajay-the-builder" target="_blank" class="social-btn" title="CodePen"><i class="fa-brands fa-codepen"></i></a>
+                <a href="https://br.pinterest.com/bajayvicente/" target="_blank" class="social-btn" title="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="https://www.duolingo.com/profile/VicenteBaj2" target="_blank" class="social-btn" title="Duolingo"><i class="fa-solid fa-feather"></i></a>
             </div>
-          </div>
-
-          <div class="hero-card">
-            <div class="hero-card-bg" aria-hidden="true"></div>
-            <div class="hero-card-inner">
-              <div class="avatar" aria-hidden="true">V</div>
-              <p class="hero-card-name">ViquinhoDev</p>
-              <p class="hero-card-tags" data-i18n="hero.card.tags">Web • Jogos • Scripts</p>
-              <div class="lang-tags">
-                <span class="lang-tag">PT</span>
-                <span class="lang-tag">EN</span>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
 
-      <!-- About -->
-      <section id="sobre">
-        <div class="container about-grid">
-          <div class="about-text">
-            <p class="section-label" data-i18n="about.label">Quem sou eu</p>
-            <h2 class="section-title" data-i18n="about.title">Sobre Mim</h2>
-            <p data-i18n="about.p1">
-              Sou Vicente Cisotto Bajay (ViquinhoDev), programador focado em criar
-              experiências modernas para a web. Desenvolvo sites, jogos, interfaces
-              interativas e scripts personalizados utilizando HTML, CSS, JavaScript,
-              Python, Java e Bash.
-            </p>
-            <p data-i18n="about.p2">
-              Atuo no desenvolvimento de sites modernos, experiências interativas,
-              jogos e scripts personalizados. Meu foco é unir criatividade,
-              desempenho e um visual profissional em cada projeto.
-            </p>
-          </div>
-
-          <div class="specialties">
-            <article class="specialty-card">
-              <div class="specialty-icon" aria-hidden="true" data-icon="globe"></div>
-              <h4 data-i18n="about.web.title">Web</h4>
-              <p data-i18n="about.web.desc">HTML, CSS e JavaScript para sites modernos e responsivos.</p>
-            </article>
-            <article class="specialty-card">
-              <div class="specialty-icon" aria-hidden="true" data-icon="zap"></div>
-              <h4 data-i18n="about.scripts.title">Scripts</h4>
-              <p data-i18n="about.scripts.desc">Python, Bash, Java e automações personalizadas.</p>
-            </article>
-            <article class="specialty-card">
-              <div class="specialty-icon" aria-hidden="true" data-icon="gamepad"></div>
-              <h4 data-i18n="about.apps.title">Apps & Jogos</h4>
-              <p data-i18n="about.apps.desc">Interfaces interativas e experiências gamificadas.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Skills -->
-      <section id="habilidades" class="skills-section">
-        <div class="container">
-          <p class="section-label" data-i18n="skills.label">Stack</p>
-          <h2 class="section-title" data-i18n="skills.title">Habilidades & Ferramentas</h2>
-          <p class="section-desc" data-i18n="skills.desc">
-            Tecnologias e ferramentas que utilizo no dia a dia para transformar ideias em projetos reais.
-          </p>
-
-          <div class="skills-grid" style="margin-top: 2.5rem">
-            <div class="skills-group">
-              <h4 data-i18n="skills.languages">Linguagens</h4>
-              <div id="language-tags" class="skill-tags"></div>
+        <!-- Seção: Sobre Mim -->
+        <section>
+            <h2 data-i18n="about-title">Sobre Mim</h2>
+            <div class="about-content">
+                <p data-i18n="about-p1">Olá! Meu nome é <strong>Vicente Bajay</strong>. Sou apaixonado por tecnologia, programação e resolução de problemas através de código. Minha jornada envolve aprendizado constante e o desenvolvimento de interfaces intuitivas e funcionais para a web.</p>
+                <p style="margin-top: 1rem;" data-i18n="about-p2">Quando não estou codificando, gosto de explorar novos artigos tecnológicos e procuro sempre estar bem informado e atualizado.</p>
             </div>
-            <div class="skills-group">
-              <h4 data-i18n="skills.tools">Ferramentas</h4>
-              <div id="tools-grid" class="tools-grid"></div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Projects -->
-      <section id="projetos">
-        <div class="container">
-          <p class="section-label" data-i18n="projects.label">Portfólio</p>
-          <h2 class="section-title" data-i18n="projects.title">Principais Projetos</h2>
-          <p class="section-desc" data-i18n="projects.desc">
-            Alguns dos projetos que desenvolvi com foco em experiência, desempenho e visual profissional.
-          </p>
-          <div id="projects-grid" class="projects-grid"></div>
-
-          <div class="projects-footer">
-            <a
-              href="https://github.com/viquinhodev?tab=repositories"
-              class="btn btn-secondary projects-all-btn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span data-i18n="projects.viewAll">Ver todos os projetos</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact -->
-      <section id="contato">
-        <div class="container">
-          <p class="section-label" data-i18n="contact.label">Fale comigo</p>
-          <h2 class="section-title" data-i18n="contact.title">Vamos criar algo incrível.</h2>
-          <p class="section-desc" data-i18n="contact.desc">
-            Entre em contato para projetos, parcerias ou ideias criativas. Respondo em português e inglês.
-          </p>
-
-          <div class="contact-wrapper">
-            <aside class="contact-info-card">
-              <h3 class="section-title" style="font-size: 1.35rem" data-i18n="contact.info.title">
-                Informações de contato
-              </h3>
-
-              <div id="contact-methods" class="contact-methods"></div>
-
-              <div id="social-links" class="social-links"></div>
-            </aside>
-
-            <div class="contact-form-card">
-              <h3 class="section-title" style="font-size: 1.35rem" data-i18n="contact.form.title">
-                Envie uma mensagem
-              </h3>
-
-              <form id="contact-form" action="https://formsubmit.co/contato@viquinhodev.com" method="POST">
-                <input type="hidden" name="_subject" value="Nova mensagem — ViquinhoDev Portfolio" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="text" name="_honey" style="display: none" tabindex="-1" autocomplete="off" />
-                <input type="hidden" name="_template" value="table" />
-
-                <div class="form-group">
-                  <label for="name" data-i18n="contact.form.name">Nome</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    autocomplete="name"
-                    data-i18n-placeholder="contact.form.name"
-                    placeholder="Nome"
-                  />
+        <!-- Seção: Habilidades & Ferramentas -->
+        <section>
+            <h2 data-i18n="skills-title">Habilidades & Ferramentas</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fa-brands fa-html5 fa-2x" style="color: #e34f26; margin-bottom: 0.5rem;"></i>
+                    <h3>HTML5 & CSS3</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;" data-i18n="skill-html-desc">Estruturação semântica e estilização moderna</p>
                 </div>
-
-                <div class="form-group">
-                  <label for="email" data-i18n="contact.form.email">Seu e-mail</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    autocomplete="email"
-                    data-i18n-placeholder="contact.form.email"
-                    placeholder="Seu e-mail"
-                  />
+                <div class="skill-card">
+                    <i class="fa-brands fa-js fa-2x" style="color: #f7df1e; margin-bottom: 0.5rem;"></i>
+                    <h3>JavaScript</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;" data-i18n="skill-js-desc">Lógica de programação e dinamismo na web</p>
                 </div>
-
-                <div class="form-group">
-                  <label for="subject" data-i18n="contact.form.subject">Assunto</label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    required
-                    data-i18n-placeholder="contact.form.subject"
-                    placeholder="Assunto"
-                  />
+                <div class="skill-card">
+                    <i class="fa-brands fa-python fa-2x" style="color: #3776ab; margin-bottom: 0.5rem;"></i>
+                    <h3>Python</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;" data-i18n="skill-py-desc">Automação, scripts e desenvolvimento backend</p>
                 </div>
-
-                <div class="form-group">
-                  <label for="message" data-i18n="contact.form.message">Mensagem</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    data-i18n-placeholder="contact.form.message"
-                    placeholder="Mensagem"
-                  ></textarea>
+                <div class="skill-card">
+                    <i class="fa-solid fa-code fa-2x" style="color: #007acc; margin-bottom: 0.5rem;"></i>
+                    <h3>VS Code</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;" data-i18n="skill-vscode-desc">Ambiente de desenvolvimento principal e extensões</p>
                 </div>
-
-                <button type="submit" id="form-submit-btn" class="btn btn-primary" data-i18n="contact.form.submit">
-                  Enviar mensagem
-                </button>
-
-                <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
-              </form>
+                <div class="skill-card">
+                    <i class="fa-solid fa-terminal fa-2x" style="color: #4d4d4d; margin-bottom: 0.5rem;"></i>
+                    <h3>Terminal</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;" data-i18n="skill-term-desc">Linha de comando, scripts e navegação eficiente</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-brands fa-linux fa-2x" style="color: #fcc624; margin-bottom: 0.5rem;"></i>
+                    <h3>Linux & Windows</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;" data-i18n="skill-os-desc">Sistemas operacionais e ambientes de desenvolvimento</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-brands fa-git-alt fa-2x" style="color: #f05032; margin-bottom: 0.5rem;"></i>
+                    <h3>Git & GitHub</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;" data-i18n="skill-git-desc">Controle de versão e trabalho colaborativo</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-solid fa-laptop-code fa-2x" style="color: var(--primary-color); margin-bottom: 0.5rem;"></i>
+                    <h3 data-i18n="skill-web-title">Desenvolvimento Web</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;" data-i18n="skill-web-desc">Criação de sites responsivos e otimizados</p>
+                </div>
             </div>
-          </div>
+        </section>
+
+        <!-- Seção: Principais Projetos -->
+        <section>
+            <h2 data-i18n="projects-title">Principais Projetos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3 data-i18n="proj1-title">Projeto 1</h3>
+                    <p data-i18n="proj1-desc">Aplicação web interativa focada em usabilidade e design responsivo.</p>
+                    <a href="#" style="color: var(--primary-color); text-decoration: none; font-weight: bold;"><span data-i18n="view-details">Ver detalhes</span> &rarr;</a>
+                </div>
+                <div class="project-card">
+                    <h3 data-i18n="proj2-title">Projeto 2</h3>
+                    <p data-i18n="proj2-desc">Interface moderna conectada a APIs para exibição dinâmica de dados.</p>
+                    <a href="#" style="color: var(--primary-color); text-decoration: none; font-weight: bold;"><span data-i18n="view-details">Ver detalhes</span> &rarr;</a>
+                </div>
+                <div class="project-card">
+                    <h3 data-i18n="proj3-title">Projeto 3</h3>
+                    <p data-i18n="proj3-desc">Página de alta performance construída seguindo as melhores práticas de SEO.</p>
+                    <a href="#" style="color: var(--primary-color); text-decoration: none; font-weight: bold;"><span data-i18n="view-details">Ver detalhes</span> &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção: Vamos criar algo incrível -->
+        <section>
+            <div class="contact-cta">
+                <h2 data-i18n="cta-title">Vamos criar algo incrível?</h2>
+                <p data-i18n="cta-desc">Estou disponível para novos projetos, parcerias e oportunidades. Entre em contato comigo para conversarmos!</p>
+                <div class="contact-info" style="margin-bottom: 0;">
+                    <a href="mailto:bajay.vicente@gmail.com" class="contact-item">
+                        <i class="fa-solid fa-envelope"></i> <span data-i18n="send-email">Enviar um E-mail</span>
+                    </a>
+                    <a href="tel:+554892122920" class="contact-item">
+                        <i class="fa-solid fa-phone"></i> <span data-i18n="call-phone">Chamar no Telefone</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/vicente-bajay-941485428/" target="_blank" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/viquinhodev1/" target="_blank" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/ViquinhoDev" target="_blank" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://codepen.io/Vicente-Bajay-the-builder" target="_blank" class="social-btn" title="CodePen"><i class="fa-brands fa-codepen"></i></a>
+                <a href="https://br.pinterest.com/bajayvicente/" target="_blank" class="social-btn" title="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="https://www.duolingo.com/profile/VicenteBaj2" target="_blank" class="social-btn" title="Duolingo"><i class="fa-solid fa-feather"></i></a>
         </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <a href="#inicio" class="logo">Viquinho<span>Dev</span></a>
-            <p data-i18n="footer.tagline">
-              Criando experiências modernas para a web, jogos e scripts.
-            </p>
-          </div>
-
-          <div class="footer-links">
-            <h5 data-i18n="footer.nav">Navegação</h5>
-            <ul>
-              <li><a href="#inicio" data-i18n="nav.home">Início</a></li>
-              <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
-              <li><a href="#habilidades" data-i18n="nav.skills">Habilidades</a></li>
-              <li><a href="#projetos" data-i18n="nav.projects">Projetos</a></li>
-              <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-social">
-            <h5 data-i18n="footer.social">Redes</h5>
-            <div id="footer-social-links" class="social-links"></div>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <p>
-            © <span id="year">2026</span> Vicente Cisotto Bajay (ViquinhoDev) —
-            <span data-i18n="footer.rights">Todos os direitos reservados.</span>
-          </p>
-          <p class="theme-note" data-i18n="footer.themes">Mais temas em breve</p>
-        </div>
-      </div>
+        <p><span data-i18n="footer-contact">Contato</span>: bajay.vicente@gmail.com | +55 48 92122920</p>
+        <p style="margin-top: 0.5rem;">&copy; 2026 Vicente Bajay. <span data-i18n="footer-rights">Todos os direitos reservados.</span></p>
     </footer>
 
-    <script src="js/icons.js"></script>
-    <script src="js/i18n.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+    <!-- Scripts: Alternância de Tema e Idioma -->
+    <script>
+        // --- Alternância de Tema ---
+        const themeBtn = document.getElementById('themeBtn');
+        const body = document.body;
+
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            if (currentTheme === 'light') {
+                body.removeAttribute('data-theme');
+                updateThemeButtonText();
+            } else {
+                body.setAttribute('data-theme', 'light');
+                updateThemeButtonText();
+            }
+        });
+
+        function updateThemeButtonText() {
+            const currentTheme = body.getAttribute('data-theme');
+            const isEnglish = currentLang === 'en';
+            if (currentTheme === 'light') {
+                themeBtn.innerHTML = `<i class="fa-solid fa-sun"></i> <span data-i18n="theme-btn">${isEnglish ? 'Theme' : 'Tema'}</span>`;
+            } else {
+                themeBtn.innerHTML = `<i class="fa-solid fa-moon"></i> <span data-i18n="theme-btn">${isEnglish ? 'Theme' : 'Tema'}</span>`;
+            }
+        }
+
+        // --- Alternância de Idioma ---
+        const langBtn = document.getElementById('langBtn');
+        let currentLang = 'pt';
+
+        const translations = {
+            pt: {
+                "theme-btn": "Tema",
+                "hero-bio": "Desenvolvedor focado em criar soluções digitais modernas, eficientes e de alto impacto visual. Sempre evoluindo e explorando novas tecnologias.",
+                "about-title": "Sobre Mim",
+                "about-p1": "Olá! Meu nome é <strong>Vicente Bajay</strong>. Sou apaixonado por tecnologia, programação e resolução de problemas através de código. Minha jornada envolve aprendizado constante e o desenvolvimento de interfaces intuitivas e funcionais para a web.",
+                "about-p2": "Quando não estou codificando, gosto de explorar novos artigos tecnológicos e procuro sempre estar bem informado e atualizado.",
+                "skills-title": "Habilidades & Ferramentas",
+                "skill-html-desc": "Estruturação semântica e estilização moderna",
+                "skill-js-desc": "Lógica de programação e dinamismo na web",
+                "skill-py-desc": "Automação, scripts e desenvolvimento backend",
+                "skill-vscode-desc": "Ambiente de desenvolvimento principal e extensões",
+                "skill-term-desc": "Linha de comando, scripts e navegação eficiente",
+                "skill-os-desc": "Sistemas operacionais e ambientes de desenvolvimento",
+                "skill-git-desc": "Controle de versão e trabalho colaborativo",
+                "skill-web-title": "Desenvolvimento Web",
+                "skill-web-desc": "Criação de sites responsivos e otimizados",
+                "projects-title": "Principais Projetos",
+                "proj1-title": "Projeto 1",
+                "proj1-desc": "Aplicação web interativa focada em usabilidade e design responsivo.",
+                "proj2-title": "Projeto 2",
+                "proj2-desc": "Interface moderna conectada a APIs para exibição dinâmica de dados.",
+                "proj3-title": "Projeto 3",
+                "proj3-desc": "Página de alta performance construída seguindo as melhores práticas de SEO.",
+                "view-details": "Ver detalhes",
+                "cta-title": "Vamos criar algo incrível?",
+                "cta-desc": "Estou disponível para novos projetos, parcerias e oportunidades. Entre em contato comigo para conversarmos!",
+                "send-email": "Enviar um E-mail",
+                "call-phone": "Chamar no Telefone",
+                "footer-contact": "Contato",
+                "footer-rights": "Todos os direitos reservados."
+            },
+            en: {
+                "theme-btn": "Theme",
+                "hero-bio": "Developer focused on creating modern, efficient, and visually impactful digital solutions. Always evolving and exploring new technologies.",
+                "about-title": "About Me",
+                "about-p1": "Hello! My name is <strong>Vicente Bajay</strong>. I am passionate about technology, programming, and solving problems through code. My journey involves continuous learning and developing intuitive, functional web interfaces.",
+                "about-p2": "When I'm not coding, I like to explore new tech articles and always stay well-informed and updated.",
+                "skills-title": "Skills & Tools",
+                "skill-html-desc": "Semantic structuring and modern styling",
+                "skill-js-desc": "Programming logic and web dynamism",
+                "skill-py-desc": "Automation, scripting, and backend development",
+                "skill-vscode-desc": "Main development environment and extensions",
+                "skill-term-desc": "Command line, scripting, and efficient navigation",
+                "skill-os-desc": "Operating systems and development environments",
+                "skill-git-desc": "Version control and collaborative work",
+                "skill-web-title": "Web Development",
+                "skill-web-desc": "Creating responsive and optimized websites",
+                "projects-title": "Main Projects",
+                "proj1-title": "Project 1",
+                "proj1-desc": "Interactive web application focused on usability and responsive design.",
+                "proj2-title": "Project 2",
+                "proj2-desc": "Modern interface connected to APIs for dynamic data display.",
+                "proj3-title": "Project 3",
+                "proj3-desc": "High-performance page built following SEO best practices.",
+                "view-details": "View details",
+                "cta-title": "Let's create something amazing?",
+                "cta-desc": "I am available for new projects, partnerships, and opportunities. Get in touch with me to talk!",
+                "send-email": "Send an Email",
+                "call-phone": "Call on Phone",
+                "footer-contact": "Contact",
+                "footer-rights": "All rights reserved."
+            }
+        };
+
+        langBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'pt' ? 'en' : 'pt';
+            langBtn.innerHTML = `<i class="fa-solid fa-globe"></i> ${currentLang === 'pt' ? 'EN' : 'PT'}`;
+            document.documentElement.lang = currentLang === 'pt' ? 'pt-BR' : 'en';
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
+
+            updateThemeButtonText();
+        });
+    </script>
+</body>
 </html>
